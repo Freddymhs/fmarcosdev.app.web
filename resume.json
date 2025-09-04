@@ -4,16 +4,17 @@
     "ats": {
       "version": "1.0",
       "optimizedFor": ["-", "-", "-"]
-    }
+    },
+    "lastUpdated": "2025-09-01"
   },
   "basics": {
     "image": "https://gravatar.com/userimage/178512464/8c8ef92b4688b3493ca52746b7775086.jpeg",
     "name": "Freddy Huaylla",
-    "label": "Fullstack Developer | JavaScript/TypeScript | Flutter",
+    "label": "Fullstack Developer | TypeScript | Flutter",
     "email": "fmarcosdev@gmail.com",
     "phone": "+56 9 7464 6583",
     "url": "https://fmarcos.dev",
-    "summary": "Desarrollador Fullstack con 3 años de experiencia especializado en tecnologías JavaScript (React, Next.js, Nest.js) y Flutter. Me destaco por priorizar la usabilidad, la optimización del rendimiento y el desarrollo de interfaces. He integrado soluciones de IA generativa utilizando LangChain y participado en proyectos como ERP multiplataforma en tiempo real, software SAAS de alto rendimiento y prácticas esenciales de DevOps. Mi metodología incluye pruebas unitarias, integración continua con GitHub Actions y colaboración en equipos multidisciplinarios. Busco aplicar mi experiencia técnica en proyectos ambiciosos, seguir creciendo profesionalmente y aportar soluciones orientadas al usuario y al cliente",
+    "summary": "Desarrollador Fullstack con +5 años de experiencia en tecnologías JavaScript/TypeScript (React, Next.js, NestJS, Node.js) y Flutter. Especializado en arquitecturas escalables, APIs REST, web scraping y sistemas de automatización con IA generativa (OpenAI API). Experiencia en desarrollo de CMS con Strapi, integración WhatsApp Business, testing automatizado (TDD) y metodologías ágiles. Enfoque en optimización de performance, seguridad y experiencia del usuario.",
     "location": {
       "city": "Arica",
       "countryCode": "CL",
@@ -49,19 +50,71 @@
   },
   "work": [
     {
+      "name": "Depot Group",
+      "position": "Backend Developer / Web Scraping / CMS Manager",
+      "type": "contract",
+      "startDate": "2025-07",
+      "endDate": "2025-10",
+      "summary": "Desarrollador enfocado en microservicios, web scraping y gestión de contenido para automatización de diversos procesos empresariales. Implementando un chatbot de WhatsApp, un scraper avanzado y un backoffice con Strapi.",
+
+      "highlights": [
+        "Scraper avanzado con NestJS y Puppeteer para extracción automatizada de datos de portales industriales, incluyendo gestión de pools de navegadores concurrentes y integración con OpenAI Vision API",
+        "Integración completa con Twilio WhatsApp Business API para mensajería empresarial, implementando webhooks robustos, manejo de multimedia y botones interactivos",
+        "Desarrollo de chatbot WhatsApp empresarial con OpenAI Assistant API v2, procesando consultas automatizadas de repuestos industriales con 6 funciones personalizadas y lógica conversacional avanzada",
+        "Backoffice completo con Strapi CMS v5.23 y React 18, sistema de gestión de contenido headless con autenticación, consumo de microservicio REST y dynamic zones para contenido flexible adaptado a necesidades empresariales",
+        "Arquitectura de microservicios con Express.js y TypeScript, implementando validación Zod, manejo centralizado de errores, Socket.IO para comunicación en tiempo real y documentación Swagger/OpenAPI",
+        "Sistema completo de gestión de clientes con PostgreSQL y logging automático a Google Sheets, incluyendo analytics empresariales en tiempo real",
+        "Base de datos PostgreSQL con connection pooling, health checks, logging estructurado con request IDs únicos y monitoreo proactivo de performance",
+        "Sistema de automatización empresarial procesando búsquedas industriales, registro automático de clientes y generación de reportes analíticos en tiempo real"
+      ],
+
+      "technologies": [
+        "NestJS",
+        "Puppeteer Advanced",
+        "OpenAI Vision API",
+        "Twilio WhatsApp Business API",
+        "OpenAI Assistant API v2",
+        "Strapi CMS v5.23",
+        "React 18",
+        "Express.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Google Sheets API",
+        "Google OAuth2",
+        "Zod Validation",
+        "Socket.IO WebSockets",
+        "Swagger/OpenAPI",
+        "Browser Pool Management",
+        "Proxy Rotation (IPRoyal)",
+        "Thread Management",
+        "Health Monitoring",
+        "Connection Pooling",
+        "Jest Testing",
+        "ESLint + Prettier",
+        "SQLite3",
+        "Better-SQLite3",
+        "Axios HTTP Client",
+        "Rate Limiting",
+        "Styled Components",
+        "React Router DOM"
+      ]
+    },
+    {
       "name": "JL LTDA.",
       "position": "Fullstack Developer",
       "type": "full-time",
       "startDate": "2024-04",
       "endDate": "2024-12",
-      "summary": "Fullstack Developer con experiencia en desarrollo de aplicaciones multiplataforma usando Flutter y arquitecturas backend escalables. Especializado en APIs GraphQL con PostgreSQL, comunicación en tiempo real via WebSockets, y automatización CI/CD con deployment cloud. Enfocado en entregar soluciones robustas, seguras y de alto rendimiento.",
+      "summary": "Desarrollo de sistema completo de gestión de punto de venta e inventario con Flutter multiplataforma, backend GraphQL especializado y hardware integrado. Sistema personalizado para empresa con 9 roles específicos, comunicación en tiempo real, escáneres de códigos de barras e impresión térmica vía Bluetooth.",
       "v2": "Responsable del desarrollo de aplicación multiplataforma con arquitectura de microservicios, implementando tecnologías avanzadas como Flutter, WebSockets, garantizando integraciones robustas, escalables y de alta disponibilidad.",
       "highlights": [
-        "Desarrollo de aplicaciones multiplataforma con Flutter, asegurando experiencia de usuario consistente y rendimiento optimizado mediante integración con APIs GraphQL",
-        "Diseño y optimización de APIs GraphQL respaldadas por PostgreSQL para manejo eficiente de datos",
-        "Integración de Supabase para autenticación segura y gestión de usuarios",
-        "Implementación de WebSockets para comunicación bidireccional en tiempo real, soportando múltiples conexiones simultáneas y visualización de información en vivo",
-        "Automatización de pipelines CI/CD con GitHub Actions para deployment continuo y despliegues ágiles"
+        "Sistema de punto de venta (POS) Flutter multiplataforma con integración de hardware: escáneres de códigos de barras, impresoras térmicas Bluetooth ESC/POS",
+        "Backend GraphQL especializado con Nexus y PostgreSQL, implementando 9 roles empresariales granulares (Gerente, Cajero, Bodega, Analista, Promotor, etc.) con permisos específicos por funcionalidad",
+        "Arquitectura de microservicios con comunicación en tiempo real: GraphQL Subscriptions + WebSockets para actualizaciones instantáneas de inventario, ventas y alertas de stock crítico",
+        "Sistema avanzado de inventario con gestión de fechas de vencimiento, categorías, ubicaciones, proveedores y alertas automáticas de reposición integrado con códigos de barras",
+        "Microservicio NestJS independiente para generación de reportes empresariales (PDF/CSV) con arquitectura limpia",
+        "Integración completa con Supabase para autenticación OAuth (Google Sign-In), almacenamiento en tiempo real y sincronización automática entre dispositivos móviles y web",
+        "Pipeline CI/CD automatizado con GitHub Actions, deployment multiplataforma (Android APK, iOS, PWA) y sistema de versionado automático para actualizaciones remotas"
       ],
       "v2hig": [
         "Desarrollo con TDD (Test-Driven Development) para funciones críticas del sistema de validación",
@@ -73,29 +126,33 @@
       ],
       "technologies": [
         "Flutter",
-        "Dart",
-        "AWS Lambda",
-        "AWS SNS",
-        "AWS SQS",
+        "Dart 3.4.1+",
         "GraphQL",
-        "Supabase",
-        "Express",
-        "TypeScript",
         "Nexus",
-        "Prisma",
-        "Apollo Server",
+        "Express.js",
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Supabase",
+        "Google OAuth2",
+        "GraphQL Subscriptions",
         "WebSockets",
-        "Redis",
+        "Mobile Scanner",
+        "Bluetooth Print ESC/POS",
+        "AWS SQS",
+        "AWS S3",
+        "Redis Pub/Sub",
         "GitHub Actions",
         "CI/CD",
-        "Microservices",
-        "Serverless Architecture",
+        "Clean Architecture",
         "TDD",
-        "Circuit Breaker Pattern",
-        "Connection Pooling",
-        "AWS Free Tier",
-        "PostgreSQL",
-        "Nexus"
+        "Role-based Access Control",
+        "Real-time Inventory Management",
+        "Hardware Integration",
+        "PDF/CSV Generation",
+        "Microservices Architecture",
+        "PWA"
       ],
       "atsKeywords": [
         "fullstack developer",
@@ -142,14 +199,17 @@
       "url": "",
       "startDate": "2021-02",
       "endDate": "2024-03",
-      "summary": "Desarrollo web con React (v18) y Next.js (v13) usando TypeScript, implementando arquitecturas escalables con GraphQL (Apollo Client) y optimizando rendimiento mediante técnicas avanzadas de caching. refactorizacion de código legacy y establecí prácticas de Git/GitHub para mejorar la colaboración del equipo.",
+      "summary": "Desarrollador Fullstack y Soporte especializado en React, Next.js y GraphQL, contribuyendo al mantenimiento y desarrollo de features en plataforma SaaS empresarial. Enfocado en resolver problemas técnicos, optimización de rendimiento y desarrollo de componentes reutilizables.",
       "highlights": [
-        "Desarrollo de interfaces con React 18 + Next.js 13 (App Router)",
-        "Refactorización de class components a functional components",
-        "Gestión de estado global y datos: Uso de Apollo Client con Optimistic UI y normalización de caché GraphQL, complementado con Context API + useReducer.",
-        "Creación de componentes reutilizables usando Ant Design y Klog Design System interno",
-        "Implementación de capa de seguridad para gestión de feature flags y protección de datos con encriptación de extremo a extremo.",
-        "Debugging y optimización de código backend, Aceleración de carga de consultas a la BD y procesos JS, identificando dependencias críticas con Chrome DevTools Profiler."
+        "Contribución al desarrollo de interfaces frontend con React 18 y Next.js 13 (App Router), implementando componentes responsivos y optimizados para la plataforma SaaS empresarial",
+        "Refactorización de código legacy migrando class components a functional components con hooks, mejorando la mantenibilidad y reduciendo la complejidad del código base",
+        "Implementación de gestión de estado con Apollo Client para GraphQL, utilizando Optimistic UI y normalización de caché, complementado con Context API y useReducer",
+        "Desarrollo de componentes reutilizables siguiendo el design system interno de Klog y patrones de Ant Design, asegurando consistencia visual en la aplicación",
+        "Implementación de features de seguridad incluyendo gestión de feature flags y protección de datos con encriptación, contribuyendo a la robustez del sistema",
+        "Debugging y optimización de rendimiento frontend utilizando Chrome DevTools Profiler, identificando y resolviendo cuellos de botella en consultas y procesos JavaScript",
+        "Soporte a usuarios empresariales, resolviendo problemas de funcionalidad y mejorando la experiencia del usuario en la plataforma SaaS",
+        "Mantenimiento y resolución de issues en backend GraphQL, optimizando consultas y mejorando tiempos de respuesta de la API",
+        "Colaboración en mejoras de flujo de trabajo del equipo estableciendo prácticas de Git/GitHub, linting con ESLint/Prettier y integración con GitHub Actions"
       ],
       "technologies": [
         "React",
@@ -159,6 +219,7 @@
         "GraphQL",
         "Apollo Client",
         "Context API",
+        "useReducer",
         "ESLint",
         "Prettier",
         "Husky",
@@ -166,7 +227,8 @@
         "GitHub Actions",
         "Vitest",
         "Webpack",
-        "Chrome DevTools"
+        "Chrome DevTools",
+        "Feature Flags"
       ],
       "visible": true
     },
@@ -177,15 +239,15 @@
       "url": "",
       "startDate": "2020-06",
       "endDate": "2021-01",
-      "summary": "Desarrollé soluciones frontend personalizadas en WordPress usando PHP y CSS para módulos farmacéuticos en Chile. Implementé mejoras de UI/UX y gestioné campañas publicitarias mediante código. Adicionalmente, participé en proyectos con React y Angular, utilizando metodologías ágiles con JIRA.",
+      "summary": "Desarrollador frontend especializado en soluciones WordPress personalizadas para el sector farmacéutico, con enfoque en UI/UX y optimización de performance. Participé en proyectos con tecnologías modernas como React y Angular, aplicando metodologías ágiles.",
       "highlights": [
-        "Personalización de módulos WordPress usando PHP para adaptarlos a requerimientos específicos",
-        "Mejora de interfaces de usuario con CSS para clientes del sector farmacéutico",
-        "Gestión e implementación de campañas publicitarias mediante desarrollo frontend",
-        "Participación en proyectos con React y Angular para desarrollo de funcionalidades avanzadas",
-        "Trabajo bajo metodologías ágiles utilizando JIRA para gestión de tareas",
-        "Optimización de rendimiento frontend en sitios WordPress",
-        "Colaboración con equipos multidisciplinarios para implementación de features"
+        "Desarrollo y personalización de temas y plugins WordPress utilizando PHP, HTML, CSS y JavaScript, adaptando funcionalidades a requerimientos específicos del sector farmacéutico",
+        "Implementación de mejoras de UI/UX en interfaces de usuario, optimizando la experiencia del cliente final y aumentando la usabilidad de las aplicaciones",
+        "Optimización de performance frontend en sitios WordPress, reduciendo tiempos de carga y mejorando el posicionamiento SEO",
+        "Gestión e implementación de campañas publicitarias digitales mediante desarrollo frontend personalizado, contribuyendo al crecimiento de la presencia online de clientes",
+        "Contribución en proyectos con tecnologías modernas como React y Angular, desarrollando componentes reutilizables y funcionalidades avanzadas",
+        "Colaboración con equipos multidisciplinarios bajo metodologías ágiles utilizando JIRA para la gestión eficiente de tareas y entregas",
+        "Mantenimiento y resolución de issues técnicos en sitios WordPress existentes, garantizando estabilidad y continuidad del servicio"
       ],
       "technologies": [
         "PHP",
@@ -196,7 +258,9 @@
         "React",
         "Angular",
         "JIRA",
-        "Metodologías Ágiles"
+        "Metodologías Ágiles",
+        "UI/UX Optimization",
+        "SEO Optimization"
       ],
       "visible": true
     }
@@ -284,44 +348,127 @@
   ],
   "skills": [
     {
+      "name": "Backend/API Development",
+      "level": "Advanced",
+      "keywords": [
+        "Express.js",
+        "NestJS",
+        "GraphQL",
+        "Apollo Server",
+        "REST APIs",
+        "WebSockets",
+        "Socket.IO",
+        "Prisma",
+        "Nexus",
+        "OpenAI Assistant API",
+        "OpenAI Vision API",
+        "Zod Validation"
+      ]
+    },
+    {
+      "name": "Web Scraping & Automation",
+      "level": "Advanced",
+      "keywords": [
+        "Puppeteer Advanced",
+        "NestJS Scraper Architecture",
+        "Browser Pool Management",
+        "Proxy Rotation (IPRoyal)",
+        "Screenshot Automation",
+        "Rate Limiting",
+        "Concurrent Browser Management"
+      ]
+    },
+    {
+      "name": "Backend Architecture",
+      "level": "Advanced",
+      "keywords": [
+        "Modular Architecture",
+        "Error Handling Middleware",
+        "Validation Pipes",
+        "Connection Pooling",
+        "Thread Management",
+        "Health Monitoring",
+        "Performance Optimization",
+        "Swagger/OpenAPI Documentation",
+        "Clean Architecture",
+        "Microservices Architecture"
+      ]
+    },
+    {
       "name": "Frontend Development",
       "level": "Advanced",
       "keywords": [
         "React",
         "Next.js",
-        "Flutter",
+        "React 18",
         "TypeScript",
         "JavaScript",
+        "Context API",
+        "useReducer",
         "Ant Design",
+        "Styled Components",
         "CSS",
         "HTML",
-        "Context API",
-        "Webpack"
+        "Webpack",
+        "UI/UX Optimization",
+        "SEO Optimization",
+        "Feature Flags",
+        "React Router DOM",
+        "Angular",
+        "React i18next",
+        "React Helmet",
+        "React Parallax",
+        "Gatsby Plugins",
+        "Bootstrap"
       ]
     },
     {
-      "name": "Backend/API Development",
+      "name": "CMS & Content Management",
+      "level": "Intermediate",
+      "keywords": [
+        "Strapi v5.23",
+        "Headless CMS",
+        "API-first Architecture",
+        "Content Modeling",
+        "CMS Authentication",
+        "Media Management"
+      ]
+    },
+    {
+      "name": "AI/ML Integration",
+      "level": "Intermediate",
+      "keywords": [
+        "OpenAI API",
+        "OpenAI Vision API",
+        "Computer Vision",
+        "Conversational AI",
+        "Image Analysis"
+      ]
+    },
+    {
+      "name": "Database & Auth",
       "level": "Advanced",
       "keywords": [
-        "GraphQL",
-        "Apollo Server",
-        "Apollo Client",
-        "Express",
-        "Nexus",
-        "REST APIs",
-        "WebSockets",
-        "Prisma"
+        "PostgreSQL",
+        "SQLite3",
+        "Better-SQLite3",
+        "Supabase",
+        "Prisma",
+        "Database Design",
+        "Google OAuth2"
       ]
     },
     {
       "name": "Mobile Development",
       "level": "Intermediate",
-      "keywords": ["Flutter", "Cross-platform"]
-    },
-    {
-      "name": "Database & Auth",
-      "level": "Advanced",
-      "keywords": ["PostgreSQL", "Supabase", "Prisma", "Database Design"]
+      "keywords": [
+        "Flutter",
+        "Cross-platform",
+        "React Native",
+        "Dart 3.4.1+",
+        "Mobile Scanner",
+        "Bluetooth Print ESC/POS"
+      ]
     },
     {
       "name": "Development Tools",
@@ -330,27 +477,49 @@
         "Git",
         "GitHub Actions",
         "CI/CD",
-        "Husky",
         "ESLint",
         "Prettier",
         "Chrome DevTools",
-        "Vitest"
+        "Jest",
+        "Vitest",
+        "Husky",
+        "Axios HTTP Client"
       ]
     },
     {
-      "name": "CMS & Legacy Systems",
-      "level": "Intermediate",
-      "keywords": ["WordPress", "PHP", "jQuery"]
+      "name": "External Integrations",
+      "level": "Advanced",
+      "keywords": [
+        "Twilio API",
+        "WhatsApp Business API",
+        "Google Sheets API",
+        "Google OAuth2",
+        "AWS SQS",
+        "AWS S3",
+        "Redis Pub/Sub",
+        "API Gateway",
+        "AWS SES",
+        "AWS Lambda"
+      ]
     },
     {
-      "name": "Methodologies",
+      "name": "Methodologies & Patterns",
       "level": "Advanced",
       "keywords": [
         "Agile/Scrum",
-        "JIRA",
         "TDD",
         "Microservices",
-        "Code Refactoring"
+        "Code Refactoring",
+        "Clean Architecture",
+        "Role-based Access Control",
+        "Real-time Inventory Management",
+        "Hardware Integration",
+        "PDF/CSV Generation",
+        "Microservices Architecture",
+        "PWA",
+        "Circuit Breaker",
+        "Asynchronous Programming",
+        "AWS SNS/SQS"
       ]
     }
   ],
@@ -451,7 +620,8 @@
         "Impresión 3D",
         "Prototipado rápido",
         "Automatización en el hogar",
-        "Tendencias en desarrollo web"
+        "Tendencias en desarrollo web",
+        "Inteligencia Artificial Generativa"
       ]
     },
     {

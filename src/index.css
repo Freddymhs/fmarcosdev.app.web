@@ -1,6 +1,4 @@
-/* import old version  config tailwind theme */
-@config "../tailwind.config.js";
-/* Importar Tailwind CSS 4 */
+/* Tailwind CSS 4 with custom theme */
 @import "tailwindcss";
 
 @font-face {
@@ -12,35 +10,45 @@
 }
 
 @theme {
-  --color-primary-color: #f1de63;
-  --color-secondary-color: #252830;
-  --color-important-color: #8cb348;
-  --color-read-color: #095957;
-  --color-read-white-color: #fff5e1;
-  --color-white-area-color: #e5e7eb;
-}
+  --color-just-white: #ffff; /* Crema para secciones alternadas */
+  /* Portfolio Color System - Basado en diseño beige/natural */
+  --color-background-main: #fefce8; /* Fondo principal de toda la página */
+  --color-text-primary: #4a3f2e; /* Texto principal (títulos, párrafos) */
+  --color-accent-green: #7c9c3f; /* Verde para elementos destacados y botones */
+  --color-text-secondary: #71787f; /* Texto secundario verde oscuro */
+  --color-card-background: #fcf6e5; /* Fondo de las tarjetas de experiencia */
+  --color-separator: #ebe2c8; /* Líneas divisorias y bordes suaves */
 
-header {
-  font-family: "Space Mono", sans-serif;
-  font-size: 0.7rem;
-}
+  /* Colores complementarios */
+  --color-highlight-yellow: #f4d03f; /* Amarillo para badges "Avanzado", "Experto" */
+  --color-skill-tag: #cb8d0b; /* Marrón para tags de tecnologías */
+  --color-progress-light: #a8c972; /* Verde claro para barras de progreso */
+  --color-footer-dark: #1e3a26; /* Verde muy oscuro para footer */
+  --color-section-cream: #faf7f0; /* Crema para secciones alternadas */
 
-html {
-  background-color: var(--color-primary-color);
-}
+  /* Font families */
+  --font-family-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
 
-/* personalized scrollbar */
-.scrollbar-custom::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
+  /* Spacing system - Espaciado del portfolio */
+  --spacing-card-padding: 0.5rem; /* Padding interno de tarjetas pequeñas */
+  --spacing-section-gap: 1rem; /* Separación entre elementos de sección */
+  --spacing-component-gap: 1.5rem; /* Separación entre componentes */
+  --spacing-section-margin: 2rem; /* Margen entre secciones principales */
+  --spacing-page-margin: 3rem; /* Margen exterior de la página */
 
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: var(--color-important-color);
-}
+  /* Border radius system - Bordes redondeados */
+  --radius-button: 0.25rem; /* Botones y elementos pequeños */
+  --radius-card: 0.5rem; /* Tarjetas y contenedores */
+  --radius-section: 1rem; /* Secciones grandes y modales */
 
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: var(--color-white-area-color);
-  border-radius: 10px;
-  border: 2px solid var(--color-read-color);
+  /* Shadow system - Sombras sutiles */
+  --shadow-card-light: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* Sombra sutil para elementos */
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1); /* Sombra al hacer hover */
+  --shadow-modal: 0 10px 15px -3px rgb(0 0 0 / 0.1); /* Sombra para modales */
+
+  /* Transition system - Animaciones */
+  --transition-button: 150ms; /* Transición rápida para botones */
+  --transition-card: 200ms; /* Transición normal para tarjetas */
+  --transition-page: 300ms; /* Transición lenta para cambios de página */
 }

@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { WELCOME_MESSAGES } from "../../../constants/constants";
+import { WELCOME_MESSAGES } from "../../../constants";
 import ProgressBar from "../../atoms/progressbar";
 import MessageArea from "../../atoms/messageArea";
+import { SEOHead } from "../../atoms";
 import { useNavigate } from "react-router";
 import resumeData from "../../../../resume.json";
 import { preload } from "react-dom";
@@ -55,6 +56,18 @@ export default function Landing() {
 
   return (
     <>
+      <SEOHead
+        title="Welcome to fmarcos.dev"
+        description="Full Stack Developer portfolio featuring React, TypeScript, Node.js projects and professional experience"
+        type="website"
+        keywords={[
+          "portfolio",
+          "full stack developer",
+          "react",
+          "typescript",
+          "web development",
+        ]}
+      />
       <MessageArea message={message} />
       <ProgressBar progress={progress} />
     </>

@@ -1,30 +1,42 @@
 import { useEffect, useState } from "react";
 
-const DESKTOP_QUERY = "(min-width: 613px)";
-const MORE_THAN_SMALL_QUERY = "(min-width: 401px)";
+// BREAKPOINTS ESPECÍFICOS
+const DESKTOP_QUERY = "(min-width: 1024px)"; // lg breakpoint
+const LARGE_DESKTOP_QUERY = "(min-width: 1250px)"; // Nuevo: xl+ custom
+const SMALL_QUERY = "(min-width: 640px)"; // sm breakpoint
 
 export default function useMediaQuery() {
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isLargeDesktop, setIsLargeDesktop] = useState(false);
   const [isMoreThanSmall, setIsMoreThanSmall] = useState(false);
 
   useEffect(() => {
     const desktopMedia = window.matchMedia(DESKTOP_QUERY);
-    const smallMedia = window.matchMedia(MORE_THAN_SMALL_QUERY);
+    const largeDesktopMedia = window.matchMedia(LARGE_DESKTOP_QUERY);
+    const smallMedia = window.matchMedia(SMALL_QUERY);
 
-    const updateIsDesktop = () => setIsDesktop(desktopMedia.matches);
-    const updateIsMoreThanSmall = () => setIsMoreThanSmall(smallMedia.matches);
+    const updateBreakpoints = () => {
+      setIsDesktop(desktopMedia.matches);
+      setIsLargeDesktop(largeDesktopMedia.matches);
+      setIsMoreThanSmall(smallMedia.matches);
+    };
 
-    updateIsDesktop();
-    updateIsMoreThanSmall();
+    updateBreakpoints();
 
-    desktopMedia.addEventListener("change", updateIsDesktop);
-    smallMedia.addEventListener("change", updateIsMoreThanSmall);
+    desktopMedia.addEventListener("change", updateBreakpoints);
+    largeDesktopMedia.addEventListener("change", updateBreakpoints);
+    smallMedia.addEventListener("change", updateBreakpoints);
 
     return () => {
-      desktopMedia.removeEventListener("change", updateIsDesktop);
-      smallMedia.removeEventListener("change", updateIsMoreThanSmall);
+      desktopMedia.removeEventListener("change", updateBreakpoints);
+      largeDesktopMedia.removeEventListener("change", updateBreakpoints);
+      smallMedia.removeEventListener("change", updateBreakpoints);
     };
   }, []);
 
-  return { isDesktop, isMoreThanSmall };
+  return { 
+    isDesktop, 
+    isLargeDesktop, // Nuevo: para 1250px+
+    isMoreThanSmall 
+  };
 }

@@ -1,44 +1,101 @@
 import { Download, ExternalLink } from "lucide-react";
+import { tv } from "tailwind-variants";
 import resumeData from "../../../../resume.json";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
+
+// Estilos usando Tailwind Variants
+const contentContainerStyles = tv({
+  base: "w-full flex-1 flex flex-col",
+});
+
+const gridWrapperStyles = tv({
+  base: "container mx-auto px-4 py-4 flex-1",
+});
+
+const certificatesGridStyles = tv({
+  base: "grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
+});
+
+const certificateCardStyles = tv({
+  base: `
+    bg-cv-light rounded-xl shadow-lg overflow-hidden 
+    transition-transform hover:scale-105
+    h-full flex flex-col
+  `,
+});
+
+const imageContainerStyles = tv({
+  base: "w-full h-64 flex items-center justify-center p-2 flex-shrink-0",
+});
+
+const certificateImageStyles = tv({
+  base: "max-h-full object-contain",
+});
+
+const cardContentStyles = tv({
+  base: "px-4 py-2 flex-1 flex flex-col",
+});
+
+const certificateTitleStyles = tv({
+  base: "font-semibold text-lg text-cv-dark font-mono truncate",
+});
+
+const certificateMetaStyles = tv({
+  base: "text-sm text-cv-secondary mt-auto py-2",
+});
+
+const actionsContainerStyles = tv({
+  base: "flex gap-4 mt-2 text-xs pb-2",
+});
+
+const actionButtonStyles = tv({
+  base: "flex items-center hover:opacity-80",
+  variants: {
+    variant: {
+      view: "text-cv-secondary",
+      download: "text-cv-green",
+    },
+  },
+});
+
+const actionIconStyles = tv({
+  base: "mr-1",
+});
 
 const Certificates = () => {
   const { certificates } = resumeData;
 
   const Content = () => {
     return (
-      <section className="w-full py-16 bg-cv-yellow">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className={contentContainerStyles()}>
+        <div className={gridWrapperStyles()}>
+          <div className={certificatesGridStyles()}>
             {certificates.map((cert) => (
-              <div
-                key={cert.name}
-                className="bg-cv-light rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform"
-              >
-                <div className="w-full h-64 flex items-center justify-center p-2">
+              <div key={cert.name} className={certificateCardStyles()}>
+                <div className={imageContainerStyles()}>
                   <img
                     src={"certificates/" + cert.name + ".png"}
                     alt={cert.name}
-                    className="max-h-full object-contain"
+                    className={certificateImageStyles()}
                   />
                 </div>
-                <div className="px-4 py-2">
-                  <h3 className="font-semibold text-lg text-cv-dark font-mono truncate">
+                <div className={cardContentStyles()}>
+                  <h3 className={certificateTitleStyles()}>
                     {cert.name.replace(/-/g, " ")}
                   </h3>
-                  <p className="text-sm text-cv-secondary">
+                  <p className={certificateMetaStyles()}>
                     {cert.issuer} • {cert.date}
                   </p>
-                  <div className="flex gap-4 mt-2 text-xs">
+                  <div className={actionsContainerStyles()}>
                     <button
                       onClick={() => window.open(cert.url, "_blank")}
-                      className="flex items-center text-cv-secondary hover:opacity-80"
+                      className={actionButtonStyles({ variant: "view" })}
                     >
-                      <ExternalLink size={14} className="mr-1" /> Ver
+                      <ExternalLink size={14} className={actionIconStyles()} /> Ver
                     </button>
                     <a href={`certificates/${cert.name}.png`} download>
-                      <button className="flex items-center text-cv-green hover:opacity-80">
-                        <Download size={14} className="mr-1" /> Descargar
+                      <button className={actionButtonStyles({ variant: "download" })}>
+                        <Download size={14} className={actionIconStyles()} /> Descargar
                       </button>
                     </a>
                   </div>
@@ -47,13 +104,19 @@ const Certificates = () => {
             ))}
           </div>
         </div>
-      </section>
+      </div>
     );
   };
 
   return (
     <PageContentLayout
-      content={{ title: "Certificados", content: <Content /> }}
+      stretch={true}
+      fullHeight={false}
+      content={{ 
+        title: "Certificados", 
+        subtitle: "Mis certificaciones y cursos completados",
+        content: <Content /> 
+      }}
     />
   );
 };

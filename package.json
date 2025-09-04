@@ -5,44 +5,57 @@
   "type": "module",
   "scripts": {
     "review": "tsc -b &&  vite build && kill-port 4173 && npx vite preview",
-    "dev": "kill-port 3000 && vite --host --open --port 3000",
-    "build": "tsc -b &&  vite build",
+    "kill": "npx kill-port 3000",
+    "dev": "npm run kill && npm run check-css-vars && vite --host --port 3000",
+    "build": "npm run check-css-vars && tsc -b ||  vite build",
+    "check-css-vars": "node scripts/check-css-vars.js",
     "simulate-worflow-generate-docs": "npx resume export --theme dev-ats-es --format html src/generate-resume-files-by-workflow/cv.html && wkhtmltopdf src/generate-resume-files-by-workflow/cv.html src/generate-resume-files-by-workflow/cv.pdf && pandoc src/generate-resume-files-by-workflow/cv.html -o src/generate-resume-files-by-workflow/cv.docx",
     "version-upgrade": "npm version minor --no-git-tag-version && git add . && git commit -m \"chore: bump version to $(node -p -e \"require('./package.json').version\")\" && git push -f",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "depcheck": "depcheck"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
     "@cloudinary/url-gen": "^1.21.0",
+    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.17",
+    "highlight.js": "^11.11.1",
+    "jsonresume-theme-dev-ats-es": "^1.0.2",
     "lucide-react": "^0.507.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-router": "^7.4.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-slug": "^6.0.0",
+    "remark-emoji": "^5.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "tailwind-variants": "^1.0.0",
-    "tailwindcss": "^4.0.17"
+    "tailwindcss": "^4.0.17",
+    "three": "^0.177.0"
   },
   "devDependencies": {
     "@cypress/react": "^9.0.1",
     "@eslint/js": "^9.21.0",
-    "@types/jest": "^29.5.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/three": "^0.177.0",
     "@vitejs/plugin-react": "^4.3.4",
     "cypress": "^14.3.0",
+    "depcheck": "^1.4.7",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "i": "^0.3.7",
-    "jest": "^29.7.0",
-    "jsonresume-theme-dev-ats-es": "^1.0.2",
     "kill-port": "^2.0.1",
-    "lighthouse": "^12.5.1",
-    "npm": "^11.3.0",
     "resume-cli": "^3.0.8",
-    "ts-jest": "^29.3.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1"
+  },
+  "volta": {
+    "node": "20.19.4"
   }
 }

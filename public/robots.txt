@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /about_me
+Allow: /projects
+Allow: /certificates
+Allow: /blog
+
+# Disallow admin or private areas
+Disallow: /admin
+Disallow: /private
+
+# Sitemap location
+Sitemap: https://fmarcos.dev/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

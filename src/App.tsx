@@ -1,81 +1,83 @@
 import packageJson from "../package.json";
-import { useMemo } from "react";
+import { JSX, useMemo, useCallback } from "react";
 import { Navigate, Route, Routes } from "react-router";
-import MainLayout from "./components/templates/main-layout/MainLayout";
-import BlogLayout from "./components/templates/blog-layout/BlogLayout";
+import MainLayout from "./components/templates/app-layout/MainLayout";
 import LandingLayout from "./components/templates/landing-layout/Landing-layout";
 
 import {
-  BLOG_PAGE,
   CERTIFICATES_PAGE,
   HOME_PAGE,
   PROJECTS_PAGE,
+  RoutePath,
   SOCIAL_PAGE,
-} from "./constants/constants";
+  BLOG_PAGE,
+  NO_INCLUDED_ROUTE_TO_PAGE,
+  INITIAL_ROUTE,
+  REGISTERED_PAGES,
+} from "./constants";
 import {
   AboutMe,
-  Blog,
   Certificates,
   LandingPage,
   Social,
   Projects,
+  Blog,
 } from "./components/pages";
 
 const App = () => {
   const versionApp = useMemo(() => `V.${packageJson.version}`, []);
-  const routesWithLayout = (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <LandingLayout version={versionApp} children={<LandingPage />} />
-        }
-      />
-      <Route
-        path={HOME_PAGE}
-        element={
-          <MainLayout>
-            <AboutMe />
-          </MainLayout>
-        }
-      />
-      <Route
-        path={SOCIAL_PAGE}
-        element={
-          <MainLayout>
-            <Social />
-          </MainLayout>
-        }
-      />
-      <Route
-        path={CERTIFICATES_PAGE}
-        element={
-          <MainLayout>
-            <Certificates />
-          </MainLayout>
-        }
-      />
-      <Route
-        path={BLOG_PAGE}
-        element={
-          <BlogLayout>
-            <Blog />
-          </BlogLayout>
-        }
-      />
 
-      <Route
-        path={PROJECTS_PAGE}
-        element={
-          <MainLayout>
-            <Projects />
-          </MainLayout>
-        }
-      />
-      <Route path="*" element={<Navigate to={HOME_PAGE} replace />} />
-    </Routes>
+  const componentByRoute: Record<RoutePath, JSX.Element> = useMemo(
+    () => ({
+      [INITIAL_ROUTE]: (
+        <LandingLayout version={versionApp}>
+          <LandingPage />
+        </LandingLayout>
+      ),
+      [HOME_PAGE]: <AboutMe />,
+      [SOCIAL_PAGE]: <Social />,
+      [CERTIFICATES_PAGE]: <Certificates />,
+      [PROJECTS_PAGE]: <Projects />,
+      [BLOG_PAGE]: <Blog />,
+      [NO_INCLUDED_ROUTE_TO_PAGE]: <Navigate to={HOME_PAGE} replace />,
+    }),
+    [versionApp]
   );
-  return routesWithLayout;
+
+  const routeDefinitions = useMemo(
+    () =>
+      REGISTERED_PAGES.map(({ to }) => ({
+        path: to,
+        element: componentByRoute[to],
+      })),
+    [componentByRoute]
+  );
+  const renderRoute = useCallback(
+    (route: { path: string; element: JSX.Element }) => {
+      const { element, path } = route;
+
+      if (path === INITIAL_ROUTE) {
+        return <Route key={path} path={path} element={element} />;
+      }
+
+      return (
+        <Route
+          key={path}
+          path={path}
+          // debug aca
+          element={<MainLayout debugMode={false}>{element}</MainLayout>}
+        />
+      );
+    },
+    []
+  );
+
+  const builtRoutes = useMemo(
+    () => routeDefinitions.map(renderRoute),
+    [routeDefinitions, renderRoute]
+  );
+
+  return <Routes>{builtRoutes}</Routes>;
 };
 
 export default App;
