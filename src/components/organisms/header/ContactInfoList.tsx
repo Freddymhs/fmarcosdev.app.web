@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import { useState } from "react";
 import useResumeData from "../../../hooks/useResumeData";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import {
@@ -21,6 +22,13 @@ interface ContactInfoListProps {
 export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
   const { isDesktop, isLargeDesktop } = useMediaQuery();
   const { getContactsBySpace } = useResumeData();
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const handleCopy = (id: string, url: string) => {
+    navigator.clipboard.writeText(url);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 600);
+  };
 
   const handleDownload = async () => {
     const response = await fetch(cv);
@@ -80,18 +88,19 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
   // Determinar si mostrar texto según el breakpoint
   const showText = vertical || isLargeDesktop;
 
-  const contactItems = contacts.map(({ name, url, type }, index) => {
+  const contactItems = contacts.map(({ name, url, type }) => {
     const isEmail = url.includes("@");
     const href = isEmail ? `mailto:${url}` : url;
+    const isCopied = copiedId === url;
 
     return (
-      <div key={index} className={contactItemWrapperStyle({ vertical })}>
+      <div key={url} className={contactItemWrapperStyle({ vertical })}>
         <a
           href={href}
           target={isEmail ? "_self" : "_blank"}
           rel={isEmail ? "" : "noopener noreferrer"}
           className={contactLinkStyle({ vertical, showText })}
-          title={!showText ? `${type}: ${url}` : undefined} // Solo tooltip si no hay texto
+          title={!showText ? `${type}: ${url}` : undefined}
         >
           {getContactIcon(url, type)}
           {showText && (
@@ -99,8 +108,8 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
           )}
         </a>
         <button
-          className={copyButtonStyle({ vertical })}
-          onClick={() => navigator.clipboard.writeText(url)}
+          className={copyButtonStyle({ vertical, copied: isCopied })}
+          onClick={() => handleCopy(url, url)}
           title="Copiar"
         >
           <Copy size={12} />
@@ -198,6 +207,13 @@ const copyButtonStyle = tv({
       true: "w-8 h-8", // Sidebar: normal
       false: "w-6 h-6", // Header: pequeño
     },
+    copied: {
+      true: "!text-background-main !border-accent-green !bg-accent-green !duration-500",
+      false: "",
+    },
+  },
+  defaultVariants: {
+    copied: false,
   },
 });
 
