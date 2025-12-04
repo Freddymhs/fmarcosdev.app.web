@@ -100,7 +100,7 @@ const highlightBulletStyles = tv({
 });
 
 const itemContainerStyles = tv({
-  base: "flex flex-col sm:flex-row my-3 rounded-lg p-5 transition-all duration-300",
+  base: "flex flex-col sm:flex-row my-3 rounded-lg p-5 transition-all duration-300 mx-4",
   variants: {
     visible: {
       true: "scale-[1.07]",
@@ -114,7 +114,7 @@ const timelineContainerStyles = tv({
 });
 
 const timelineWrapperStyles = tv({
-  base: "max-w-4xl mx-auto px-4 md:px-6 w-full",
+  base: "max-w-5xl mx-auto w-full",
 });
 
 const timelineListStyles = tv({

@@ -49,11 +49,11 @@ const PageContentLayout = ({
   });
 
   const headerClasses = tv({
-    base: "text-center",
+    base: "text-center mb-8",
     variants: {
       fullHeight: {
         true: "py-4 flex-shrink-0",
-        false: "mb-7",
+        false: "",
       },
     },
   });
@@ -82,16 +82,24 @@ const PageContentLayout = ({
         <div className={headerClasses({ fullHeight })}>
           {topSection && <>{topSection}</>}
 
-          <h2 className="text-3xl font-bold font-mono mb-5 text-text-primary">
+          <h2 className="text-3xl font-bold font-mono mb-6 text-text-primary">
             {title}
           </h2>
           {subtitle && (
-            <h3 className="font-mono mb-7 text-text-secondary text-justify">
-              {subtitle}
-            </h3>
+            <div className="max-w-5xl mx-auto">
+              <h3 className="font-mono text-text-secondary text-justify">
+                {subtitle}
+              </h3>
+            </div>
           )}
         </div>
-        <div className={contentAreaClasses({ fullHeight })}>{content}</div>
+        <div
+          className={`max-w-5xl mx-auto w-full ${contentAreaClasses({
+            fullHeight,
+          })}`}
+        >
+          {content}
+        </div>
       </div>
     </section>
   );
