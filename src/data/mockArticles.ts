@@ -1,240 +1,150 @@
 import { Article } from "../components/pages/blog/blog";
 
-export const mockArticles: Article[] = [
-  {
-    id: 1,
-    documentId: "article-1",
-    createdAt: "2024-01-15T10:30:00.000Z",
-    updatedAt: "2024-01-15T10:30:00.000Z",
-    publishedAt: "2024-01-15T10:30:00.000Z",
-    Title: "Introducción a React Hooks",
-    richContent: `
-# Introducción a React Hooks
+// ═══════════════════════════════════════════════════════════════════════════
+// 🎯 CONFIGURACIÓN DE TESTING - Cambia este número para probar con más/menos cards
+// ═══════════════════════════════════════════════════════════════════════════
+const ARTICLE_COUNT = 100; // ← CAMBIA ESTE NÚMERO: 5, 10, 20, 40, 80, 120, 150, 200
+// borrar
+// ═══════════════════════════════════════════════════════════════════════════
+// 📚 Temas y títulos para generar artículos variados
+// ═══════════════════════════════════════════════════════════════════════════
+const TECH_TOPICS = [
+  "React Hooks avanzados",
+  "TypeScript Best Practices", 
+  "Next.js App Router",
+  "GraphQL vs REST",
+  "Tailwind CSS Tips",
+  "Node.js Performance",
+  "Docker para devs",
+  "CI/CD con GitHub Actions",
+  "Testing con Jest",
+  "MongoDB vs PostgreSQL",
+  "AWS para principiantes",
+  "Kubernetes básico",
+  "WebSockets en tiempo real",
+  "Redux vs Zustand",
+  "Vite vs Webpack",
+  "CSS Grid Layout",
+  "Flexbox mastery",
+  "React Query",
+  "Prisma ORM",
+  "tRPC end-to-end",
+  "Serverless Functions",
+  "Edge Computing",
+  "WebAssembly intro",
+  "PWA development",
+  "SEO para SPAs",
+  "Accessibility (a11y)",
+  "Web Security basics",
+  "OAuth 2.0 explained",
+  "JWT best practices",
+  "API Rate Limiting",
+  "Caching strategies",
+  "Database indexing",
+  "Microservices patterns",
+  "Event-driven architecture",
+  "Domain-Driven Design",
+  "Clean Architecture",
+  "SOLID principles",
+  "Design Patterns JS",
+  "Functional programming",
+  "Reactive programming",
+  "Machine Learning JS",
+  "TensorFlow.js",
+  "Web Workers",
+  "Service Workers",
+  "IndexedDB",
+  "WebGL basics",
+  "Three.js intro",
+  "Canvas API",
+  "SVG animations",
+  "GSAP animations",
+];
 
-Los React Hooks revolucionaron la forma de escribir componentes en React. Te permiten usar estado y otros características de React sin escribir una clase.
+const TITLE_PREFIXES = [
+  "Guía completa de",
+  "Introducción a",
+  "Dominando",
+  "Profundizando en",
+  "Tips y trucos de",
+  "Errores comunes en",
+  "Optimizando",
+  "Mejores prácticas de",
+  "Tutorial de",
+  "Explorando",
+];
 
-## ¿Qué son los Hooks?
+// ═══════════════════════════════════════════════════════════════════════════
+// 🔧 Función generadora de artículos
+// ═══════════════════════════════════════════════════════════════════════════
 
-Los Hooks son funciones especiales que te permiten "conectarte" a las características de React. Todos empiezan con \`use\`, como \`useState\` o \`useEffect\`.
-
-## Ventajas principales
-
-- **Reutilización de lógica**: Puedes extraer lógica de componentes y reutilizarla
-- **Código más limpio**: Menos boilerplate comparado con las clases
-- **Mejor composición**: Fácil de combinar y testear
-
-\`\`\`javascript
-function Counter() {
-  const [count, setCount] = useState(0);
-  
-  return (
-    <div>
-      <p>Contador: {count}</p>
-      <button onClick={() => setCount(count + 1)}>
-        Incrementar
-      </button>
-    </div>
-  );
-}
-\`\`\`
-    `
-  },
-  {
-    id: 2,
-    documentId: "article-2",
-    createdAt: "2024-02-10T14:20:00.000Z",
-    updatedAt: "2024-02-10T14:20:00.000Z",
-    publishedAt: "2024-02-10T14:20:00.000Z",
-    Title: "TypeScript en proyectos React",
-    richContent: `
-# TypeScript en proyectos React
-
-TypeScript añade tipado estático a JavaScript, mejorando la experiencia de desarrollo y reduciendo errores en tiempo de ejecución.
-
-## Beneficios de usar TypeScript
-
-- **Detección temprana de errores**: Los errores se capturan en tiempo de compilación
-- **Mejor IntelliSense**: Autocompletado más preciso en el IDE
-- **Refactoring seguro**: Cambios de código más confiables
-
-## Ejemplo básico
-
-\`\`\`typescript
-interface Props {
-  title: string;
-  count: number;
-  onIncrement: () => void;
-}
-
-const Counter: React.FC<Props> = ({ title, count, onIncrement }) => {
-  return (
-    <div>
-      <h2>{title}</h2>
-      <p>Contador: {count}</p>
-      <button onClick={onIncrement}>Incrementar</button>
-    </div>
-  );
+/**
+ * Genera una fecha aleatoria entre 2023 y 2025
+ */
+const generateRandomDate = (index: number): string => {
+  const baseDate = new Date(2023, 0, 1);
+  // Distribuir fechas uniformemente
+  const daysToAdd = Math.floor((index / 200) * 730) + Math.floor(Math.random() * 30);
+  baseDate.setDate(baseDate.getDate() + daysToAdd);
+  return baseDate.toISOString();
 };
-\`\`\`
-    `
-  },
-  {
-    id: 3,
-    documentId: "article-3",
-    createdAt: "2024-03-05T09:15:00.000Z",
-    updatedAt: "2024-03-05T09:15:00.000Z",
-    publishedAt: "2024-03-05T09:15:00.000Z",
-    Title: "Optimización de rendimiento en aplicaciones web",
-    richContent: `
-# Optimización de rendimiento en aplicaciones web
 
-El rendimiento es crucial para la experiencia del usuario. Una aplicación lenta puede llevar a la pérdida de usuarios y menor conversión.
+/**
+ * Genera un título único combinando prefijos y temas
+ */
+const generateTitle = (index: number): string => {
+  const prefix = TITLE_PREFIXES[index % TITLE_PREFIXES.length];
+  const topic = TECH_TOPICS[index % TECH_TOPICS.length];
+  const part = Math.floor(index / TECH_TOPICS.length) + 1;
+  return part > 1 ? `${prefix} ${topic} (Parte ${part})` : `${prefix} ${topic}`;
+};
 
-## Técnicas principales
+/**
+ * Genera contenido de ejemplo para un artículo
+ */
+const generateContent = (title: string, index: number): string => `
+# ${title}
 
-### 1. Lazy Loading
-Cargar recursos solo cuando se necesitan.
+Este es el artículo número ${index + 1} de nuestra colección de contenido técnico.
 
-\`\`\`javascript
-const LazyComponent = lazy(() => import('./HeavyComponent'));
-\`\`\`
+## Introducción
 
-### 2. Memoización
-Evitar recálculos innecesarios.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-\`\`\`javascript
-const expensiveValue = useMemo(() => {
-  return computeExpensiveValue(props.data);
-}, [props.data]);
-\`\`\`
+## Puntos clave
 
-### 3. Code Splitting
-Dividir el código en chunks más pequeños.
-
-## Herramientas de medición
-
-- **Lighthouse**: Auditoría integral de rendimiento
-- **Web Vitals**: Métricas core de Google
-- **React DevTools**: Profiler para componentes React
-    `
-  },
-  {
-    id: 4,
-    documentId: "article-4",
-    createdAt: "2024-04-12T16:45:00.000Z",
-    updatedAt: "2024-04-12T16:45:00.000Z",
-    publishedAt: "2024-04-12T16:45:00.000Z",
-    Title: "GraphQL vs REST: ¿Cuándo usar cada uno?",
-    richContent: `
-# GraphQL vs REST: ¿Cuándo usar cada uno?
-
-La elección entre GraphQL y REST depende de varios factores del proyecto, equipo y requisitos específicos.
-
-## REST - Representational State Transfer
-
-### Ventajas
-- **Simplicidad**: Fácil de entender y implementar
-- **Caching**: HTTP caching funciona de forma natural
-- **Tooling**: Amplio ecosistema de herramientas
-
-### Cuándo usar REST
-- APIs públicas simples
-- Operaciones CRUD básicas
-- Equipos con experiencia limitada en GraphQL
-
-## GraphQL - Query Language
-
-### Ventajas
-- **Flexibilidad**: Los clientes solicitan exactamente lo que necesitan
-- **Tipado fuerte**: Schema bien definido
-- **Una sola endpoint**: Simplifica la arquitectura
-
-### Cuándo usar GraphQL
-- Aplicaciones con múltiples clientes
-- Datos altamente relacionales
-- Necesidad de queries complejas
-
-\`\`\`graphql
-query GetUser($id: ID!) {
-  user(id: $id) {
-    name
-    email
-    posts {
-      title
-      publishedAt
-    }
-  }
-}
-\`\`\`
+- Punto importante #1 sobre ${title.split(' ').slice(-2).join(' ')}
+- Punto importante #2 con ejemplos prácticos
+- Punto importante #3 para implementar
 
 ## Conclusión
 
-No hay una respuesta única. La mejor elección depende del contexto específico de tu proyecto.
-    `
-  },
-  {
-    id: 5,
-    documentId: "article-5",
-    createdAt: "2024-05-20T11:30:00.000Z",
-    updatedAt: "2024-05-20T11:30:00.000Z",
-    publishedAt: "2024-05-20T11:30:00.000Z",
-    Title: "El futuro del desarrollo web: Tendencias 2024",
-    richContent: `
-# El futuro del desarrollo web: Tendencias 2024
+Este artículo cubre los aspectos fundamentales del tema. ¡Esperamos que te sea útil!
+`;
 
-El mundo del desarrollo web evoluciona constantemente. Estas son las tendencias más importantes que están definiendo el panorama actual.
+/**
+ * Genera N artículos mock
+ */
+const generateArticles = (count: number): Article[] => {
+  return Array.from({ length: count }, (_, index) => {
+    const date = generateRandomDate(index);
+    const title = generateTitle(index);
+    return {
+      id: index + 1,
+      documentId: `article-${index + 1}`,
+      createdAt: date,
+      updatedAt: date,
+      publishedAt: date,
+      Title: title,
+      richContent: generateContent(title, index),
+    };
+  }).sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+};
 
-## 1. Edge Computing y Server-Side Rendering
+// ═══════════════════════════════════════════════════════════════════════════
+// 📤 Export: usa ARTICLE_COUNT para controlar cuántos artículos se generan
+// ═══════════════════════════════════════════════════════════════════════════
+export const mockArticles: Article[] = generateArticles(ARTICLE_COUNT);
 
-Los frameworks como Next.js y Remix están llevando la computación más cerca del usuario.
-
-### Beneficios
-- **Menor latencia**: Respuestas más rápidas
-- **Mejor SEO**: Contenido renderizado en el servidor
-- **Experiencia híbrida**: Lo mejor de SSR y SPA
-
-## 2. Web Components y Micro Frontends
-
-La modularización llega al frontend con arquitecturas más distribuidas.
-
-\`\`\`javascript
-// Web Component personalizado
-class MyCustomElement extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = '<p>¡Hola desde un Web Component!</p>';
-  }
-}
-
-customElements.define('my-custom-element', MyCustomElement);
-\`\`\`
-
-## 3. WebAssembly (WASM)
-
-Ejecutar código de alto rendimiento en el navegador.
-
-### Casos de uso
-- Juegos complejos
-- Aplicaciones de edición de video/imagen
-- Simulaciones científicas
-
-## 4. AI-Assisted Development
-
-Herramientas como GitHub Copilot están cambiando cómo escribimos código.
-
-### Impacto
-- **Mayor productividad**: Autocompletado inteligente
-- **Menos bugs**: Sugerencias basadas en mejores prácticas
-- **Aprendizaje acelerado**: Patrones y técnicas avanzadas
-
-## 5. Sostenibilidad Digital
-
-Desarrollo con conciencia ambiental.
-
-- **Green Coding**: Código más eficiente consume menos energía
-- **CDNs inteligentes**: Distribución optimizada de contenido
-- **Lazy Loading**: Cargar solo lo necesario
-
-El futuro es emocionante, y estas tecnologías están aquí para quedarse.
-    `
-  }
-];
+// También exportar la función por si quieres usarla directamente
+export { generateArticles };
