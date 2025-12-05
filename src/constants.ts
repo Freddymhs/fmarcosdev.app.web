@@ -101,7 +101,7 @@ const VISIBLE_NAV_ROUTES: RoutePath[] = [
   ROUTES.HOME_PAGE,
   ROUTES.CERTIFICATES_PAGE,
   ROUTES.PROJECTS_PAGE,
-  // ROUTES.BLOG_PAGE,
+  ROUTES.BLOG_PAGE,
 ];
 
 export const REGISTERED_PAGES = ExistentPages.filter(({ to }) =>
