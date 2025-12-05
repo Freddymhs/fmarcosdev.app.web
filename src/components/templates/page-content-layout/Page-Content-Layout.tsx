@@ -7,7 +7,7 @@ type PageContentLayoutProps = {
   padding?: boolean;
   content: {
     topSection?: React.ReactNode;
-    title: string;
+    title?: string; // 🎯 FIX: Ahora opcional para layouts sin header
     content: React.ReactNode;
     subtitle?: string;
   };
@@ -79,22 +79,27 @@ const PageContentLayout = ({
           { fullHeight }
         )}`}
       >
-        <div className={headerClasses({ fullHeight })}>
-          {topSection && <>{topSection}</>}
+        {/* 🎯 FIX: Header solo se renderiza si hay contenido */}
+        {(title || topSection) && (
+          <div className={headerClasses({ fullHeight })}>
+            {topSection && <>{topSection}</>}
 
-          <h2 className="text-3xl font-bold font-mono mb-6 text-text-primary">
-            {title}
-          </h2>
-          {subtitle && (
-            <div className="max-w-5xl mx-auto">
-              <h3 className="font-mono text-text-secondary text-justify">
-                {subtitle}
-              </h3>
-            </div>
-          )}
-        </div>
+            {title && (
+              <h2 className="text-3xl font-bold font-mono mb-6 text-text-primary">
+                {title}
+              </h2>
+            )}
+            {subtitle && (
+              <div className="max-w-5xl mx-auto">
+                <h3 className="font-mono text-text-secondary text-justify">
+                  {subtitle}
+                </h3>
+              </div>
+            )}
+          </div>
+        )}
         <div
-          className={`max-w-5xl mx-auto w-full ${contentAreaClasses({
+          className={`${stretch ? "max-w-5xl mx-auto" : ""} w-full ${contentAreaClasses({
             fullHeight,
           })}`}
         >

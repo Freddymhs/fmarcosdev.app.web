@@ -25,9 +25,9 @@ const HelicalScrollCards = ({
   const configRef = useRef({
     turns: 4,
     segments: 100,
-    heightSpan: 8, // Valor más generoso ahora que no hay padding-bottom
+    heightSpan: 8, // Se recalcula dinámicamente para efecto scroll infinito
     cardCount: Math.max(articles.length, 1),
-    scrollSensitivity: 0.15,
+    scrollSensitivity: 0.25, // Aumentado para mejor UX táctil en mobile
     transitionThreshold: 0.95,
   });
 
@@ -47,8 +47,10 @@ const HelicalScrollCards = ({
     };
 
     let { width, height } = updateSize();
-
-    const dynamicHeightSpan = Math.min(10, Math.max(6, height / 80));
+    
+    // 🎯 FIX UI/UX: Helicoide 40% más alto que viewport para efecto "scroll infinito"
+    // Los elementos se cortan arriba y abajo, dando sensación de lista infinita
+    const dynamicHeightSpan = (height / 60) * 1.4; // Sin límite máximo, siempre sobresale
     configRef.current.heightSpan = dynamicHeightSpan;
 
     // Setup escena
@@ -56,11 +58,12 @@ const HelicalScrollCards = ({
     scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    // Posicionar la cámara más centrada verticalmente para mejor visualización
-    const cameraY = configRef.current.heightSpan * 0.4; // Cambiado de /2 a *0.4 para enfocar más arriba
-    // Hacer el radio adaptable al ancho del contenedor
-    const radius = Math.max(3, width / 200);
-    const cameraDistance = Math.max(radius * 2, 15);
+    // 🎯 FIX UI/UX: Cámara centrada para que contenido se corte arriba Y abajo
+    const cameraY = configRef.current.heightSpan * 0.5; // Centrado perfecto
+    // 🎯 FIX UI/UX: Radio más responsive - en mobile usa más ancho de pantalla
+    const isMobile = width < 768;
+    const radius = isMobile ? Math.max(2.5, width / 150) : Math.max(3, width / 200);
+    const cameraDistance = isMobile ? Math.max(radius * 1.8, 12) : Math.max(radius * 2, 15);
     camera.position.set(0, cameraY, cameraDistance);
     camera.lookAt(0, cameraY, 0);
     cameraRef.current = camera;
@@ -249,12 +252,13 @@ const HelicalScrollCards = ({
 
       const { width: newWidth, height: newHeight } = updateSize();
 
-      // Recalcular heightSpan dinámicamente usando toda la altura disponible
-      const newHeightSpan = Math.min(10, Math.max(6, newHeight / 80));
+      // 🎯 FIX UI/UX: Mantener efecto scroll infinito en resize
+      const newHeightSpan = (newHeight / 60) * 1.4;
       configRef.current.heightSpan = newHeightSpan;
 
-      // Recalcular radio y puntos de la hélice
-      const newRadius = Math.max(3, newWidth / 200);
+      // 🎯 FIX UI/UX: Radio responsive en resize
+      const isMobile = newWidth < 768;
+      const newRadius = isMobile ? Math.max(2.5, newWidth / 150) : Math.max(3, newWidth / 200);
       const { turns, segments, cardCount } = configRef.current;
       const heightSpan = newHeightSpan;
       const newPoints = Array.from({ length: segments }, (_, i) => {
@@ -289,9 +293,9 @@ const HelicalScrollCards = ({
       pointsRef.current = newPoints;
 
       cameraRef.current.aspect = newWidth / newHeight;
-      // Actualizar posición de la cámara basada en el nuevo radio y heightSpan
-      const newCameraDistance = Math.max(newRadius * 2, 15);
-      const newCameraY = newHeightSpan * 0.4; // Mantener la misma proporción
+      // 🎯 FIX UI/UX: Cámara centrada en resize también
+      const newCameraDistance = isMobile ? Math.max(newRadius * 1.8, 12) : Math.max(newRadius * 2, 15);
+      const newCameraY = newHeightSpan * 0.5; // Centrado perfecto
       cameraRef.current.position.set(0, newCameraY, newCameraDistance);
       cameraRef.current.lookAt(0, newCameraY, 0);
       cameraRef.current.updateProjectionMatrix();
@@ -310,12 +314,13 @@ const HelicalScrollCards = ({
         for (let entry of entries) {
           const { width: newWidth, height: newHeight } = entry.contentRect;
           if (rendererRef.current && cameraRef.current) {
-            // Recalcular heightSpan dinámicamente usando toda la altura disponible
-            const newHeightSpan = Math.min(10, Math.max(6, newHeight / 80));
+            // 🎯 FIX UI/UX: Mantener efecto scroll infinito en ResizeObserver
+            const newHeightSpan = (newHeight / 60) * 1.4;
             configRef.current.heightSpan = newHeightSpan;
 
-            // Recalcular radio y puntos de la hélice
-            const newRadius = Math.max(3, newWidth / 200);
+            // 🎯 FIX UI/UX: Radio responsive en ResizeObserver
+            const isMobile = newWidth < 768;
+            const newRadius = isMobile ? Math.max(2.5, newWidth / 150) : Math.max(3, newWidth / 200);
             const { turns, segments, cardCount } = configRef.current;
             const heightSpan = newHeightSpan;
             const newPoints = Array.from({ length: segments }, (_, i) => {
@@ -350,9 +355,11 @@ const HelicalScrollCards = ({
             pointsRef.current = newPoints;
 
             cameraRef.current.aspect = newWidth / newHeight;
-            // Actualizar posición de la cámara basada en el nuevo radio
-            const newCameraDistance = Math.max(newRadius * 2, 15);
-            cameraRef.current.position.z = newCameraDistance;
+            // 🎯 FIX UI/UX: Cámara centrada en ResizeObserver
+            const newCameraDistance = isMobile ? Math.max(newRadius * 1.8, 12) : Math.max(newRadius * 2, 15);
+            const newCameraY = newHeightSpan * 0.5;
+            cameraRef.current.position.set(0, newCameraY, newCameraDistance);
+            cameraRef.current.lookAt(0, newCameraY, 0);
             cameraRef.current.updateProjectionMatrix();
             rendererRef.current.setSize(newWidth, newHeight);
           }
@@ -519,21 +526,23 @@ const HelicalScrollCards = ({
 
   return (
     <div
-      className="w-full border-2 border-red-400 flex-1 z-100"
+      className="w-full h-full flex-1"
       style={{
-        // Responsive: usar flex-1 y altura mínima conservadora para no invadir footer
-        minHeight: "300px", // Reducida para respetar el footer
         display: "flex",
         flexDirection: "column",
+        overflow: "hidden",
+        // 🎯 FIX UI/UX: Eliminados borders de debug
       }}
     >
       <div
         ref={mountRef}
-        className="w-full h-full flex-1 border border-red-300"
+        className="w-full h-full flex-1"
         style={{
           position: "relative",
+          overflow: "hidden",
+          // 🎯 FIX UI/UX: Eliminados borders de debug
         }}
-      ></div>
+      />
     </div>
   );
 };

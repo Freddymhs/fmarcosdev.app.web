@@ -87,7 +87,7 @@ const Blog = () => {
         ]}
       />
       <PageContentLayout
-        stretch={true} // No usar container que limita el ancho
+        stretch={false} // Usar todo el ancho disponible
         fullHeight={true} // Usar toda la altura disponible
         content={{
           // title: "Blog",
