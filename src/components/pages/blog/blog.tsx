@@ -115,6 +115,7 @@ const BlogContent = ({ articles }: { articles: Article[] }) => {
         </div>
       ) : (
         <HelicalScrollCards
+        scrollSpeed={0.9}
           hiddenReposition={false}
           // filterHeight={80}
           articles={articles}

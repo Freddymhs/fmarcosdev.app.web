@@ -5,10 +5,14 @@ import { Article } from "./blog";
 const HelicalScrollCards = ({
   hiddenReposition = true,
   articles = [],
+  clockwise = false, // Sentido del giro (false = antihorario/derecha-izq)
+  scrollSpeed = 0.5, // 🎯 NUEVO: Velocidad del scroll (0.1 = lento, 1.0 = muy rápido)
 }: {
   hiddenReposition?: boolean;
   articles?: Article[];
-  filterHeight?: number; // Add type definition
+  filterHeight?: number;
+  clockwise?: boolean;
+  scrollSpeed?: number; // 🎯 NUEVO: Prop para controlar velocidad del scroll
 }) => {
   const mountRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -27,7 +31,7 @@ const HelicalScrollCards = ({
     segments: 100,
     heightSpan: 8, // Se recalcula dinámicamente para efecto scroll infinito
     cardCount: Math.max(articles.length, 1),
-    scrollSensitivity: 0.25, // Aumentado para mejor UX táctil en mobile
+    scrollSensitivity: scrollSpeed, // 🎯 Usa la prop scrollSpeed
     transitionThreshold: 0.95,
   });
 
@@ -88,12 +92,15 @@ const HelicalScrollCards = ({
     const { turns, segments, heightSpan, cardCount } = configRef.current;
     // Hacer el radio adaptable al ancho del contenedor (radius ya definido arriba)
 
+    // 🎯 Sentido del giro: -1 = antihorario (derecha a izq), 1 = horario (izq a derecha)
+    const direction = clockwise ? 1 : -1;
+
     const points = Array.from({ length: segments }, (_, i) => {
       const theta = (i / segments) * turns * Math.PI * 2;
       return new THREE.Vector3(
         radius * Math.cos(theta),
         (i / segments) * heightSpan,
-        radius * Math.sin(theta)
+        radius * Math.sin(theta) * direction // 🎯 Invertir sentido con direction
       );
     });
 
@@ -261,12 +268,13 @@ const HelicalScrollCards = ({
       const newRadius = isMobile ? Math.max(2.5, newWidth / 150) : Math.max(3, newWidth / 200);
       const { turns, segments, cardCount } = configRef.current;
       const heightSpan = newHeightSpan;
+      const direction = clockwise ? 1 : -1; // 🎯 Mantener sentido del giro
       const newPoints = Array.from({ length: segments }, (_, i) => {
         const theta = (i / segments) * turns * Math.PI * 2;
         return new THREE.Vector3(
           newRadius * Math.cos(theta),
           (i / segments) * heightSpan,
-          newRadius * Math.sin(theta)
+          newRadius * Math.sin(theta) * direction
         );
       });
 
@@ -323,12 +331,13 @@ const HelicalScrollCards = ({
             const newRadius = isMobile ? Math.max(2.5, newWidth / 150) : Math.max(3, newWidth / 200);
             const { turns, segments, cardCount } = configRef.current;
             const heightSpan = newHeightSpan;
+            const direction = clockwise ? 1 : -1; // 🎯 Mantener sentido del giro
             const newPoints = Array.from({ length: segments }, (_, i) => {
               const theta = (i / segments) * turns * Math.PI * 2;
               return new THREE.Vector3(
                 newRadius * Math.cos(theta),
                 (i / segments) * heightSpan,
-                newRadius * Math.sin(theta)
+                newRadius * Math.sin(theta) * direction
               );
             });
 

@@ -3,7 +3,7 @@ import { type ReactNode, useEffect, useState } from "react";
 import { tv } from "tailwind-variants";
 import { useLocation } from "react-router";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import Footer from "../../organisms/footer/footer";
+
 import NavigationFooter from "../../organisms/footer/NavigationFooter";
 import { SideBar } from "../../organisms/header/Sidebar";
 import Header from "../../organisms/header/Header";
@@ -128,24 +128,26 @@ const MainLayoutContent: React.FC<MainLayoutProps> = ({
         {children}
       </main>
 
-      {/* 📏 Footer - Controlled height with real component */}
-      <footer
-        className={`${footerStyles()} ${
-          debugMode ? "border-4 border-blue-500 border-solid bg-blue-50/20" : ""
-        }`}
-        style={{
-          height: `${LAYOUT_CONFIG.FOOTER_HEIGHT}vh`,
-          overflow: "hidden", // Evita que el contenido se salga
-        }}
-      >
-        {debugMode && (
-          <div className="absolute bottom-1 left-1 bg-blue-500 text-white px-2 py-1 text-xs font-mono rounded z-50">
-            FOOTER: {LAYOUT_CONFIG.FOOTER_HEIGHT}vh (
-            {layoutDimensions.footerHeight}px)
-          </div>
-        )}
-        <NavigationFooter />
-      </footer>
+      {/* 📏 Footer - Solo visible en Desktop (NavigationFooter retorna null en mobile) */}
+      {isDesktop && (
+        <footer
+          className={`${footerStyles()} ${
+            debugMode ? "border-4 border-blue-500 border-solid bg-blue-50/20" : ""
+          }`}
+          style={{
+            height: `${LAYOUT_CONFIG.FOOTER_HEIGHT}vh`,
+            overflow: "hidden",
+          }}
+        >
+          {debugMode && (
+            <div className="absolute bottom-1 left-1 bg-blue-500 text-white px-2 py-1 text-xs font-mono rounded z-50">
+              FOOTER: {LAYOUT_CONFIG.FOOTER_HEIGHT}vh (
+              {layoutDimensions.footerHeight}px)
+            </div>
+          )}
+          <NavigationFooter />
+        </footer>
+      )}
 
       {/* 🔧 Debug Panel with Real-time Data */}
       {debugMode && (
