@@ -5,7 +5,7 @@
       "version": "1.0",
       "optimizedFor": ["-", "-", "-"]
     },
-    "lastUpdated": "2025-09-01"
+    "lastUpdated": "2025-12-09"
   },
   "basics": {
     "image": "https://gravatar.com/userimage/178512464/8c8ef92b4688b3493ca52746b7775086.jpeg",
@@ -38,7 +38,7 @@
       },
       {
         "username": "fmarcosdev",
-        "network": "Webiste",
+        "network": "website",
         "url": "https://www.fmarcos.dev"
       },
       {
@@ -59,12 +59,11 @@
 
       "highlights": [
         "Scraper avanzado con NestJS y Puppeteer para extracción automatizada de datos de portales industriales, incluyendo gestión de pools de navegadores concurrentes y integración con OpenAI Vision API",
-        "Integración completa con Twilio WhatsApp Business API para mensajería empresarial, implementando webhooks robustos, manejo de multimedia y botones interactivos",
+        "Integración completa con Twilio WhatsApp Business API para mensajería empresarial, implementando webhooks robustos, manejo debotones interactivos",
         "Desarrollo de chatbot WhatsApp empresarial con OpenAI Assistant API v2, procesando consultas automatizadas de repuestos industriales con 6 funciones personalizadas y lógica conversacional avanzada",
         "Backoffice completo con Strapi CMS v5.23 y React 18, sistema de gestión de contenido headless con autenticación, consumo de microservicio REST y dynamic zones para contenido flexible adaptado a necesidades empresariales",
         "Arquitectura de microservicios con Express.js y TypeScript, implementando validación Zod, manejo centralizado de errores, Socket.IO para comunicación en tiempo real y documentación Swagger/OpenAPI",
         "Sistema completo de gestión de clientes con PostgreSQL y logging automático a Google Sheets, incluyendo analytics empresariales en tiempo real",
-        "Base de datos PostgreSQL con connection pooling, health checks, logging estructurado con request IDs únicos y monitoreo proactivo de performance",
         "Sistema de automatización empresarial procesando búsquedas industriales, registro automático de clientes y generación de reportes analíticos en tiempo real"
       ],
 
@@ -145,7 +144,6 @@
         "Redis Pub/Sub",
         "GitHub Actions",
         "CI/CD",
-        "Clean Architecture",
         "TDD",
         "Role-based Access Control",
         "Real-time Inventory Management",
@@ -199,7 +197,7 @@
       "url": "",
       "startDate": "2021-02",
       "endDate": "2024-03",
-      "summary": "Desarrollador Fullstack y Soporte especializado en React, Next.js y GraphQL, contribuyendo al mantenimiento y desarrollo de features en plataforma SaaS empresarial. Enfocado en resolver problemas técnicos, optimización de rendimiento y desarrollo de componentes reutilizables.",
+      "summary": "Desarrollador Fullstack y Soporte especializado en React, Next.js y GraphQL, contribuyendo al mantenimiento y desarrollo de features en plataforma SaaS empresarial. Enfocado en resolver problemas técnicos y desarrollo de componentes reutilizables.",
       "highlights": [
         "Contribución al desarrollo de interfaces frontend con React 18 y Next.js 13 (App Router), implementando componentes responsivos y optimizados para la plataforma SaaS empresarial",
         "Refactorización de código legacy migrando class components a functional components con hooks, mejorando la mantenibilidad y reduciendo la complejidad del código base",
@@ -305,18 +303,39 @@
     },
     {
       "type": "Mobile App",
-      "name": "Lends",
-      "startDate": "2024-02",
-      "endDate": "2024-04",
-      "description": "...",
-      "technologies": ["react-native"],
+      "name": "MyLends(Loans) - Gestión de Préstamos",
+      "startDate": "2025-07",
+      "endDate": "2025-12",
+      "description": "Aplicación móvil multiplataforma para gestión de préstamos empresariales, implementando Clean Architecture de 4 capas con BLoC Pattern, Supabase como  backend y programación funcional con Either types para manejo de errores tipados.",
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Clean Architecture",
+        "BLoC Pattern",
+        "Supabase",
+        "PostgreSQL",
+        "Google Sign-In",
+        "GetIt",
+        "Dart",
+        "Hive BD",
+        "Go Router"
+      ],
       "url": "",
-      "githubUrl": "",
-      "image": "",
-      "features": [],
-      "role": "Developer",
-      "complexity": "Simple"
+      "githubUrl": "https://github.com/freddymhs/idea-de-lends",
+      "image": "mylends_fullpage",
+      "features": [
+        "Clean Architecture (4 capas)",
+        "SOLID Principles",
+        "BLoC + Cubit State Management",
+        "Functional Error Handling (Either<Failure, Success>)",
+        "Google OAuth Authentication",
+        "Offline-first con caché local",
+        "Multi-plataforma (iOS, Android, Web)"
+      ],
+      "role": "Mobile Developer",
+      "complexity": "High"
     },
+
     {
       "type": "Mobile App",
       "name": "Bot Router",
@@ -348,6 +367,18 @@
   ],
   "skills": [
     {
+      "name": "AI/ML Integration",
+      "level": "Intermediate",
+      "keywords": [
+        "Computer Vision",
+        "OpenAI API",
+        "OpenAI Vision API",
+        "Conversational AI",
+        "OpenAi Assistant API",
+        "Image Analysis"
+      ]
+    },
+    {
       "name": "Backend/API Development",
       "level": "Advanced",
       "keywords": [
@@ -360,8 +391,7 @@
         "Socket.IO",
         "Prisma",
         "Nexus",
-        "OpenAI Assistant API",
-        "OpenAI Vision API",
+        "API-first Architecture",
         "Zod Validation"
       ]
     },
@@ -369,13 +399,12 @@
       "name": "Web Scraping & Automation",
       "level": "Advanced",
       "keywords": [
-        "Puppeteer Advanced",
+        "Puppeteer",
         "NestJS Scraper Architecture",
         "Browser Pool Management",
         "Proxy Rotation (IPRoyal)",
         "Screenshot Automation",
-        "Rate Limiting",
-        "Concurrent Browser Management"
+        "Rate Limiting"
       ]
     },
     {
@@ -383,15 +412,10 @@
       "level": "Advanced",
       "keywords": [
         "Modular Architecture",
-        "Error Handling Middleware",
-        "Validation Pipes",
-        "Connection Pooling",
-        "Thread Management",
-        "Health Monitoring",
-        "Performance Optimization",
-        "Swagger/OpenAPI Documentation",
         "Clean Architecture",
-        "Microservices Architecture"
+        "Microservices Architecture",
+        "Swagger/OpenAPI Documentation",
+        "Error Handling Middleware"
       ]
     },
     {
@@ -400,11 +424,11 @@
       "keywords": [
         "React",
         "Next.js",
-        "React 18",
+        "Tailwind CSS",
         "TypeScript",
         "JavaScript",
         "Context API",
-        "useReducer",
+        "Hooks Personalizados",
         "Ant Design",
         "Styled Components",
         "CSS",
@@ -414,11 +438,8 @@
         "SEO Optimization",
         "Feature Flags",
         "React Router DOM",
-        "Angular",
         "React i18next",
         "React Helmet",
-        "React Parallax",
-        "Gatsby Plugins",
         "Bootstrap"
       ]
     },
@@ -426,23 +447,10 @@
       "name": "CMS & Content Management",
       "level": "Intermediate",
       "keywords": [
-        "Strapi v5.23",
-        "Headless CMS",
-        "API-first Architecture",
+        "Strapi CMS",
         "Content Modeling",
-        "CMS Authentication",
-        "Media Management"
-      ]
-    },
-    {
-      "name": "AI/ML Integration",
-      "level": "Intermediate",
-      "keywords": [
-        "OpenAI API",
-        "OpenAI Vision API",
-        "Computer Vision",
-        "Conversational AI",
-        "Image Analysis"
+        "Media Management",
+        "Headless CMS"
       ]
     },
     {
@@ -455,7 +463,9 @@
         "Supabase",
         "Prisma",
         "Database Design",
-        "Google OAuth2"
+        "Google OAuth2",
+        "JWT",
+        "Session Auth"
       ]
     },
     {
@@ -465,7 +475,7 @@
         "Flutter",
         "Cross-platform",
         "React Native",
-        "Dart 3.4.1+",
+        "Dart Lang",
         "Mobile Scanner",
         "Bluetooth Print ESC/POS"
       ]
@@ -482,8 +492,7 @@
         "Chrome DevTools",
         "Jest",
         "Vitest",
-        "Husky",
-        "Axios HTTP Client"
+        "Husky"
       ]
     },
     {
@@ -493,7 +502,6 @@
         "Twilio API",
         "WhatsApp Business API",
         "Google Sheets API",
-        "Google OAuth2",
         "AWS SQS",
         "AWS S3",
         "Redis Pub/Sub",
@@ -506,20 +514,12 @@
       "name": "Methodologies & Patterns",
       "level": "Advanced",
       "keywords": [
+        "Feature Flags",
         "Agile/Scrum",
-        "TDD",
-        "Microservices",
         "Code Refactoring",
-        "Clean Architecture",
-        "Role-based Access Control",
-        "Real-time Inventory Management",
-        "Hardware Integration",
-        "PDF/CSV Generation",
         "Microservices Architecture",
-        "PWA",
         "Circuit Breaker",
-        "Asynchronous Programming",
-        "AWS SNS/SQS"
+        "Asynchronous Programming"
       ]
     }
   ],
@@ -529,7 +529,7 @@
       "area": "Técnico de Nivel Superior en Analista Programador",
       "studyType": "Técnico Superior",
       "location": "Arica, CL",
-      "specialization": "Analista Programdor",
+      "specialization": "Analista Programador",
       "startDate": "2017-03",
       "endDate": "2019-12",
       "gpa": "0",
@@ -538,7 +538,7 @@
         "Fundamentos de C#",
         "Desarrollo Web con PHP y CSS3",
         "Programación Orientada a Objetos (Java)",
-        "Implementación de Active Directory para administración centralizada de múltiples"
+        "Implementación de Active Directory para administración centralizada de múltiples dominios"
       ]
     }
   ],
@@ -644,9 +644,9 @@
     }
   ],
   "updates": {
-    "goal": "https://claude.ai/chat/ec237394-f521-44a5-ad3e-d0b978feaab7",
+    "goal": "",
     "short-summary": "Desarrollador multiplataforma con 4 años de experiencia, adaptable a entornos modernos que utilicen Flutter, React Native, Node.js, Next.js, GraphQL y ReactJS. Mi carrera se basa en el stack Fullstack JavaScript, fácilmente adaptable a proyectos móviles. He implementado soluciones con comunicación en tiempo real mediante WebSockets, integraciones seguras con Supabase Auth y bases de datos PostgreSQL, así como pipelines CI/CD para despliegues eficientes.",
-    "ia-in-code": "Exploro soluciones con v0, refino código y pruebas con Claude, y consulto temas de arquitectura con GPT. Utilizo ramas dedicadas para features de IA, integrando Husky para linting y testing automatizado. Empleo Postbot en Postman para pruebas, documentando con Swagger. Mantengo flujos CI/CD con Jest y Playwright/Cypress para garantizar código mantenible y escalable",
+    "ia-in-code": "Exploro soluciones con v0,lovable, refino código y pruebas con Claude, y consulto temas de arquitectura con GPT. Utilizo ramas dedicadas para features de IA, integrando Husky para linting y testing automatizado. Empleo Postbot en Postman para pruebas, documentando con Swagger. Mantengo flujos CI/CD con Jest y Playwright/Cypress para garantizar código mantenible y escalable",
     "backend-node": "Soy capaz y tengo experiencia en desarrollar APIs REST con Node.js usando TypeScript y Express. Implementé WebSockets con Socket.IO para sincronización en tiempo real, aplicando arquitectura en capas, patrón Repository, validaciones con Zod, manejo centralizado de errores, testing con Jest y documentación automática con Swagger. Me enfoco en buenas prácticas, escalabilidad y mantenibilidad.",
     "nestjs": "arquitectura modular basada en módulos, controladores, proveedores y servicios, el uso intensivo de decoradores, y los principios de Inversión de Control (IoC) e Inyección de Dependencias (DI) que estructuran el manejo de rutas y la organización de tu código.",
     "aws": "AWS (EC2, Lambdas, DynamoDB)"
