@@ -1,61 +1,97 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "highlight.js/styles/github.css";
 import "katex/dist/katex.min.css";
-import HelicalScrollCards from "../../organisms/blog/Oscilospira";
-import HeaderBlog from "../../organisms/header/headerBlog";
+import HelicalScrollCards, {
+  CardItem,
+} from "../../organisms/blog/HelicalScrollCards";
 import { SEOHead } from "../../atoms";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
-import { mockArticles } from "../../../data/mockArticles";
 
-export interface Article {
-  id: number;
+interface Article extends CardItem {
   documentId: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  richContent: string;
-  Title: string;
+  content?: string;
+  richContent?: string;
+}
+interface BlogContentProps {
+  articles: Article[];
+  onLoadMore: () => void;
+  hasMore: boolean;
+  loadingMore: boolean;
 }
 
-const Blog = () => {
+const API_BASE_URL = import.meta.env.VITE_API_GATEWAY_URL;
+
+const CARDS_PER_PAGE = 15;
+const CARDS_START_OFFSET = 1;
+
+const useArticles = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isAppending, setIsAppending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
-  // Fetch articles from API (temporarily using mock data)
+  const fetchArticles = useCallback(
+    async (targetPage: number, append: boolean) => {
+      try {
+        const updateLoadingState = append ? setIsAppending : setIsLoading;
+        updateLoadingState(true);
+        setError(null);
+
+        const res = await fetch(
+          `${API_BASE_URL}/articles?pagination[page]=${targetPage}&pagination[pageSize]=${CARDS_PER_PAGE}`
+        );
+
+        if (!res.ok) throw new Error(`API Error: ${res.status}`);
+
+        const response = await res.json();
+        const newArticles = (response.data || []) as Article[];
+
+        const hasMorePages =
+          response.meta?.pagination?.page <
+          response.meta?.pagination?.pageCount;
+        setHasMore(hasMorePages);
+
+        setArticles((prev) =>
+          append ? [...prev, ...newArticles] : newArticles
+        );
+        setPage(targetPage);
+      } catch (err) {
+        console.error("Error fetching articles:", err);
+        setError(
+          err instanceof Error ? err.message : "Failed to fetch articles"
+        );
+      } finally {
+        setIsLoading(false);
+        setIsAppending(false);
+      }
+    },
+    []
+  );
+
   useEffect(() => {
-    // Simulate API call with timeout
-    const loadArticles = () => {
-      setTimeout(() => {
-        try {
-          // TODO: Replace with actual API call when backend is ready
-          // fetch("http://localhost:3033/Articles")
-          //   .then((res) => {
-          //     if (!res.ok) throw new Error("Failed to fetch articles");
-          //     return res.json();
-          //   })
-          //   .then((data: Article[]) => {
-          //     setArticles(data);
-          //     setLoading(false);
-          //   })
+    fetchArticles(1, false);
+  }, [fetchArticles]);
 
-          // Using mock data for now
-          setArticles(mockArticles);
-          setLoading(false);
-        } catch (error) {
-          console.error("Error loading articles:", error);
-          setError("Failed to load articles. Using mock data for now.");
-          // Fallback to mock data even on error
-          setArticles(mockArticles);
-          setLoading(false);
-        }
-      }, 500); // Simulate network delay
-    };
+  const loadMore = useCallback(() => {
+    const canLoadMore = !isAppending && hasMore;
+    if (canLoadMore) {
+      fetchArticles(page + 1, true);
+    }
+  }, [isAppending, hasMore, page, fetchArticles]);
 
-    loadArticles();
-  }, []);
+  return { articles, isLoading, isAppending, error, hasMore, loadMore };
+};
 
-  if (loading) {
+const Blog = () => {
+  const { articles, isLoading, isAppending, error, hasMore, loadMore } =
+    useArticles();
+
+  if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-lg">Loading articles...</div>
@@ -63,7 +99,9 @@ const Blog = () => {
     );
   }
 
-  if (error) {
+  const hasNoArticlesWithError = error && articles.length === 0;
+
+  if (hasNoArticlesWithError) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-red-500">{error}</div>
@@ -87,15 +125,17 @@ const Blog = () => {
         ]}
       />
       <PageContentLayout
-        stretch={false} // Usar todo el ancho disponible
-        fullHeight={true} // Usar toda la altura disponible
+        stretch={false}
+        fullHeight={true}
         content={{
-          // title: "Blog",
-          // subtitle:
-          //   articles.length > 0
-          //     ? `Explorando ${articles.length} artículos sobre tecnología, desarrollo e innovación`
-          //     : "No hay artículos disponibles en este momento",
-          content: <BlogContent articles={articles} />,
+          content: (
+            <BlogContent
+              articles={articles}
+              onLoadMore={loadMore}
+              hasMore={hasMore}
+              loadingMore={isAppending}
+            />
+          ),
         }}
       />
     </>
@@ -104,23 +144,56 @@ const Blog = () => {
 
 export default Blog;
 
-const BlogContent = ({ articles }: { articles: Article[] }) => {
+const BlogContent = ({
+  articles,
+  onLoadMore,
+  hasMore,
+  loadingMore,
+}: BlogContentProps) => {
   return (
     <div className="flex flex-col flex-1 w-full h-full">
-      {/* <HeaderBlog /> */}
-
-      {articles.length === 0 ? (
-        <div className="flex items-center justify-center p-8">
-          <p className="text-gray-500">No articles to display</p>
-        </div>
-      ) : (
-        <HelicalScrollCards
-        scrollSpeed={0.9}
-          hiddenReposition={false}
-          // filterHeight={80}
-          articles={articles}
-        />
-      )}
+      <HelicalScrollCards<Article>
+        items={articles}
+        onLoadMore={onLoadMore}
+        hasMore={hasMore}
+        loadingMore={loadingMore}
+        debug={false}
+        clockwise={false}
+        scrollSpeed={1.7}
+        hiddenReposition={true}
+        loadingText="Cargando..."
+        emptyText="No hay artículos"
+        config={{
+          slotCount: CARDS_PER_PAGE,
+          turns: 3,
+          helixHeight: 4,
+          cardScale: 0.8,
+          yOffset: 0.4,
+          cameraFov: 50,
+          topMarginSlots: CARDS_START_OFFSET,
+          cardConfig: {
+            canvasWidth: 240,
+            canvasHeight: 300,
+            titleMaxLength: 20,
+          },
+        }}
+        theme={{
+          gradientStart: "#fcf6e5", // Crema base de tarjeta
+          gradientMid: "#f4d03f", // Amarillo suave (highlight) para calidez sin saturar
+          gradientEnd: "#f4d03f", // Fondo principal claro
+          border: "#2f4732", // Verde acento como borde visible
+          headerBg: "#2f4732", // Verde oscuro suavizado
+          headerText: "#f4d03f", // Amarillo destacado para numeraciones
+          titleText: "#4a3f2e", // Texto principal marrón
+          dateBg: "#f4d03f", // Fondo limpio para la fecha
+          dateText: "#cb8d0b", // Acento amarillo/marrón (skill-tag)
+          dateSubtext: "#2f4732", // Texto secundario
+          footerBg: "#2f4732", // Consistente con header
+          footerText: "#fefce8", // Texto claro sobre fondo oscuro
+          helixLine: 0x7c9c3f,
+        }}
+        className=""
+      />
     </div>
   );
 };

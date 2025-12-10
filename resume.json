@@ -602,6 +602,12 @@
       "issuer": "Google Actívate",
       "date": "2020-08",
       "url": ""
+    },
+    {
+      "name": "AI Fluency",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
     }
   ],
   "publications": [
