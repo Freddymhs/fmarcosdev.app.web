@@ -48,7 +48,8 @@ const FooterTextStyles = tv({
       copyright: "text-sm opacity-90",
       brand: "text-lg font-bold tracking-tight",
       subtitle: "text-xs opacity-75 font-mono",
-      social: "text-sm hover:text-highlight-yellow transition-colors cursor-pointer",
+      social:
+        "text-sm hover:text-highlight-yellow transition-colors cursor-pointer",
     },
   },
 });
@@ -67,14 +68,14 @@ const SocialLinkStyles = tv({
 // COMPONENTES INTERNOS
 const BrandSection = ({ isDesktop }: { isDesktop: boolean }) => {
   return (
-    <div className={FooterSectionStyles({ 
-      section: "brand", 
-      mobile: !isDesktop 
-    })}>
+    <div
+      className={FooterSectionStyles({
+        section: "brand",
+        mobile: !isDesktop,
+      })}
+    >
       <div className="flex flex-col items-center md:items-start">
-        <span className={FooterTextStyles({ variant: "brand" })}>
-          FM
-        </span>
+        <span className={FooterTextStyles({ variant: "brand" })}>FM</span>
         <span className={FooterTextStyles({ variant: "subtitle" })}>
           fullstack developer
         </span>
@@ -85,12 +86,14 @@ const BrandSection = ({ isDesktop }: { isDesktop: boolean }) => {
 
 const CopyrightSection = ({ isDesktop }: { isDesktop: boolean }) => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <div className={FooterSectionStyles({ 
-      section: "center", 
-      mobile: !isDesktop 
-    })}>
+    <div
+      className={FooterSectionStyles({
+        section: "center",
+        mobile: !isDesktop,
+      })}
+    >
       <span className={FooterTextStyles({ variant: "copyright" })}>
         © {currentYear} Freddy Marcos • Hecho con ❤️ y React
       </span>
@@ -100,20 +103,20 @@ const CopyrightSection = ({ isDesktop }: { isDesktop: boolean }) => {
 
 const SocialSection = ({ isDesktop }: { isDesktop: boolean }) => {
   const socialLinks = [
-    { 
-      name: "GitHub", 
-      href: "https://github.com/fmarcosdev", 
-      icon: "⚡" 
+    {
+      name: "GitHub",
+      href: "https://github.com/fmarcosdev",
+      icon: "⚡",
     },
-    { 
-      name: "LinkedIn", 
-      href: "https://linkedin.com/in/fmarcosdev", 
-      icon: "💼" 
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/fmarcosdev",
+      icon: "💼",
     },
-    { 
-      name: "Email", 
-      href: "mailto:hello@fmarcosdev.com", 
-      icon: "✉️" 
+    {
+      name: "Email",
+      href: "mailto:hello@fmarcosdev.com",
+      icon: "✉️",
     },
   ];
 
@@ -137,10 +140,12 @@ const SocialSection = ({ isDesktop }: { isDesktop: boolean }) => {
   }
 
   return (
-    <div className={FooterSectionStyles({ 
-      section: "social", 
-      mobile: false 
-    })}>
+    <div
+      className={FooterSectionStyles({
+        section: "social",
+        mobile: false,
+      })}
+    >
       <div className="flex gap-3">
         {socialLinks.map((link) => (
           <a
@@ -168,11 +173,9 @@ const Footer = () => {
   const FooterArea = ({
     isDesktop,
     children,
-  }: Omit<FooterAreaProps, 'showContactInfo'>) => {
+  }: Omit<FooterAreaProps, "showContactInfo">) => {
     return (
-      <div className={FooterContainerStyles({ isDesktop })}>
-        {children}
-      </div>
+      <div className={FooterContainerStyles({ isDesktop })}>{children}</div>
     );
   };
 

@@ -19,7 +19,7 @@ const FooterContentStyles = tv({
 
 const NavButtonStyles = tv({
   base: `
-    px-6 py-4 font-medium transition-all duration-200 flex items-center justify-center
+    px-6 py-4 font-medium transition-all duration-200 flex justify-center
     text-sm md:text-base
     no-underline
   `,
