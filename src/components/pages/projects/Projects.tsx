@@ -1,13 +1,13 @@
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
 import { SEOHead } from "../../atoms";
-import resumeData from "../../../../resume.json";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import Card from "../../molecules/project-card/Card";
 import { Project } from "../../../types/projects";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { useResumeData } from "../../../hooks/useResumeData";
 
 const Projects = () => {
-  const projects = resumeData.projects as Project[];
+  const { projects } = useResumeData();
 
   return (
     <>

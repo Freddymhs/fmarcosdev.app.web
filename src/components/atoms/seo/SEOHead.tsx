@@ -24,20 +24,18 @@ export const SEOHead = ({
   keywords = [],
 }: SEOHeadProps) => {
   const location = useLocation();
-  const { data: resumeData } = useResumeData();
+  const resumeData = useResumeData();
 
   // Construir datos SEO dinámicamente desde resume.json
-  const seoTitle =
-    title || `${resumeData?.basics?.name || AUTHOR_NAME} - ${SITE_TITLE}`;
-  const seoDescription =
-    description || resumeData?.basics?.summary || SITE_DESCRIPTION;
+  const seoTitle = title || `${resumeData.name || AUTHOR_NAME} - ${SITE_TITLE}`;
+  const seoDescription = description || resumeData.summary || SITE_DESCRIPTION;
   const seoImage = image || `${URL_SITE}/og-image.png`;
   const seoUrl = `${URL_SITE}${location.pathname}`;
 
   // Keywords dinámicas basadas en skills del resume
   const dynamicKeywords = [
-    ...(resumeData?.skills?.map((skill: any) => skill.keywords).flat() || []),
-    ...(resumeData?.work?.map((work: any) => work.highlights).flat() || []),
+    ...(resumeData.skills?.map((skill: any) => skill.keywords).flat() || []),
+    ...(resumeData.work?.map((work: any) => work.highlights).flat() || []),
     ...keywords,
   ]
     .filter(Boolean)
@@ -70,7 +68,7 @@ export const SEOHead = ({
     // Meta tags básicos
     updateMetaTag("description", seoDescription);
     updateMetaTag("keywords", dynamicKeywords.join(", "));
-    updateMetaTag("author", resumeData?.basics?.name || AUTHOR_NAME);
+    updateMetaTag("author", resumeData.name || AUTHOR_NAME);
 
     // Open Graph
     updateMetaTag("og:title", seoTitle, true);
@@ -87,14 +85,14 @@ export const SEOHead = ({
     updateMetaTag("twitter:image", seoImage);
     updateMetaTag(
       "twitter:creator",
-      resumeData?.basics?.profiles?.find((p: any) => p.network === "Twitter")
+      resumeData.profiles?.find((p: any) => p.network === "Twitter")
         ?.username || "@" + AUTHOR_NAME
     );
 
     // LinkedIn específico
     updateMetaTag(
       "linkedin:owner",
-      resumeData?.basics?.profiles?.find((p: any) => p.network === "LinkedIn")
+      resumeData.profiles?.find((p: any) => p.network === "LinkedIn")
         ?.username || ""
     );
 
@@ -113,21 +111,19 @@ export const SEOHead = ({
     const schemaData = {
       "@context": "https://schema.org",
       "@type": type === "profile" ? "Person" : "WebSite",
-      name: resumeData?.basics?.name || AUTHOR_NAME,
+      name: resumeData.name || AUTHOR_NAME,
       url: URL_SITE,
       description: seoDescription,
       image: seoImage,
       ...(type === "profile" && {
-        jobTitle: resumeData?.basics?.label,
+        jobTitle: resumeData.label,
         worksFor: {
           "@type": "Organization",
-          name: resumeData?.work?.[0]?.name,
+          name: resumeData.work?.[0]?.name,
         },
-        sameAs: resumeData?.basics?.profiles?.map(
-          (profile: any) => profile.url
-        ),
+        sameAs: resumeData.profiles?.map((profile: any) => profile.url),
         knowsAbout: dynamicKeywords.slice(0, 10),
-        alumniOf: resumeData?.education?.map((edu: any) => ({
+        alumniOf: resumeData.education?.map((edu: any) => ({
           "@type": "EducationalOrganization",
           name: edu.institution,
         })),
