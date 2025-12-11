@@ -868,7 +868,7 @@ const HelicalScrollCards = <T extends CardItem = CardItem>({
         }}
       />
       {loadingMore && (
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm shadow-lg">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white px-4 py-2 rounded-full text-sm shadow-lg">
           {loadingText}
         </div>
       )}

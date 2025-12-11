@@ -88,16 +88,7 @@ const useArticles = () => {
 };
 
 const Blog = () => {
-  const { articles, isLoading, isAppending, error, hasMore, loadMore } =
-    useArticles();
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-lg">Loading articles...</div>
-      </div>
-    );
-  }
+  const { articles, isAppending, error, hasMore, loadMore } = useArticles();
 
   const hasNoArticlesWithError = error && articles.length === 0;
 
@@ -151,7 +142,7 @@ const BlogContent = ({
   loadingMore,
 }: BlogContentProps) => {
   return (
-    <div className="flex flex-col flex-1 w-full h-full">
+    <div className="flex flex-col flex-1 w-full h-full relative">
       <HelicalScrollCards<Article>
         items={articles}
         onLoadMore={onLoadMore}
@@ -161,7 +152,7 @@ const BlogContent = ({
         clockwise={false}
         scrollSpeed={1.5}
         hiddenReposition={true}
-        loadingText="Cargando..."
+        loadingText={"Cargando contenido..."}
         emptyText="No hay artículos"
         config={{
           slotCount: CARDS_PER_PAGE,
