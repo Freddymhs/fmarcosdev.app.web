@@ -49,7 +49,7 @@ const useArticles = () => {
         if (!res.ok) throw new Error(`API Error: ${res.status}`);
 
         const response = await res.json();
-        const newArticles = (response.data || []) as Article[];
+        const newArticles = response.data || [];
 
         const hasMorePages =
           response.meta?.pagination?.page <
@@ -94,7 +94,7 @@ const Blog = () => {
   const hasNoArticlesWithError = error && articles.length === 0;
 
   if (isLoading) {
-    <> </>;
+    return <></>;
   }
   if (hasNoArticlesWithError) {
     return (
