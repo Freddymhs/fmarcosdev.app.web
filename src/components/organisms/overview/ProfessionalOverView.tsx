@@ -331,6 +331,29 @@ export default function ProfessionalOverview() {
             <div className={statLabel()}>{texts.certifications}</div>
           </div>
         </div>
+
+        {/* Propuesta de valor - Grid 3 columnas */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-5 mt-6 border border-blue-200 shadow-sm">
+          <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-4 text-center">
+            {texts.valuePropositionTitle}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {texts.technicalFocusAreas.map((area, index) => (
+              <div
+                key={index}
+                className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-blue-100"
+              >
+                <div className="text-3xl mb-2">{area.emoji}</div>
+                <h4 className="font-bold text-blue-900 mb-2 text-sm">
+                  {area.title}
+                </h4>
+                <p className="text-xs text-gray-700 leading-relaxed">
+                  {area.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* tarjetas blancas inferiores */}

@@ -1,5 +1,6 @@
 export const ProfessionalOverviewTexts = {
   // Títulos de secciones
+  valuePropositionTitle: "🎯 MI ENFOQUE TÉCNICO",
   availabilityTitle: "⚡ DISPONIBILIDAD",
   workPreferencesTitle: "🌐 PREFERENCIAS DE TRABAJO",
 
@@ -31,4 +32,26 @@ export const ProfessionalOverviewTexts = {
   // Textos misceláneos
   more: "más",
   chile: "Chile",
+
+  // Áreas de enfoque técnico (estructura de datos para iteración)
+  technicalFocusAreas: [
+    {
+      emoji: "🤖",
+      title: "Automatización",
+      description:
+        "Reduzco trabajo manual repetitivo con web scraping, bots de WhatsApp y procesamiento automatizado",
+    },
+    {
+      emoji: "📱",
+      title: "Apps Móviles",
+      description:
+        "Desarrollo aplicaciones Flutter con Clean Architecture y BLoC para código mantenible",
+    },
+    {
+      emoji: "🔧",
+      title: "Backend & APIs",
+      description:
+        "Implemento microservicios, APIs REST/GraphQL usando NestJS, Express y TypeScript",
+    },
+  ],
 };
