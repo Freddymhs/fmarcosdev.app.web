@@ -159,17 +159,17 @@ const BlogContent = ({
         loadingMore={loadingMore}
         debug={false}
         clockwise={false}
-        scrollSpeed={1.7}
+        scrollSpeed={1.5}
         hiddenReposition={true}
         loadingText="Cargando..."
         emptyText="No hay artículos"
         config={{
           slotCount: CARDS_PER_PAGE,
-          turns: 3,
-          helixHeight: 4,
-          cardScale: 0.8,
-          yOffset: 0.4,
-          cameraFov: 50,
+          cardScale: 0.65,
+          turns: 4,
+          yOffset: 0.5,
+          helixHeight: 6,
+          cameraFov: 45,
           topMarginSlots: CARDS_START_OFFSET,
           cardConfig: {
             canvasWidth: 240,
