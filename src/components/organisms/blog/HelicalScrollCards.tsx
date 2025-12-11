@@ -286,20 +286,16 @@ const HelicalScrollCards = <T extends CardItem = CardItem>({
 
       // 🎯 Proporciones relativas al tamaño del canvas
       const centerX = canvasW / 2;
-      const headerH = canvasH * 0.156; // ~50px en 320
-      const titleStartY = canvasH * 0.25; // ~80px en 320
+      const titleStartY = canvasH * 0.18; // ~58px en 320 (espacio para badge)
       const dateY = canvasH * 0.688; // ~220px en 320
       const dateH = canvasH * 0.188; // ~60px en 320
-      const footerY = canvasH * 0.906; // ~290px en 320
-      const footerH = canvasH * 0.094; // ~30px en 320
 
       // 🎯 Font sizes proporcionales al canvas (basados en 320px de referencia)
-      const fontHeader = Math.round(canvasH * 0.05); // 16px en 320
-      const fontTitle = Math.round(canvasH * 0.044); // 14px en 320
+      const fontBadge = Math.round(canvasH * 0.0375); // 12px en 320 (pequeño)
+      const fontTitle = Math.round(canvasH * 0.063); // 20px en 320 (más grande)
       const fontDateDay = Math.round(canvasH * 0.075); // 24px en 320
       const fontDateSub = Math.round(canvasH * 0.0375); // 12px en 320
-      const fontFooter = Math.round(canvasH * 0.031); // 10px en 320
-      const lineSpacing = Math.round(canvasH * 0.078); // 25px en 320
+      const lineSpacing = Math.round(canvasH * 0.088); // 28px en 320 (más espacio)
 
       const fontFamily = "-apple-system, BlinkMacSystemFont, sans-serif";
 
@@ -311,24 +307,36 @@ const HelicalScrollCards = <T extends CardItem = CardItem>({
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvasW, canvasH);
 
-      // Borde (proporcional)
-      const borderWidth = Math.max(1, Math.round(canvasW * 0.015));
+      // Borde delgado consistente con esquinas redondeadas (simulado)
+      const borderWidth = Math.max(2, Math.round(canvasW * 0.01)); // 2-3px
       ctx.strokeStyle = currentTheme.border;
       ctx.lineWidth = borderWidth;
       ctx.strokeRect(
-        borderWidth,
-        borderWidth,
-        canvasW - borderWidth * 2,
-        canvasH - borderWidth * 2
+        borderWidth / 2,
+        borderWidth / 2,
+        canvasW - borderWidth,
+        canvasH - borderWidth
       );
 
-      // Header con label
+      // Badge pequeño con número (esquina superior derecha)
+      const badgeText = getCardLabel(item, index);
+      ctx.font = `bold ${fontBadge}px ${fontFamily}`;
+      const badgeWidth = ctx.measureText(badgeText).width + Math.round(canvasW * 0.06);
+      const badgeHeight = Math.round(canvasH * 0.06); // ~19px en 320
+      const badgeX = canvasW - badgeWidth - Math.round(canvasW * 0.05); // Margen derecha
+      const badgeY = Math.round(canvasH * 0.03); // Margen superior
+
+      // Fondo del badge
       ctx.fillStyle = currentTheme.headerBg;
-      ctx.fillRect(0, 0, canvasW, headerH);
+      const radius = Math.round(canvasH * 0.015); // Border radius pequeño
+      ctx.beginPath();
+      ctx.roundRect(badgeX, badgeY, badgeWidth, badgeHeight, radius);
+      ctx.fill();
+
+      // Texto del badge
       ctx.fillStyle = currentTheme.headerText;
-      ctx.font = `bold ${fontHeader}px ${fontFamily}`;
       ctx.textAlign = "center";
-      ctx.fillText(getCardLabel(item, index), centerX, headerH * 0.6);
+      ctx.fillText(badgeText, badgeX + badgeWidth / 2, badgeY + badgeHeight * 0.65);
 
       // Título con word wrap (maxLength configurable)
       const title = getCardTitle(item, index);
@@ -371,13 +379,6 @@ const HelicalScrollCards = <T extends CardItem = CardItem>({
           dateY + dateH * 0.75
         );
       }
-
-      // Footer
-      ctx.fillStyle = currentTheme.footerBg;
-      ctx.fillRect(0, footerY, canvasW, footerH);
-      ctx.fillStyle = currentTheme.footerText;
-      ctx.font = `${fontFooter}px ${fontFamily}`;
-      ctx.fillText("CARD", centerX, footerY + footerH * 0.6);
 
       const texture = new THREE.CanvasTexture(canvas);
       textureCacheRef.current.set(cacheKey, texture);

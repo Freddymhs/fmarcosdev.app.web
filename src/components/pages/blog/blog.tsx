@@ -6,6 +6,7 @@ import HelicalScrollCards, {
 } from "../../organisms/blog/HelicalScrollCards";
 import { SEOHead } from "../../atoms";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 interface Article extends CardItem {
   documentId: string;
@@ -145,9 +146,29 @@ const BlogContent = ({
   hasMore,
   loadingMore,
 }: BlogContentProps) => {
+  const { isDesktop } = useMediaQuery();
+
+  // Configuración responsiva
+  const responsiveConfig = {
+    slotCount: CARDS_PER_PAGE,
+    cardScale: isDesktop ? 0.8 : 0.59, // Reducir escala en móvil
+    turns: isDesktop ? 2 : 3, // Más vueltas en móvil para compactar
+    yOffset: isDesktop ? 1 : -0.6, // Ajuste vertical
+    helixHeight: isDesktop ? 13 : 10, // Altura menor en móvil
+    cameraFov: isDesktop ? 48 : 75, // FOV más amplio en móvil
+    topMarginSlots: CARDS_START_OFFSET,
+    cardConfig: {
+      canvasWidth: isDesktop ? 240 : 200,
+      canvasHeight: isDesktop ? 300 : 250,
+      titleMaxLength: isDesktop ? 20 : 15,
+    },
+  };
+
   return (
     <div className="flex flex-col flex-1 w-full h-full relative">
       <HelicalScrollCards<Article>
+        // Key fuerza el re-mount al cambiar de breakpoint
+        key={isDesktop ? "desktop" : "mobile"}
         items={articles}
         onLoadMore={onLoadMore}
         hasMore={hasMore}
@@ -158,33 +179,18 @@ const BlogContent = ({
         hiddenReposition={true}
         loadingText={"Cargando contenido..."}
         emptyText="No hay artículos"
-        config={{
-          slotCount: CARDS_PER_PAGE,
-          cardScale: 0.65,
-          turns: 4,
-          yOffset: 0.5,
-          helixHeight: 6,
-          cameraFov: 45,
-          topMarginSlots: CARDS_START_OFFSET,
-          cardConfig: {
-            canvasWidth: 240,
-            canvasHeight: 300,
-            titleMaxLength: 20,
-          },
-        }}
+        config={responsiveConfig}
         theme={{
-          gradientStart: "#fcf6e5", // Crema base de tarjeta
-          gradientMid: "#f4d03f", // Amarillo suave (highlight) para calidez sin saturar
-          gradientEnd: "#f4d03f", // Fondo principal claro
-          border: "#2f4732", // Verde acento como borde visible
-          headerBg: "#2f4732", // Verde oscuro suavizado
-          headerText: "#f4d03f", // Amarillo destacado para numeraciones
-          titleText: "#4a3f2e", // Texto principal marrón
-          dateBg: "#f4d03f", // Fondo limpio para la fecha
-          dateText: "#cb8d0b", // Acento amarillo/marrón (skill-tag)
-          dateSubtext: "#2f4732", // Texto secundario
-          footerBg: "#2f4732", // Consistente con header
-          footerText: "#fefce8", // Texto claro sobre fondo oscuro
+          gradientStart: "#fcf6e5",
+          gradientMid: "#f4d03f",
+          gradientEnd: "#f4d03f",
+          border: "#2f4732",
+          headerBg: "#2f4732",
+          headerText: "#f4d03f",
+          titleText: "#4a3f2e",
+          dateBg: "#f4d03f",
+          dateText: "#cb8d0b",
+          dateSubtext: "#2f4732",
           helixLine: 0x7c9c3f,
         }}
         className=""
