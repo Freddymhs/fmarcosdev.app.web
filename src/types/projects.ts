@@ -15,4 +15,5 @@ export interface Project {
   features: string[];
   role: string;
   complexity: Complexity;
+  published?: boolean;
 }

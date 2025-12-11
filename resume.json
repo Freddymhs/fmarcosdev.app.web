@@ -335,34 +335,140 @@
       "role": "Mobile Developer",
       "complexity": "High"
     },
-
     {
+      "published": false,
       "type": "Mobile App",
       "name": "Bot Router",
       "startDate": "2024-07",
       "endDate": "2024-08",
-      "description": "...",
-      "technologies": ["react-native"],
+      "description": "Aplicación React Native que gestiona de forma segura el WiFi compartido: permite cambiar la contraseña de tu router, generar un código QR para que invitados se conecten fácilmente y restaurar la contraseña después de un tiempo definido.",
+      "technologies": [
+        "React Native",
+        "Expo",
+        "QR Code Generator",
+        "WiFi Management"
+      ],
       "url": "",
       "githubUrl": "",
       "image": "",
-      "features": [],
-      "role": "Developer",
-      "complexity": "Simple"
+      "features": [
+        "Cambio temporal de contraseña del router",
+        "Generación de código QR con credenciales WiFi",
+        "Configuración de periodos de acceso",
+        "Interfaz simple y multilingüe"
+      ],
+      "role": "Mobile Developer",
+      "complexity": "Media"
     },
     {
+      "published": false,
+      "type": "Web App / Backend Service",
+      "name": "Payment Service App – Microservicio de Pagos y Suscripciones",
+      "startDate": "2025-01",
+      "endDate": "2025-02",
+      "description": "Microservicio completo de gestión de pagos, planes de suscripción y facturación recurrente utilizando Stripe. Incluye Webhooks seguros, colas de mensajes con AWS SQS para procesamiento asíncrono y un dashboard administrativo en Next.js para visualizar transacciones en tiempo real. Implementado con NestJS siguiendo arquitectura limpia y documentación OpenAPI.",
+      "technologies": [
+        "NestJS",
+        "TypeScript",
+        "Stripe API",
+        "Stripe Webhooks",
+        "Next.js",
+        "React",
+        "PostgreSQL",
+        "Prisma ORM",
+        "AWS SQS",
+        "AWS Lambda",
+        "Docker",
+        "OpenAPI/Swagger",
+        "JWT Auth",
+        "CI/CD (GitHub Actions)"
+      ],
+      "url": "",
+      "githubUrl": "",
+      "image": "",
+      "features": [
+        "Integración completa con Stripe (pagos únicos, suscripciones y facturación automática)",
+        "Procesamiento asíncrono de pagos mediante colas AWS SQS",
+        "Webhooks verificados con firma y reintentos automáticos",
+        "Dashboard Next.js con listados de pagos, planes y estado de usuarios",
+        "Generación automática de facturas PDF vía servidor",
+        "Notificaciones por email con AWS SES",
+        "Arquitectura limpia con separación de capas",
+        "Documentación Swagger / OpenAPI 3.0"
+      ],
+      "role": "Fullstack Developer",
+      "complexity": "High"
+    },
+    {
+      "published": false,
       "type": "Mobile App",
       "name": "Gestor APP",
       "startDate": "2024-02",
       "endDate": "2025-01",
-      "description": "...",
-      "technologies": ["Flutter", "NodeJS", "NestJS"],
+      "description": "Aplicación Flutter con soporte backend que permite organizar deseos y necesidades mediante una matriz de decisiones. Permite listar artículos, clasificarlos, presupuestarlos y registrar reflexiones para tomar decisiones de compra más conscientes.",
+      "technologies": [
+        "Flutter",
+        "Node.js",
+        "NestJS",
+        "GraphQL",
+        "SQLite",
+        "Firebase"
+      ],
       "url": "",
       "githubUrl": "",
       "image": "",
-      "features": [],
-      "role": "Developer",
+      "features": [
+        "Matriz de decisiones deseos/necesidades",
+        "Gestión y registro de gastos",
+        "Notas y reflexiones para cada ítem",
+        "Sincronización en la nube y modo offline"
+      ],
+      "role": "Full-stack Developer",
       "complexity": "Complejo"
+    },
+    {
+      "published": false,
+      "type": "DevOps / Platform Project",
+      "name": "Observability Platform – Microservicios Node.js con Docker & Kubernetes",
+      "startDate": "",
+      "endDate": "",
+      "description": "Proyecto de plataforma de observabilidad y despliegue para un conjunto de microservicios NestJS (auth, billing, scraping). Todo el stack se ejecuta en contenedores Docker orquestados con Kubernetes, con monitoreo de métricas, logs centralizados, dashboards y pipeline CI/CD completo.",
+      "technologies": [
+        "NestJS",
+        "Node.js",
+        "TypeScript",
+        "Express.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Docker",
+        "Docker Compose",
+        "Kubernetes",
+        "Helm",
+        "NGINX Ingress",
+        "Prometheus",
+        "Grafana",
+        "Loki o ELK Stack",
+        "GitHub Actions",
+        "JWT Auth",
+        "REST APIs",
+        "OpenAPI/Swagger",
+        "Feature Flags"
+      ],
+      "url": "",
+      "githubUrl": "",
+      "image": "",
+      "features": [
+        "Containerización completa de microservicios NestJS con Docker y definición de entornos (dev/stage/prod)",
+        "Cluster local con Kubernetes (kind/minikube) usando Helm charts para desplegar servicios y dependencias",
+        "Balanceo de carga y routing HTTP mediante NGINX Ingress Controller",
+        "Monitoreo de métricas técnicas (CPU, memoria, requests, latencia) con Prometheus y dashboards en Grafana",
+        "Centralización de logs de todos los microservicios en Loki/ELK con filtros por servicio, nivel y correlación de request id",
+        "Alertas básicas (ej. alto error rate o latencia) configuradas en Grafana para simular un entorno productivo",
+        "Pipeline CI/CD con GitHub Actions: build de imágenes, tests, lint, y despliegue automático al cluster",
+        "Buenas prácticas de seguridad: variables de entorno, secretos en Kubernetes, rate limiting y hardening básico de imágenes"
+      ],
+      "role": "Fullstack / DevOps Engineer",
+      "complexity": "High"
     }
   ],
   "skills": [
