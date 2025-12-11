@@ -88,10 +88,14 @@ const useArticles = () => {
 };
 
 const Blog = () => {
-  const { articles, isAppending, error, hasMore, loadMore } = useArticles();
+  const { articles, isLoading, isAppending, error, hasMore, loadMore } =
+    useArticles();
 
   const hasNoArticlesWithError = error && articles.length === 0;
 
+  if (isLoading) {
+    <> </>;
+  }
   if (hasNoArticlesWithError) {
     return (
       <div className="flex items-center justify-center min-h-screen">
