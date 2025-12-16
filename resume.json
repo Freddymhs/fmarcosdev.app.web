@@ -302,6 +302,34 @@
       "complexity": "Simple"
     },
     {
+      "published": false,
+      "type": "Mobile App",
+      "name": "Gestor APP",
+      "startDate": "2024-02",
+      "endDate": "2025-01",
+      "description": "Aplicación Flutter con soporte backend que permite organizar deseos y necesidades mediante una matriz de decisiones. Permite listar artículos, clasificarlos, presupuestarlos y registrar reflexiones para tomar decisiones de compra más conscientes.",
+      "technologies": [
+        "Flutter",
+        "Node.js",
+        "NestJS",
+        "GraphQL",
+        "SQLite",
+        "Firebase"
+      ],
+      "url": "",
+      "githubUrl": "",
+      "image": "",
+      "features": [
+        "Matriz de decisiones deseos/necesidades",
+        "Gestión y registro de gastos",
+        "Notas y reflexiones para cada ítem",
+        "Sincronización en la nube y modo offline"
+      ],
+      "role": "Full-stack Developer",
+      "complexity": "Complejo"
+    },
+    {
+      "published": false,
       "type": "Mobile App",
       "name": "MyLends(Loans) - Gestión de Préstamos",
       "startDate": "2025-07",
@@ -399,33 +427,7 @@
       "role": "Fullstack Developer",
       "complexity": "High"
     },
-    {
-      "published": false,
-      "type": "Mobile App",
-      "name": "Gestor APP",
-      "startDate": "2024-02",
-      "endDate": "2025-01",
-      "description": "Aplicación Flutter con soporte backend que permite organizar deseos y necesidades mediante una matriz de decisiones. Permite listar artículos, clasificarlos, presupuestarlos y registrar reflexiones para tomar decisiones de compra más conscientes.",
-      "technologies": [
-        "Flutter",
-        "Node.js",
-        "NestJS",
-        "GraphQL",
-        "SQLite",
-        "Firebase"
-      ],
-      "url": "",
-      "githubUrl": "",
-      "image": "",
-      "features": [
-        "Matriz de decisiones deseos/necesidades",
-        "Gestión y registro de gastos",
-        "Notas y reflexiones para cada ítem",
-        "Sincronización en la nube y modo offline"
-      ],
-      "role": "Full-stack Developer",
-      "complexity": "Complejo"
-    },
+
     {
       "published": false,
       "type": "DevOps / Platform Project",
@@ -662,6 +664,12 @@
   ],
   "certificates": [
     {
+      "name": "AI Fluency",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
+    },
+    {
       "name": "Curso-de-ECMAScript-6+",
       "issuer": "Platzi",
       "date": "2022-02",
@@ -708,12 +716,6 @@
       "issuer": "Google Actívate",
       "date": "2020-08",
       "url": ""
-    },
-    {
-      "name": "AI Fluency",
-      "issuer": "Anthropic",
-      "date": "2025-12",
-      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
     }
   ],
   "publications": [
