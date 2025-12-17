@@ -330,6 +330,49 @@
     },
     {
       "published": false,
+      "type": "Web App / Backend Service",
+      "name": "AgroPilot – Cuaderno de Campo + Control de Agua + Jobs + Observability (Next.js + NestJS + AWS Serverless)",
+      "startDate": "2025-12",
+      "endDate": "",
+      "description": "Plataforma operativa para gestionar un piloto agrícola en Arica con foco en eficiencia hídrica y trazabilidad. Incluye registro de riegos y entregas de agua (aljibe), cuaderno de campo con fotos y gastos, módulo de alertas automáticas y jobs programados. Arquitectura moderna con frontend PWA en Next.js y backend NestJS serverless en AWS (API + cola + workers), instrumentada con observabilidad (logs/métricas/trazas) para operar y evolucionar el sistema de forma robusta y de bajo costo. Infraestructura como código usando AWS CDK (TypeScript).",
+      "technologies": [
+        "Next.js (App Router)",
+        "TypeScript",
+        "PWA (Offline-first)",
+        "NestJS",
+        "AWS Lambda",
+        "API Gateway",
+        "AWS EventBridge Scheduler",
+        "AWS SQS",
+        "AWS S3",
+        "DynamoDB",
+        "AWS CDK (TypeScript IaC)",
+        "OpenTelemetry",
+        "Grafana (Dashboards + Alerts) / CloudWatch",
+        "JWT Auth",
+        "Zod Validation",
+        "OpenAPI/Swagger",
+        "CI/CD (GitHub Actions)",
+        "Docker (Local Dev)"
+      ],
+      "url": "",
+      "githubUrl": "",
+      "image": "",
+      "features": [
+        "Registro de riegos por sector (litros o minutos) y cálculo automático de consumo semanal/mensual",
+        "Registro de entregas de agua (m³, costo, proveedor) con soporte de boletas/fotos en S3",
+        "Cuaderno de campo digital: actividades, observaciones, fotos, gastos y horas; export CSV/PDF",
+        "Jobs programados (EventBridge) para recalcular métricas, detectar datos faltantes y generar alertas",
+        "Procesamiento asíncrono con SQS + workers (notificaciones, reportes, reintentos)",
+        "Alertas automáticas (agua baja, desviación de consumo, tareas pendientes) vía Telegram/Discord/Email",
+        "Observabilidad completa: logs estructurados, métricas y trazas end-to-end con dashboards y alertas",
+        "Infraestructura como código (AWS CDK) + despliegue automatizado (GitHub Actions) a AWS"
+      ],
+      "role": "Fullstack / Backend & Cloud Engineer",
+      "complexity": "High"
+    },
+    {
+      "published": false,
       "type": "Mobile App",
       "name": "MyLends(Loans) - Gestión de Préstamos",
       "startDate": "2025-07",
@@ -427,7 +470,6 @@
       "role": "Fullstack Developer",
       "complexity": "High"
     },
-
     {
       "published": false,
       "type": "DevOps / Platform Project",
@@ -664,10 +706,16 @@
   ],
   "certificates": [
     {
-      "name": "AI Fluency",
+      "name": "AI-Fluency",
       "issuer": "Anthropic",
       "date": "2025-12",
       "url": "https://verify.skilljar.com/c/aw76s9syi69n"
+    },
+    {
+      "name": "Claude-Code-in-Action",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/psa8ywhm6twg"
     },
     {
       "name": "Curso-de-ECMAScript-6+",
