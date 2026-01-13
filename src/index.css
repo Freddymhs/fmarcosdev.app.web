@@ -51,4 +51,67 @@
   --transition-button: 150ms; /* Transición rápida para botones */
   --transition-card: 200ms; /* Transición normal para tarjetas */
   --transition-page: 300ms; /* Transición lenta para cambios de página */
+
+  /* View Transitions - Duraciones */
+  --view-transition-duration: 800ms;
+}
+
+/* View Transitions - Efecto MUY notorio para probar */
+::view-transition-old(page-content),
+::view-transition-new(page-content),
+::view-transition-old(blog-canvas),
+::view-transition-new(blog-canvas) {
+  animation-duration: var(--view-transition-duration);
+}
+
+::view-transition-old(page-content) {
+  animation-name: slide-out-left;
+}
+
+::view-transition-new(page-content) {
+  animation-name: slide-in-right;
+}
+
+/* Fade simple para el blog (3D canvas) */
+::view-transition-old(blog-canvas) {
+  animation-name: fade-out-blog;
+}
+
+::view-transition-new(blog-canvas) {
+  animation-name: fade-in-blog;
+}
+
+@keyframes slide-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+}
+
+@keyframes fade-out-blog {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-blog {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(page-content),
+  ::view-transition-new(page-content),
+  ::view-transition-old(blog-canvas),
+  ::view-transition-new(blog-canvas) {
+    animation-duration: 0.001ms !important;
+  }
 }

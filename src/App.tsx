@@ -3,6 +3,7 @@ import { JSX, useMemo, useCallback } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import MainLayout from "./components/templates/app-layout/MainLayout";
 import LandingLayout from "./components/templates/landing-layout/Landing-layout";
+import { usePageTransitions } from "./hooks/usePageTransitions";
 
 import {
   CERTIFICATES_PAGE,
@@ -25,6 +26,7 @@ import {
 } from "./components/pages";
 
 const App = () => {
+  usePageTransitions(); //! remove on react19 viewtransition
   const versionApp = useMemo(() => `V.${packageJson.version}`, []);
 
   const componentByRoute: Record<RoutePath, JSX.Element> = useMemo(

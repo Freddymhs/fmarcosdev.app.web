@@ -72,6 +72,7 @@ const PageContentLayout = ({
       className={sectionClasses({ fullHeight })}
       style={{
         padding: !fullHeight && padding ? "var(--spacing-page-margin) 0" : "0",
+        viewTransitionName: "page-content", //! remove on react19 viewtransition
       }}
     >
       <div
@@ -99,7 +100,9 @@ const PageContentLayout = ({
           </div>
         )}
         <div
-          className={`${stretch ? "max-w-5xl mx-auto" : ""} w-full ${contentAreaClasses({
+          className={`${
+            stretch ? "max-w-5xl mx-auto" : ""
+          } w-full ${contentAreaClasses({
             fullHeight,
           })}`}
         >
