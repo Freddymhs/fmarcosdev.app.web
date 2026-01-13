@@ -94,16 +94,25 @@ const Blog = () => {
 
   const hasNoArticlesWithError = error && articles.length === 0;
 
-  if (isLoading) {
-    return <></>;
-  }
-  if (hasNoArticlesWithError) {
+  const renderContent = () => {
+    if (isLoading) return null;
+
+    if (hasNoArticlesWithError) {
+      return (
+        <div className="flex items-center justify-center h-full">
+          <div className="text-red-500">{error}</div>
+        </div>
+      );
+    }
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-red-500">{error}</div>
-      </div>
+      <BlogContent
+        articles={articles}
+        onLoadMore={loadMore}
+        hasMore={hasMore}
+        loadingMore={isAppending}
+      />
     );
-  }
+  };
 
   return (
     <>
@@ -124,14 +133,7 @@ const Blog = () => {
         stretch={false}
         fullHeight={true}
         content={{
-          content: (
-            <BlogContent
-              articles={articles}
-              onLoadMore={loadMore}
-              hasMore={hasMore}
-              loadingMore={isAppending}
-            />
-          ),
+          content: renderContent(),
         }}
       />
     </>
