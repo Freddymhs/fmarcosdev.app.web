@@ -111,6 +111,7 @@ src/
 | Estilos        | TailwindCSS, PostCSS                         |
 | CI/CD          | GitHub Actions, wkhtmltopdf, pandoc          |
 | Formato CV     | JSON Resume, dev-ats theme                   |
+| Almacenamiento | Cloudinary (imágenes y medios)               |
 | Calidad Código | ESLint, Prettier, TypeScript tipado estricto |
 ```
 
