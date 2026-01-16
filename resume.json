@@ -302,31 +302,30 @@
       "complexity": "Simple"
     },
     {
-      "published": false,
       "type": "Mobile App",
-      "name": "Gestor APP",
+      "name": "PriorityBox APP",
       "startDate": "2024-02",
       "endDate": "2025-01",
-      "description": "Aplicación Flutter con soporte backend que permite organizar deseos y necesidades mediante una matriz de decisiones. Permite listar artículos, clasificarlos, presupuestarlos y registrar reflexiones para tomar decisiones de compra más conscientes.",
+      "description": "Aplicación React Native que implementa la Matriz de Eisenhower para organizar y priorizar deseos vs necesidades. Permite clasificar elementos según relevancia (alta/baja) y tipo (deseo/necesidad) para facilitar decisiones de compra más conscientes.",
       "technologies": [
-        "Flutter",
-        "Node.js",
-        "NestJS",
-        "GraphQL",
-        "SQLite",
-        "Firebase"
+        "React Native",
+        "Expo",
+        "Firebase Realtime Database",
+        "React Navigation",
+        "Native Base"
       ],
       "url": "",
-      "githubUrl": "",
-      "image": "",
+      "githubUrl": "https://github.com/Freddymhs/priorityBox",
+      "image": "prioritybox-matriz-image",
       "features": [
-        "Matriz de decisiones deseos/necesidades",
-        "Gestión y registro de gastos",
-        "Notas y reflexiones para cada ítem",
-        "Sincronización en la nube y modo offline"
+        "Matriz de Eisenhower (4 cuadrantes: deseos/necesidades + relevancia)",
+        "Gestión de listas personalizadas",
+        "Clasificación y reorganización de elementos",
+        "Sincronización en tiempo real con Firebase",
+        "Guía interactiva del método"
       ],
       "role": "Full-stack Developer",
-      "complexity": "Complejo"
+      "complexity": "Medio"
     },
     {
       "published": false,
