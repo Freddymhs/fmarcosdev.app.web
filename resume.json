@@ -705,28 +705,34 @@
   ],
   "certificates": [
     {
-      "name": "AI-Fluency",
-      "issuer": "Anthropic",
-      "date": "2025-12",
-      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
-    },
-    {
-      "name": "Claude-Code-in-Action",
-      "issuer": "Anthropic",
-      "date": "2025-12",
-      "url": "https://verify.skilljar.com/c/psa8ywhm6twg"
-    },
-    {
-      "name": "Curso-de-ECMAScript-6+",
-      "issuer": "Platzi",
-      "date": "2022-02",
-      "url": "https://platzi.com/p/freddyhuaylla/curso/1815-ecmascript-6/diploma/detalle/"
-    },
-    {
-      "name": "JavaScript-avanzado:-Expresiones-regulares",
-      "issuer": "LinkedIn Learning",
+      "name": "introduccion-basico-IA",
+      "issuer": "Google Actívate",
       "date": "2021-03",
-      "url": "https://www.linkedin.com/learning/certificates/78f3324d3b5dba3625bbd48999e3382fd5f73b7ed09d79d4efc5c1e27c64822e?trk=backfilled_certificate"
+      "url": ""
+    },
+    {
+      "name": "Cloud-Computing",
+      "issuer": "Google Actívate",
+      "date": "2020-08",
+      "url": ""
+    },
+    {
+      "name": "Desarrollo-de-Apps",
+      "issuer": "Google Actívate",
+      "date": "2020-11",
+      "url": ""
+    },
+    {
+      "name": "Fundamentos-de-big-data:-Técnicas-y-conceptos",
+      "issuer": "LinkedIn Learning",
+      "date": "2021-01",
+      "url": "https://www.linkedin.com/learning/certificates/a7dbc26991f406ceb0381fa91a1c9901d5e02856602e3b90abbb873cfe748831?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
+    },
+    {
+      "name": "Fundamentos-big-data-tecnicas",
+      "issuer": "LinkedIn Learning",
+      "date": "2021-01",
+      "url": "https://www.linkedin.com/learning/certificates/3e6bd5ac2409e2cf4c6b730697ae99c9c633a0d3ed4f900b85e142b4c5277936?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
     },
     {
       "name": "Node.js-esencial",
@@ -741,28 +747,28 @@
       "url": "https://www.linkedin.com/learning/certificates/a335b74b1c83af91aa1afa6a59e61c5217be40c03a0714f924501579f04e8df2?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
     },
     {
-      "name": "Fundamentos-big-data-tecnicas",
+      "name": "Curso-de-ECMAScript-6+",
+      "issuer": "Platzi",
+      "date": "2022-02",
+      "url": "https://platzi.com/p/freddyhuaylla/curso/1815-ecmascript-6/diploma/detalle/"
+    },
+    {
+      "name": "JavaScript-avanzado:-Expresiones-regulares",
       "issuer": "LinkedIn Learning",
-      "date": "2021-01",
-      "url": "https://www.linkedin.com/learning/certificates/3e6bd5ac2409e2cf4c6b730697ae99c9c633a0d3ed4f900b85e142b4c5277936?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
+      "date": "2021-03",
+      "url": "https://www.linkedin.com/learning/certificates/78f3324d3b5dba3625bbd48999e3382fd5f73b7ed09d79d4efc5c1e27c64822e?trk=backfilled_certificate"
     },
     {
-      "name": "Fundamentos-de-big-data:-Técnicas-y-conceptos",
-      "issuer": "LinkedIn Learning",
-      "date": "2021-01",
-      "url": "https://www.linkedin.com/learning/certificates/a7dbc26991f406ceb0381fa91a1c9901d5e02856602e3b90abbb873cfe748831?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
+      "name": "AI-Fluency",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
     },
     {
-      "name": "Desarrollo-de-Apps",
-      "issuer": "Google Actívate",
-      "date": "2020-11",
-      "url": ""
-    },
-    {
-      "name": "Cloud-Computing",
-      "issuer": "Google Actívate",
-      "date": "2020-08",
-      "url": ""
+      "name": "Claude-Code-in-Action",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/psa8ywhm6twg"
     }
   ],
   "publications": [
