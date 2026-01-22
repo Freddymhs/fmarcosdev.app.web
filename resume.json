@@ -88,10 +88,8 @@
         "Thread Management",
         "Health Monitoring",
         "Connection Pooling",
-        "Jest Testing",
         "ESLint + Prettier",
         "SQLite3",
-        "Better-SQLite3",
         "Axios HTTP Client",
         "Rate Limiting",
         "Styled Components",
@@ -608,7 +606,6 @@
       "keywords": [
         "PostgreSQL",
         "SQLite3",
-        "Better-SQLite3",
         "Supabase",
         "Prisma",
         "Database Design",
@@ -639,7 +636,6 @@
         "ESLint",
         "Prettier",
         "Chrome DevTools",
-        "Jest",
         "Vitest",
         "Husky"
       ]
@@ -666,9 +662,18 @@
         "Feature Flags",
         "Agile/Scrum",
         "Code Refactoring",
-        "Microservices Architecture",
         "Circuit Breaker",
         "Asynchronous Programming"
+      ]
+    },
+    {
+      "name": "Design Patterns",
+      "level": "Advanced",
+      "keywords": [
+        "Higher-Order Components (HOC)",
+        "Custom Hooks",
+        "Factory Pattern",
+        "Pipe/Compose Pattern"
       ]
     }
   ],
@@ -813,8 +818,8 @@
   "updates": {
     "goal": "",
     "short-summary": "Desarrollador multiplataforma con 4 años de experiencia, adaptable a entornos modernos que utilicen Flutter, React Native, Node.js, Next.js, GraphQL y ReactJS. Mi carrera se basa en el stack Fullstack JavaScript, fácilmente adaptable a proyectos móviles. He implementado soluciones con comunicación en tiempo real mediante WebSockets, integraciones seguras con Supabase Auth y bases de datos PostgreSQL, así como pipelines CI/CD para despliegues eficientes.",
-    "ia-in-code": "Exploro soluciones con v0,lovable, refino código y pruebas con Claude, y consulto temas de arquitectura con GPT. Utilizo ramas dedicadas para features de IA, integrando Husky para linting y testing automatizado. Empleo Postbot en Postman para pruebas, documentando con Swagger. Mantengo flujos CI/CD con Jest y Playwright/Cypress para garantizar código mantenible y escalable",
-    "backend-node": "Soy capaz y tengo experiencia en desarrollar APIs REST con Node.js usando TypeScript y Express. Implementé WebSockets con Socket.IO para sincronización en tiempo real, aplicando arquitectura en capas, patrón Repository, validaciones con Zod, manejo centralizado de errores, testing con Jest y documentación automática con Swagger. Me enfoco en buenas prácticas, escalabilidad y mantenibilidad.",
+    "ia-in-code": "Exploro soluciones con v0,lovable, refino código y pruebas con Claude, y consulto temas de arquitectura con GPT. Utilizo ramas dedicadas para features de IA, integrando Husky para linting y testing automatizado. Empleo Postbot en Postman para pruebas, documentando con Swagger. Mantengo flujos CI/CD con Vitest y Playwright/Cypress para garantizar código mantenible y escalable",
+    "backend-node": "Soy capaz y tengo experiencia en desarrollar APIs REST con Node.js usando TypeScript y Express. Implementé WebSockets con Socket.IO para sincronización en tiempo real, aplicando arquitectura en capas, patrón Repository, validaciones con Zod, manejo centralizado de errores, testing con Vitest y documentación automática con Swagger. Me enfoco en buenas prácticas, escalabilidad y mantenibilidad.",
     "nestjs": "arquitectura modular basada en módulos, controladores, proveedores y servicios, el uso intensivo de decoradores, y los principios de Inversión de Control (IoC) e Inyección de Dependencias (DI) que estructuran el manejo de rutas y la organización de tu código.",
     "aws": "AWS (EC2, Lambdas, DynamoDB)"
   }
