@@ -710,6 +710,12 @@
   ],
   "certificates": [
     {
+      "name": "SCRUM-roles",
+      "issuer": "LinkedIn Learning",
+      "date": "2020-11",
+      "url": "https://www.linkedin.com/learning/certificates/86f9717d5ff0fd9f5ecdc592dc683bdc0eb0a938abd577119b69d839594b0be4?"
+    },
+    {
       "name": "introduccion-basico-IA",
       "issuer": "Google Actívate",
       "date": "2021-03",
