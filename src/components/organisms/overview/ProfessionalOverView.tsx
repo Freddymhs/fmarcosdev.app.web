@@ -148,7 +148,7 @@ const calculateExperienceYears = (work: WorkExperience[]): number => {
 };
 
 const extractExperienceYearsFromSummary = (
-  summary: string | undefined
+  summary: string | undefined,
 ): number => {
   if (!summary) return 4; // Valor por defecto
 
@@ -227,7 +227,7 @@ export default function ProfessionalOverview() {
           obs.unobserve(entry.target);
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.35 },
     );
 
     obs.observe(target);
@@ -259,7 +259,7 @@ export default function ProfessionalOverview() {
                 className="inline-flex items-center gap-2"
                 title={texts.andMoreTechnologies.replace(
                   "{count}",
-                  remainingTechs.toString()
+                  remainingTechs.toString(),
                 )}
               >
                 <span className="font-medium">
@@ -383,7 +383,7 @@ export default function ProfessionalOverview() {
               <span>
                 {texts.timezoneFlexible.replace(
                   "{location}",
-                  data.basics.location?.city || texts.chile
+                  data.basics.location?.city || texts.chile,
                 )}
               </span>
             </li>

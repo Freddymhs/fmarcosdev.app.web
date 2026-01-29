@@ -149,6 +149,13 @@ Secundaria: Mono Lisa (monospace) -->
    npm install
    ```
 
+   ### 📦 @fmarcosdev/ui-core (Librería local)
+
+   En desarrollo esta librería apunta a la carpeta local. Antes de deployar, cambiar en `package.json`:
+   ```json
+   "@fmarcosdev/ui-core": "^0.1.1"  // npm registry en producción
+   ```
+
 3. **Iniciar servidor de desarrollo**
    ```bash
    npm run dev

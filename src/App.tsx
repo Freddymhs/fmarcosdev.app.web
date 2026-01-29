@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router";
 import MainLayout from "./components/templates/app-layout/MainLayout";
 import LandingLayout from "./components/templates/landing-layout/Landing-layout";
 import { usePageTransitions } from "./hooks/usePageTransitions";
+import { useDailyFocus } from "./hooks/useDailyFocus";
 
 import {
   CERTIFICATES_PAGE,
@@ -24,8 +25,15 @@ import {
   Projects,
   Blog,
 } from "./components/pages";
+import { DailyFocusPill } from "@fmarcosdev/ui-core";
+import useResumeData from "./hooks/useResumeData";
 
 const App = () => {
+  const { incompletedProjects, incompledteStudies } = useResumeData();
+
+  const project = useDailyFocus(incompletedProjects);
+  const study = useDailyFocus(incompledteStudies);
+
   usePageTransitions(); //! remove on react19 viewtransition
   const versionApp = useMemo(() => `V.${packageJson.version}`, []);
 
@@ -33,6 +41,8 @@ const App = () => {
     () => ({
       [INITIAL_ROUTE]: (
         <LandingLayout version={versionApp}>
+          {/* //!error not fixed - installing ui deps first */}
+          <DailyFocusPill project={project?.name} study={study?.name} />
           <LandingPage />
         </LandingLayout>
       ),
@@ -43,7 +53,7 @@ const App = () => {
       [BLOG_PAGE]: <Blog />,
       [NO_INCLUDED_ROUTE_TO_PAGE]: <Navigate to={HOME_PAGE} replace />,
     }),
-    [versionApp]
+    [versionApp],
   );
 
   const routeDefinitions = useMemo(
@@ -52,7 +62,7 @@ const App = () => {
         path: to,
         element: componentByRoute[to],
       })),
-    [componentByRoute]
+    [componentByRoute],
   );
   const renderRoute = useCallback(
     (route: { path: string; element: JSX.Element }) => {
@@ -71,12 +81,12 @@ const App = () => {
         />
       );
     },
-    []
+    [],
   );
 
   const builtRoutes = useMemo(
     () => routeDefinitions.map(renderRoute),
-    [routeDefinitions, renderRoute]
+    [routeDefinitions, renderRoute],
   );
 
   return <Routes>{builtRoutes}</Routes>;

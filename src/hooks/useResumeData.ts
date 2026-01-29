@@ -25,15 +25,15 @@ export const useResumeData = () => {
         profile.network.toLowerCase() === "linkedin"
           ? "linkedin"
           : profile.network.toLowerCase() === "github"
-          ? "github"
-          : profile.network.toLowerCase() === "portfolio"
-          ? "portfolio"
-          : profile.network.toLowerCase() === "website" ||
-            profile.network.toLowerCase() === "webiste"
-          ? "website"
-          : profile.network.toLowerCase() === "hackerrank"
-          ? "hackerrank"
-          : "web",
+            ? "github"
+            : profile.network.toLowerCase() === "portfolio"
+              ? "portfolio"
+              : profile.network.toLowerCase() === "website" ||
+                  profile.network.toLowerCase() === "webiste"
+                ? "website"
+                : profile.network.toLowerCase() === "hackerrank"
+                  ? "hackerrank"
+                  : "web",
     })),
 
     // Contactos PRIORIZADOS por importancia y espacio
@@ -153,10 +153,17 @@ export const useResumeData = () => {
     // Datos de trabajo, proyectos, etc. (filtrar elementos no publicados)
     work: resumeData.work,
     projects: resumeData.projects.filter(
-      (item: any) => item.published !== false
+      (item: any) => item.published !== false,
     ),
+
     skills: resumeData.skills,
     education: resumeData.education,
+    incompledteStudies: resumeData.studies.filter(
+      (item) => item.completed === false && item.startDate !== "",
+    ),
+    incompletedProjects: resumeData.projects.filter(
+      (item) => item.published === false && item.startDate !== "",
+    ),
     certificates: resumeData.certificates,
   };
 };

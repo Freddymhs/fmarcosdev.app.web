@@ -28,7 +28,7 @@ export default function Landing() {
 
   const getRandomMessage = useCallback(
     () => WELCOME_MESSAGES[Math.floor(Math.random() * WELCOME_MESSAGES.length)],
-    []
+    [],
   );
 
   useEffect(() => {

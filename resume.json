@@ -261,6 +261,28 @@
       "visible": true
     }
   ],
+  "studies": [
+    {
+      "completed": false,
+      "name": "Claude Code",
+      "startDate": "2026-01-15"
+    },
+    {
+      "completed": false,
+      "name": "ScrumSt",
+      "startDate": "2025-11-04"
+    },
+    {
+      "completed": false,
+      "name": "Software Arch Elevator",
+      "startDate": ""
+    },
+    {
+      "completed": false,
+      "name": "AWS Certified",
+      "startDate": ""
+    }
+  ],
   "projects": [
     {
       "type": "Website Empresarial",
@@ -329,7 +351,7 @@
       "published": false,
       "type": "Web App / Backend Service",
       "name": "AgroPilot – Cuaderno de Campo + Control de Agua + Jobs + Observability (Next.js + NestJS + AWS Serverless)",
-      "startDate": "2025-12",
+      "startDate": "2026-01",
       "endDate": "",
       "description": "Plataforma operativa para gestionar un piloto agrícola en Arica con foco en eficiencia hídrica y trazabilidad. Incluye registro de riegos y entregas de agua (aljibe), cuaderno de campo con fotos y gastos, módulo de alertas automáticas y jobs programados. Arquitectura moderna con frontend PWA en Next.js y backend NestJS serverless en AWS (API + cola + workers), instrumentada con observabilidad (logs/métricas/trazas) para operar y evolucionar el sistema de forma robusta y de bajo costo. Infraestructura como código usando AWS CDK (TypeScript).",
       "technologies": [
@@ -407,8 +429,8 @@
       "published": false,
       "type": "Mobile App",
       "name": "Bot Router",
-      "startDate": "2024-07",
-      "endDate": "2024-08",
+      "startDate": "",
+      "endDate": "",
       "description": "Aplicación React Native que gestiona de forma segura el WiFi compartido: permite cambiar la contraseña de tu router, generar un código QR para que invitados se conecten fácilmente y restaurar la contraseña después de un tiempo definido.",
       "technologies": [
         "React Native",
@@ -432,8 +454,8 @@
       "published": false,
       "type": "Web App / Backend Service",
       "name": "Payment Service App – Microservicio de Pagos y Suscripciones",
-      "startDate": "2025-01",
-      "endDate": "2025-02",
+      "startDate": "",
+      "endDate": "",
       "description": "Microservicio completo de gestión de pagos, planes de suscripción y facturación recurrente utilizando Stripe. Incluye Webhooks seguros, colas de mensajes con AWS SQS para procesamiento asíncrono y un dashboard administrativo en Next.js para visualizar transacciones en tiempo real. Implementado con NestJS siguiendo arquitectura limpia y documentación OpenAPI.",
       "technologies": [
         "NestJS",

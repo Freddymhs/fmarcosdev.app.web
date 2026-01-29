@@ -12,7 +12,8 @@
     "simulate-worflow-generate-docs": "npx resume export --theme dev-ats-es --format html src/generate-resume-files-by-workflow/cv.html && wkhtmltopdf src/generate-resume-files-by-workflow/cv.html src/generate-resume-files-by-workflow/cv.pdf && pandoc src/generate-resume-files-by-workflow/cv.html -o src/generate-resume-files-by-workflow/cv.docx",
     "version-upgrade": "npm version minor --no-git-tag-version && git add . && git commit -m \"chore: bump version to $(node -p -e \"require('./package.json').version\")\" && git push -f",
     "cypress": "cypress open",
-    "depcheck": "depcheck"
+    "depcheck": "depcheck",
+    "clean": "rm -rf node_modules && npm cache clean --force && npm install"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
@@ -35,7 +36,8 @@
     "remark-math": "^6.0.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.0.17",
-    "three": "^0.177.0"
+    "three": "^0.177.0",
+    "@fmarcosdev/ui-core": "^0.1.1"
   },
   "devDependencies": {
     "@cypress/react": "^9.0.1",
