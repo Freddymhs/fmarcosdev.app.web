@@ -264,8 +264,18 @@
   "studies": [
     {
       "completed": false,
-      "name": "Claude Code",
+      "name": "Introduction to Model Context Protocol (MCP)",
       "startDate": "2026-01-15"
+    },
+    {
+      "completed": false,
+      "name": "Building with the Claude API",
+      "startDate": ""
+    },
+    {
+      "completed": false,
+      "name": "MCP: Advanced Topics",
+      "startDate": ""
     },
     {
       "completed": false,
@@ -346,6 +356,32 @@
       ],
       "role": "Full-stack Developer",
       "complexity": "Medio"
+    },
+    {
+      "type": "Chrome Extension / Web App",
+      "name": "LinKs (noTabs)",
+      "startDate": "2023-05",
+      "endDate": "",
+      "description": "Extensión ligera para guardar links de trabajo/estudio, agruparlos por tags y abrirlos rápido desde el navegador. Pensada para mi flujo diario de soporte y lectura.",
+      "technologies": [
+        "React 18",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Webpack 5",
+        "LocalStorage"
+      ],
+      "url": "",
+      "githubUrl": "https://github.com/Freddymhs/noTabs",
+      "image": "notab-extension-freddy",
+      "features": [
+        "Tags predefinidos (trabajo, development, lectura, soporte, mochila, otros)",
+        "Alta/baja de links con contador",
+        "Abrir todos los links de una categoría en nuevas pestañas",
+        "Exportar/importar JSON para backup",
+        "UI dark simple y responsive"
+      ],
+      "role": "Developer",
+      "complexity": "Simple"
     },
     {
       "published": false,
