@@ -263,7 +263,7 @@
   ],
   "studies": [
     {
-      "completed": false,
+      "completed": true,
       "name": "Introduction to Model Context Protocol (MCP)",
       "startDate": "2026-01-15"
     },
@@ -767,6 +767,12 @@
     }
   ],
   "certificates": [
+    {
+      "name": "Introduction-to-Model-Context-Protocol",
+      "issuer": "Anthropic",
+      "date": "2026-02",
+      "url": "https://verify.skilljar.com/c/4fyc4jtikimo?"
+    },
     {
       "name": "SCRUM-roles",
       "issuer": "LinkedIn Learning",
