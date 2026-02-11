@@ -568,6 +568,43 @@
       ],
       "role": "Fullstack / DevOps Engineer",
       "complexity": "High"
+    },
+    {
+      "published": false,
+      "type": "Backend API Service",
+      "name": "AgriPlan API – Backend de Planificación Agrícola",
+      "startDate": "",
+      "endDate": "",
+      "description": "API REST para planificación y gestión agrícola, construida con Python siguiendo arquitectura en capas (Router → Service → Repository). Incluye gestión de cultivos, parcelas, ciclos de riego y reportes operativos. Proyecto enfocado en aplicar estándares de producción del ecosistema Python backend: tipado estricto, validación con Pydantic/DRF Serializers, inyección de dependencias, manejo de errores con excepciones de dominio y testing con pytest.",
+      "technologies": [
+        "Python",
+        "Django REST Framework",
+        "FastAPI",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Pydantic",
+        "Alembic",
+        "pytest",
+        "Docker",
+        "AWS S3",
+        "AWS Lambda",
+        "CI/CD (GitHub Actions)"
+      ],
+      "url": "",
+      "githubUrl": "",
+      "image": "",
+      "features": [
+        "Arquitectura en capas: Router → Service → Repository con separación estricta",
+        "CRUD de parcelas, cultivos, ciclos de riego y actividades agrícolas",
+        "Validación tipada de request/response con Pydantic schemas o DRF Serializers",
+        "Manejo de errores con jerarquía de excepciones de dominio",
+        "Inyección de dependencias y repository pattern con interfaces abstractas",
+        "Testing con pytest: unit tests en services, integration en repositories, API tests en endpoints",
+        "Documentación automática OpenAPI/Swagger",
+        "Autenticación JWT"
+      ],
+      "role": "Backend Developer (Python)",
+      "complexity": "High"
     }
   ],
   "skills": [
