@@ -2,7 +2,8 @@ import PageContentLayout from "../../templates/page-content-layout/Page-Content-
 import { SEOHead } from "../../atoms";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import Card from "../../molecules/project-card/Card";
-import { Project } from "../../../types/projects";
+import type { ResumeProject } from "../../../types/resume";
+import type { Project } from "../../../types/projects";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { useResumeData } from "../../../hooks/useResumeData";
 
@@ -39,7 +40,7 @@ const Projects = () => {
 
 export default Projects;
 
-const CardsContainer = ({ projects }: { projects: Project[] }) => {
+const CardsContainer = ({ projects }: { projects: ResumeProject[] }) => {
   const { isDesktop } = useMediaQuery();
   const isMobile = !isDesktop;
   const cld = new Cloudinary({
@@ -57,7 +58,7 @@ const CardsContainer = ({ projects }: { projects: Project[] }) => {
               i={i}
               featured={i === 0}
               isMobile={isMobile}
-              data={props}
+              data={props as Project}
               cld={cld}
             />
           );

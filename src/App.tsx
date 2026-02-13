@@ -41,8 +41,7 @@ const App = () => {
     () => ({
       [INITIAL_ROUTE]: (
         <LandingLayout version={versionApp}>
-          {/* //!error not fixed - installing ui deps first */}
-          <DailyFocusPill project={project?.name} study={study?.name} />
+          <DailyFocusPill project={project?.name || ''} study={study?.name || ''} />
           <LandingPage />
         </LandingLayout>
       ),

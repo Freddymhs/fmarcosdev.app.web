@@ -2,11 +2,10 @@
 import { useRef } from "react";
 import { tv } from "tailwind-variants";
 
-import useMediaQuery from "../../../hooks/useMediaQuery";
 import useResumeData from "../../../hooks/useResumeData";
 import { ContactInfoList } from "./ContactInfoList";
 
-import { HeaderAreaProps, MenuButtonProps } from "./types";
+import { MenuButtonProps } from "./types";
 
 // Props para comunicarse con MainLayout
 interface HeaderProps {
@@ -99,18 +98,18 @@ const ContactSection = () => {
 
 // 5. COMPONENTE PRINCIPAL - SÚPER SIMPLE
 const Header = ({ onToggleSidebar, sidebarOpen = false }: HeaderProps = {}) => {
-  const headerRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div ref={headerRef} className={HeaderStyles()}>
       {/* Brand - Datos del resume.json */}
       <BrandSection />
-      
+
       {/* Contactos - Solo desktop (md:flex) */}
       <ContactSection />
-      
+
       {/* Botón menú - Solo mobile (flex md:hidden) */}
-      <MenuButton onClick={onToggleSidebar} isOpen={sidebarOpen} />
+      <MenuButton onClick={onToggleSidebar || (() => {})} isOpen={sidebarOpen} />
     </div>
   );
 };

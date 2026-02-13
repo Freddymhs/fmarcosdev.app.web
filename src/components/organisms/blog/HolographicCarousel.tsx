@@ -120,7 +120,7 @@ export default function HolographicCarousel({
   }, []);
 
   const cardsPerGroup = dimensions.rows * dimensions.columns;
-  const groupedCards = [];
+  const groupedCards: CardData[][] = [];
 
   for (let i = 0; i < cards.length; i += cardsPerGroup) {
     groupedCards.push(cards.slice(i, i + cardsPerGroup));

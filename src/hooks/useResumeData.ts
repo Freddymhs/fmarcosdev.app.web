@@ -1,4 +1,5 @@
 import resumeData from "../../resume.json";
+import type { Resume, ResumeProject } from "../types/resume";
 
 // Hook para acceder a los datos del CV
 export const useResumeData = () => {
@@ -152,8 +153,8 @@ export const useResumeData = () => {
 
     // Datos de trabajo, proyectos, etc. (filtrar elementos no publicados)
     work: resumeData.work,
-    projects: resumeData.projects.filter(
-      (item: any) => item.published !== false,
+    projects: (resumeData as Resume).projects.filter(
+      (item: ResumeProject) => item.published !== false,
     ),
 
     skills: resumeData.skills,

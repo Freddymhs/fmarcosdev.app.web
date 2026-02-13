@@ -7,6 +7,7 @@ import {
   AUTHOR_NAME,
 } from "../../../constants";
 import useResumeData from "../../../hooks/useResumeData";
+import type { ResumeProfile, ResumeSkill, ResumeWork, ResumeEducation } from "../../../types/resume";
 
 interface SEOHeadProps {
   title?: string;
@@ -34,8 +35,8 @@ export const SEOHead = ({
 
   // Keywords dinámicas basadas en skills del resume
   const dynamicKeywords = [
-    ...(resumeData.skills?.map((skill: any) => skill.keywords).flat() || []),
-    ...(resumeData.work?.map((work: any) => work.highlights).flat() || []),
+    ...(resumeData.skills?.map((skill: ResumeSkill) => skill.keywords).flat() || []),
+    ...(resumeData.work?.map((work: ResumeWork) => work.highlights).flat() || []),
     ...keywords,
   ]
     .filter(Boolean)
@@ -85,14 +86,14 @@ export const SEOHead = ({
     updateMetaTag("twitter:image", seoImage);
     updateMetaTag(
       "twitter:creator",
-      resumeData.profiles?.find((p: any) => p.network === "Twitter")
+      resumeData.profiles?.find((p: ResumeProfile) => p.network === "Twitter")
         ?.username || "@" + AUTHOR_NAME
     );
 
     // LinkedIn específico
     updateMetaTag(
       "linkedin:owner",
-      resumeData.profiles?.find((p: any) => p.network === "LinkedIn")
+      resumeData.profiles?.find((p: ResumeProfile) => p.network === "LinkedIn")
         ?.username || ""
     );
 
@@ -121,9 +122,9 @@ export const SEOHead = ({
           "@type": "Organization",
           name: resumeData.work?.[0]?.name,
         },
-        sameAs: resumeData.profiles?.map((profile: any) => profile.url),
+        sameAs: resumeData.profiles?.map((profile: ResumeProfile) => profile.url),
         knowsAbout: dynamicKeywords.slice(0, 10),
-        alumniOf: resumeData.education?.map((edu: any) => ({
+        alumniOf: resumeData.education?.map((edu: ResumeEducation) => ({
           "@type": "EducationalOrganization",
           name: edu.institution,
         })),

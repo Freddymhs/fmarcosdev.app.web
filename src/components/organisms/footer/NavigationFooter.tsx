@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 import { Link, useLocation } from "react-router";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { NAVIGATION_PAGES, HOME_PAGE } from "../../../constants";
+import { NAVIGATION_PAGES } from "../../../constants";
 
 // ESTILOS PARA EL NUEVO FOOTER
 const FooterContainerStyles = tv({
@@ -83,7 +83,7 @@ const NavigationFooter = () => {
     <footer className={FooterContainerStyles()}>
       <div className={FooterContentStyles()}>
         {/* Mapeo de páginas de navegación */}
-        {footerNavigationPages.map(({ to, label }, index) => {
+        {footerNavigationPages.map(({ to }, index) => {
           const isActivePage = isActive(to);
 
           // El primer elemento es primary (igual que en el sidebar)

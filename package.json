@@ -11,6 +11,9 @@
     "check-css-vars": "node scripts/check-css-vars.js",
     "simulate-worflow-generate-docs": "npx resume export --theme dev-ats-es --format html src/generate-resume-files-by-workflow/cv.html && wkhtmltopdf src/generate-resume-files-by-workflow/cv.html src/generate-resume-files-by-workflow/cv.pdf && pandoc src/generate-resume-files-by-workflow/cv.html -o src/generate-resume-files-by-workflow/cv.docx",
     "version-upgrade": "npm version minor --no-git-tag-version && git add . && git commit -m \"chore: bump version to $(node -p -e \"require('./package.json').version\")\" && git push -f",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
     "cypress": "cypress open",
     "depcheck": "depcheck",
     "clean": "rm -rf node_modules && npm cache clean --force && npm install"
@@ -42,6 +45,8 @@
   "devDependencies": {
     "@cypress/react": "^9.0.1",
     "@eslint/js": "^9.21.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/three": "^0.177.0",
@@ -52,10 +57,13 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "happy-dom": "^20.6.1",
+    "jsdom": "^28.0.0",
     "kill-port": "^2.0.1",
     "resume-cli": "^3.0.8",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1"
+    "typescript-eslint": "^8.24.1",
+    "vitest": "^4.0.18"
   },
   "volta": {
     "node": "20.19.4"

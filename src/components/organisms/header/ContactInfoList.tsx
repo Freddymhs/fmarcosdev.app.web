@@ -45,7 +45,7 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
   };
 
   // Función para obtener el icono correcto según el tipo
-  const getContactIcon = (url: string, type: string) => {
+  const getContactIcon = (type: string) => {
     switch (type) {
       case "mail":
         return <Mail size={14} />;
@@ -102,7 +102,7 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
           className={contactLinkStyle({ vertical, showText })}
           title={!showText ? `${type}: ${url}` : undefined}
         >
-          {getContactIcon(url, type)}
+          {getContactIcon(type)}
           {showText && (
             <span className={contactNameStyle({ vertical })}>{name}</span>
           )}

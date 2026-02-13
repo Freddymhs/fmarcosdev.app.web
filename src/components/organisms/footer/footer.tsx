@@ -1,7 +1,4 @@
 import { tv } from "tailwind-variants";
-import { useLocation } from "react-router";
-import { BLOG_PAGE } from "../../../constants";
-import { isEqualName } from "../../helpers";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
 interface FooterAreaProps {
@@ -166,9 +163,6 @@ const SocialSection = ({ isDesktop }: { isDesktop: boolean }) => {
 // COMPONENTE PRINCIPAL MEJORADO
 const Footer = () => {
   const { isDesktop } = useMediaQuery();
-  const location = useLocation();
-
-  const showContactInfo = isEqualName(location.pathname, BLOG_PAGE);
 
   const FooterArea = ({
     isDesktop,

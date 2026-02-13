@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback } from "react";
 import { tv } from "tailwind-variants";
 // import { CONFIG_BLOG_CARDS } from "../../../constants/constants";
 import type { CardPosition } from "../../../types/cardPosition";
-import DevTools from "./devmode";
 import type { CardData } from "../../../types/cardData";
 
 // Estilos usando Tailwind Variants
@@ -228,16 +227,16 @@ export default function HelicoidalCards({
         left: `${Math.max(10, Math.min(85, x))}%`,
         top: `${y}%`,
         transform: `
-          perspective(1200px) 
-          rotateY(${rotateY}deg) 
-          rotateX(${rotateX}deg) 
+          perspective(1200px)
+          rotateY(${rotateY}deg)
+          rotateX(${rotateX}deg)
           rotateZ(${rotateZ}deg)
           scale(${scale})
           translateZ(${depth * 50}px)
         `,
         zIndex: isVisible ? zIndex : 0,
         opacity: Math.max(CONFIG_BLOG_CARDS.opacity.min, Math.min(1, opacity)),
-        // filter: `blur(${blur}px) brightness(${brightness})`,
+        filter: `blur(${blur}px) brightness(${brightness})`,
         isInFront: zIndex > 10,
         depth,
         scale,
