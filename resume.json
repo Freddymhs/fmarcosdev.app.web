@@ -10,11 +10,11 @@
   "basics": {
     "image": "https://gravatar.com/userimage/178512464/8c8ef92b4688b3493ca52746b7775086.jpeg",
     "name": "Freddy Huaylla",
-    "label": "Fullstack Developer | TypeScript | Flutter",
+    "label": "Fullstack Developer | React · Next.js · Node.js · TypeScript",
     "email": "fmarcosdev@gmail.com",
     "phone": "+56 9 7464 6583",
     "url": "https://fmarcos.dev",
-    "summary": "Desarrollador Fullstack con +5 años de experiencia en tecnologías JavaScript/TypeScript (React, Next.js, NestJS, Node.js) y Flutter. Especializado en arquitecturas escalables, APIs REST, web scraping y sistemas de automatización con IA generativa (OpenAI API). Experiencia en desarrollo de CMS con Strapi, integración WhatsApp Business, testing automatizado (TDD) y metodologías ágiles. Enfoque en optimización de performance, seguridad y experiencia del usuario.",
+    "summary": "Desarrollador Fullstack con +5 años de experiencia en tecnologías JavaScript/TypeScript (React, Next.js, NestJS, Node.js) como stack principal. Especializado en arquitecturas escalables, APIs REST, web scraping y sistemas de automatización con IA generativa (OpenAI API). Experiencia en desarrollo de CMS con Strapi, integración WhatsApp Business, testing automatizado (TDD) y metodologías ágiles, con skills complementarias en Flutter y Python. Enfoque en optimización de performance, seguridad y experiencia del usuario.",
     "location": {
       "city": "Arica",
       "countryCode": "CL",
@@ -61,12 +61,11 @@
         "Scraper avanzado con NestJS y Puppeteer para extracción automatizada de datos de portales industriales, incluyendo gestión de pools de navegadores concurrentes y integración con OpenAI Vision API",
         "Integración completa con Twilio WhatsApp Business API para mensajería empresarial, implementando webhooks robustos, manejo debotones interactivos",
         "Desarrollo de chatbot WhatsApp empresarial con OpenAI Assistant API v2, procesando consultas automatizadas de repuestos industriales con 6 funciones personalizadas y lógica conversacional avanzada",
-        "Backoffice completo con Strapi CMS v5.23 y React 18, sistema de gestión de contenido headless con autenticación, consumo de microservicio REST y dynamic zones para contenido flexible adaptado a necesidades empresariales",
+        "Backoffice con Strapi CMS v5.23 y React 18: visualización de conversaciones recuperadas del chatbot WhatsApp, envío de mensajes masivos a usuarios que interactuaron previamente, autenticación, consumo de microservicio REST y dynamic zones para contenido flexible",
         "Arquitectura de microservicios con Express.js y TypeScript, implementando validación Zod, manejo centralizado de errores, Socket.IO para comunicación en tiempo real y documentación Swagger/OpenAPI",
         "Sistema completo de gestión de clientes con PostgreSQL y logging automático a Google Sheets, incluyendo analytics empresariales en tiempo real",
         "Sistema de automatización empresarial procesando búsquedas industriales, registro automático de clientes y generación de reportes analíticos en tiempo real"
       ],
-
       "technologies": [
         "NestJS",
         "Puppeteer Advanced",
@@ -102,8 +101,7 @@
       "type": "full-time",
       "startDate": "2024-04",
       "endDate": "2024-12",
-      "summary": "Desarrollo de sistema completo de gestión de punto de venta e inventario con Flutter multiplataforma, backend GraphQL especializado y hardware integrado. Sistema personalizado para empresa con 9 roles específicos, comunicación en tiempo real, escáneres de códigos de barras e impresión térmica vía Bluetooth.",
-      "v2": "Responsable del desarrollo de aplicación multiplataforma con arquitectura de microservicios, implementando tecnologías avanzadas como Flutter, WebSockets, garantizando integraciones robustas, escalables y de alta disponibilidad.",
+      "summary": "Desarrollo fullstack de sistema empresarial de punto de venta e inventario con backend GraphQL/NestJS, microservicios y CI/CD. Incluye aplicación multiplataforma Flutter con integración de hardware especializado (escáneres de códigos de barras, impresión térmica Bluetooth), 9 roles granulares y comunicación en tiempo real.",
       "highlights": [
         "Sistema de punto de venta (POS) Flutter multiplataforma con integración de hardware: escáneres de códigos de barras, impresoras térmicas Bluetooth ESC/POS",
         "Backend GraphQL especializado con Nexus y PostgreSQL, implementando 9 roles empresariales granulares (Gerente, Cajero, Bodega, Analista, Promotor, etc.) con permisos específicos por funcionalidad",
@@ -113,9 +111,7 @@
         "Integración completa con Supabase para autenticación OAuth (Google Sign-In), almacenamiento en tiempo real y sincronización automática entre dispositivos móviles y web",
         "Pipeline CI/CD automatizado con GitHub Actions, deployment multiplataforma (Android APK, iOS, PWA) y sistema de versionado automático para actualizaciones remotas"
       ],
-      "v2hig": [
-        "Desarrollo con TDD (Test-Driven Development) para funciones críticas del sistema de validación",
-        "Backend serverless robusto con arquitectura de microservicios en AWS (capa gratuita), enfocado en validación automática de compras",
+      "wishlist": [
         "Sistema de caché distribuido con Redis para optimización de consultas y connection pooling entre servicios",
         "Automatización de flujos: Lambda para registro de usuarios + Lambda especializado para notificaciones de bienvenida",
         "Implementación de patrones de resiliencia: Circuit Breaker",
@@ -190,22 +186,21 @@
     },
     {
       "name": "Klog",
-      "position": "Support/Fullstack",
+      "position": "Fullstack Developer & Technical Support",
       "type": "full-time",
       "url": "",
       "startDate": "2021-02",
       "endDate": "2024-03",
       "summary": "Desarrollador Fullstack y Soporte especializado en React, Next.js y GraphQL, contribuyendo al mantenimiento y desarrollo de features en plataforma SaaS empresarial. Enfocado en resolver problemas técnicos y desarrollo de componentes reutilizables.",
       "highlights": [
-        "Contribución al desarrollo de interfaces frontend con React 18 y Next.js 13 (App Router), implementando componentes responsivos y optimizados para la plataforma SaaS empresarial",
-        "Refactorización de código legacy migrando class components a functional components con hooks, mejorando la mantenibilidad y reduciendo la complejidad del código base",
-        "Implementación de gestión de estado con Apollo Client para GraphQL, utilizando Optimistic UI y normalización de caché, complementado con Context API y useReducer",
-        "Desarrollo de componentes reutilizables siguiendo el design system interno de Klog y patrones de Ant Design, asegurando consistencia visual en la aplicación",
-        "Implementación de features de seguridad incluyendo gestión de feature flags y protección de datos con encriptación, contribuyendo a la robustez del sistema",
-        "Debugging y optimización de rendimiento frontend utilizando Chrome DevTools Profiler, identificando y resolviendo cuellos de botella en consultas y procesos JavaScript",
-        "Soporte a usuarios empresariales, resolviendo problemas de funcionalidad y mejorando la experiencia del usuario en la plataforma SaaS",
-        "Mantenimiento y resolución de issues en backend GraphQL, optimizando consultas y mejorando tiempos de respuesta de la API",
-        "Colaboración en mejoras de flujo de trabajo del equipo estableciendo prácticas de Git/GitHub, linting con ESLint/Prettier y integración con GitHub Actions"
+        "Desarrollé y mantuve features frontend con React 18 y Next.js 13 en plataforma SaaS de logística marítima, creando componentes reutilizables bajo el design system interno (@klog/klog-design + Ant Design)",
+        "Implementé gestión de estado con Apollo Client (GraphQL) en arquitectura CSR: Optimistic UI, normalización de caché y re-fetching; construí queries y mutations mixtas conectando front y backend GraphQL; Context API + useReducer para estado local complejo",
+        "Migré class components legacy a functional components con hooks personalizados, mejorando la calidad y mantenibilidad del código base",
+        "Implementé capa de seguridad para feature flags: encriptación del valor de flags en backend y frontend usando crypto, evitando exponer nombres de funciones y permisos por usuario en peticiones GraphQL visibles",
+        "Implementé visibilidad de nuevas secciones basada en roles y permisos de usuario (casbin), desarrollando componentes React asociados y lógica de control de acceso en frontend",
+        "Resolví bugs críticos en módulo de tracking de cargas marítimas: debugging de coordenadas lat/long incorrectas que afectaban la visualización en mapa de seguimiento en tiempo real (google-map-react)",
+        "Ejecuté mejoras iterativas en módulo de reportes: corrección de formatos y adición de columnas según requerimientos del negocio logístico",
+        "Optimicé performance frontend con Chrome DevTools Profiler, identificando cuellos de botella en re-renders; establecí prácticas de calidad con ESLint/Prettier/Husky y GitHub Actions CI; brindé soporte técnico a usuarios internos y empresariales resolviendo incidencias funcionales"
       ],
       "technologies": [
         "React",
@@ -295,6 +290,56 @@
   ],
   "projects": [
     {
+      "published": false,
+      "type": "Web App / Backend Service",
+      "name": "AgroPilot – Cuaderno de Campo + Control de Agua + Jobs + Observability (Next.js + NestJS + AWS Serverless)",
+      "startDate": "2026-01",
+      "endDate": "",
+      "description": "Plataforma operativa para gestionar un piloto agrícola en Arica con foco en eficiencia hídrica y trazabilidad. Incluye registro de riegos y entregas de agua (aljibe), cuaderno de campo con fotos y gastos, módulo de alertas automáticas y jobs programados. Arquitectura moderna con frontend PWA en Next.js y backend NestJS serverless en AWS (API + cola + workers), instrumentada con observabilidad (logs/métricas/trazas) para operar y evolucionar el sistema de forma robusta y de bajo costo. Infraestructura como código usando AWS CDK (TypeScript).",
+      "technologies": [
+        "Next.js (App Router)",
+        "TypeScript",
+        "PWA (Offline-first)",
+        "Zod Validation",
+        "supabase email auth",
+        "JWT Auth",
+        "CI/CD (GitHub Actions)"
+      ],
+      "wishlist": [
+        "DynamoDB",
+        "OpenTelemetry",
+        "AWS Lambda",
+        "API Gateway",
+        "NestJS",
+        "Grafana (Dashboards + Alerts) / CloudWatch",
+        "AWS CDK (TypeScript IaC)",
+        "AWS SQS",
+        "AWS EventBridge Scheduler",
+
+        "AWS S3",
+        "Python",
+        "FastAPI/Django",
+        "Postgresql",
+        "AWS (RDS,S3,LABMDA)",
+        "Authenticacion avanzadada con google"
+      ],
+      "url": "",
+      "githubUrl": "",
+      "image": "",
+      "features": [
+        "Registro de riegos por sector (litros o minutos) y cálculo automático de consumo semanal/mensual",
+        "Registro de entregas de agua (m³, costo, proveedor) con soporte de boletas/fotos en S3",
+        "Cuaderno de campo digital: actividades, observaciones, fotos, gastos y horas; export CSV/PDF",
+        "Jobs programados (EventBridge) para recalcular métricas, detectar datos faltantes y generar alertas",
+        "Procesamiento asíncrono con SQS + workers (notificaciones, reportes, reintentos)",
+        "Alertas automáticas (agua baja, desviación de consumo, tareas pendientes) vía Telegram/Discord/Email",
+        "Observabilidad completa: logs estructurados, métricas y trazas end-to-end con dashboards y alertas",
+        "Infraestructura como código (AWS CDK) + despliegue automatizado (GitHub Actions) a AWS"
+      ],
+      "role": "Fullstack / Backend & Cloud Engineer",
+      "complexity": "High"
+    },
+    {
       "type": "Website Empresarial",
       "name": "GEOTRANS - Maquinarias y Transportes",
       "startDate": "2020-04",
@@ -383,49 +428,7 @@
       "role": "Developer",
       "complexity": "Simple"
     },
-    {
-      "published": false,
-      "type": "Web App / Backend Service",
-      "name": "AgroPilot – Cuaderno de Campo + Control de Agua + Jobs + Observability (Next.js + NestJS + AWS Serverless)",
-      "startDate": "2026-01",
-      "endDate": "",
-      "description": "Plataforma operativa para gestionar un piloto agrícola en Arica con foco en eficiencia hídrica y trazabilidad. Incluye registro de riegos y entregas de agua (aljibe), cuaderno de campo con fotos y gastos, módulo de alertas automáticas y jobs programados. Arquitectura moderna con frontend PWA en Next.js y backend NestJS serverless en AWS (API + cola + workers), instrumentada con observabilidad (logs/métricas/trazas) para operar y evolucionar el sistema de forma robusta y de bajo costo. Infraestructura como código usando AWS CDK (TypeScript).",
-      "technologies": [
-        "Next.js (App Router)",
-        "TypeScript",
-        "PWA (Offline-first)",
-        "NestJS",
-        "AWS Lambda",
-        "API Gateway",
-        "AWS EventBridge Scheduler",
-        "AWS SQS",
-        "AWS S3",
-        "DynamoDB",
-        "AWS CDK (TypeScript IaC)",
-        "OpenTelemetry",
-        "Grafana (Dashboards + Alerts) / CloudWatch",
-        "JWT Auth",
-        "Zod Validation",
-        "OpenAPI/Swagger",
-        "CI/CD (GitHub Actions)",
-        "Docker (Local Dev)"
-      ],
-      "url": "",
-      "githubUrl": "",
-      "image": "",
-      "features": [
-        "Registro de riegos por sector (litros o minutos) y cálculo automático de consumo semanal/mensual",
-        "Registro de entregas de agua (m³, costo, proveedor) con soporte de boletas/fotos en S3",
-        "Cuaderno de campo digital: actividades, observaciones, fotos, gastos y horas; export CSV/PDF",
-        "Jobs programados (EventBridge) para recalcular métricas, detectar datos faltantes y generar alertas",
-        "Procesamiento asíncrono con SQS + workers (notificaciones, reportes, reintentos)",
-        "Alertas automáticas (agua baja, desviación de consumo, tareas pendientes) vía Telegram/Discord/Email",
-        "Observabilidad completa: logs estructurados, métricas y trazas end-to-end con dashboards y alertas",
-        "Infraestructura como código (AWS CDK) + despliegue automatizado (GitHub Actions) a AWS"
-      ],
-      "role": "Fullstack / Backend & Cloud Engineer",
-      "complexity": "High"
-    },
+
     {
       "published": false,
       "type": "Mobile App",
@@ -665,7 +668,9 @@
       "level": "Advanced",
       "keywords": [
         "React",
+        "React 18",
         "Next.js",
+        "Next.js App Router",
         "Tailwind CSS",
         "TypeScript",
         "JavaScript",
@@ -811,40 +816,16 @@
       "url": "https://verify.skilljar.com/c/4fyc4jtikimo?"
     },
     {
-      "name": "SCRUM-roles",
-      "issuer": "LinkedIn Learning",
-      "date": "2020-11",
-      "url": "https://www.linkedin.com/learning/certificates/86f9717d5ff0fd9f5ecdc592dc683bdc0eb0a938abd577119b69d839594b0be4?"
+      "name": "Claude-Code-in-Action",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/psa8ywhm6twg"
     },
     {
-      "name": "introduccion-basico-IA",
-      "issuer": "Google Actívate",
-      "date": "2021-03",
-      "url": ""
-    },
-    {
-      "name": "Cloud-Computing",
-      "issuer": "Google Actívate",
-      "date": "2020-08",
-      "url": ""
-    },
-    {
-      "name": "Desarrollo-de-Apps",
-      "issuer": "Google Actívate",
-      "date": "2020-11",
-      "url": ""
-    },
-    {
-      "name": "Fundamentos-de-big-data:-Técnicas-y-conceptos",
-      "issuer": "LinkedIn Learning",
-      "date": "2021-01",
-      "url": "https://www.linkedin.com/learning/certificates/a7dbc26991f406ceb0381fa91a1c9901d5e02856602e3b90abbb873cfe748831?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
-    },
-    {
-      "name": "Fundamentos-big-data-tecnicas",
-      "issuer": "LinkedIn Learning",
-      "date": "2021-01",
-      "url": "https://www.linkedin.com/learning/certificates/3e6bd5ac2409e2cf4c6b730697ae99c9c633a0d3ed4f900b85e142b4c5277936?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
+      "name": "AI-Fluency",
+      "issuer": "Anthropic",
+      "date": "2025-12",
+      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
     },
     {
       "name": "Node.js-esencial",
@@ -871,16 +852,34 @@
       "url": "https://www.linkedin.com/learning/certificates/78f3324d3b5dba3625bbd48999e3382fd5f73b7ed09d79d4efc5c1e27c64822e?trk=backfilled_certificate"
     },
     {
-      "name": "AI-Fluency",
-      "issuer": "Anthropic",
-      "date": "2025-12",
-      "url": "https://verify.skilljar.com/c/aw76s9syi69n"
+      "name": "Fundamentos-big-data-tecnicas",
+      "issuer": "LinkedIn Learning",
+      "date": "2021-01",
+      "url": "https://www.linkedin.com/learning/certificates/3e6bd5ac2409e2cf4c6b730697ae99c9c633a0d3ed4f900b85e142b4c5277936?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BOIWRW6BHQoWoLcTlhIgfNg%3D%3D"
     },
     {
-      "name": "Claude-Code-in-Action",
-      "issuer": "Anthropic",
-      "date": "2025-12",
-      "url": "https://verify.skilljar.com/c/psa8ywhm6twg"
+      "name": "SCRUM-roles",
+      "issuer": "LinkedIn Learning",
+      "date": "2020-11",
+      "url": "https://www.linkedin.com/learning/certificates/86f9717d5ff0fd9f5ecdc592dc683bdc0eb0a938abd577119b69d839594b0be4?"
+    },
+    {
+      "name": "introduccion-basico-IA",
+      "issuer": "Google Actívate",
+      "date": "2021-03",
+      "url": ""
+    },
+    {
+      "name": "Cloud-Computing",
+      "issuer": "Google Actívate",
+      "date": "2020-08",
+      "url": ""
+    },
+    {
+      "name": "Desarrollo-de-Apps",
+      "issuer": "Google Actívate",
+      "date": "2020-11",
+      "url": ""
     }
   ],
   "publications": [
@@ -923,11 +922,11 @@
     }
   ],
   "updates": {
-    "goal": "",
-    "short-summary": "Desarrollador multiplataforma con 4 años de experiencia, adaptable a entornos modernos que utilicen Flutter, React Native, Node.js, Next.js, GraphQL y ReactJS. Mi carrera se basa en el stack Fullstack JavaScript, fácilmente adaptable a proyectos móviles. He implementado soluciones con comunicación en tiempo real mediante WebSockets, integraciones seguras con Supabase Auth y bases de datos PostgreSQL, así como pipelines CI/CD para despliegues eficientes.",
-    "ia-in-code": "Exploro soluciones con v0,lovable, refino código y pruebas con Claude, y consulto temas de arquitectura con GPT. Utilizo ramas dedicadas para features de IA, integrando Husky para linting y testing automatizado. Empleo Postbot en Postman para pruebas, documentando con Swagger. Mantengo flujos CI/CD con Vitest y Playwright/Cypress para garantizar código mantenible y escalable",
-    "backend-node": "Soy capaz y tengo experiencia en desarrollar APIs REST con Node.js usando TypeScript y Express. Implementé WebSockets con Socket.IO para sincronización en tiempo real, aplicando arquitectura en capas, patrón Repository, validaciones con Zod, manejo centralizado de errores, testing con Vitest y documentación automática con Swagger. Me enfoco en buenas prácticas, escalabilidad y mantenibilidad.",
-    "nestjs": "arquitectura modular basada en módulos, controladores, proveedores y servicios, el uso intensivo de decoradores, y los principios de Inversión de Control (IoC) e Inyección de Dependencias (DI) que estructuran el manejo de rutas y la organización de tu código.",
-    "aws": "AWS (EC2, Lambdas, DynamoDB)"
+    "goal": "Aprender y crecer hacia arquitectura de software, especialmente en sistemas que integren IA",
+    "stack": "Fullstack JS/TS: Next.js (SSG/SSR/ISR/App Router) en frontend, Node.js/NestJS + Express en backend, APIs Python como integración. Go en el radar a futuro.",
+    "workflow": "UI: v0 + Visily. Código: Claude Code (principal) + GPT para arquitectura. Editor: VSCode + MCP (Semgrep, TestSprite, comandos custom). Testing: Postman + Vitest + Playwright/Cypress. CI/CD: Husky + GitHub Actions. Docs: Swagger.",
+    "backend": "APIs REST con Node.js/NestJS + TypeScript. WebSockets con Socket.IO, arquitectura modular con módulos/controladores/servicios, IoC + DI, patrón Repository, validaciones con Zod, manejo centralizado de errores, documentación con Swagger.",
+    "cloud": "AWS: ECS, EC2, Lambda, SQS, DLQ, RDS, S3, Amplify. Arquitecturas serverless y de microservicios. Resiliencia con Circuit Breaker.",
+    "principles": "SOLID siempre. TDD en progreso (implementando por mi cuenta). Patrones UI: Render Props, HOC, Container. Inmutabilidad por defecto. MCP integrado al flujo de trabajo."
   }
 }
