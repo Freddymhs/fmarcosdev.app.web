@@ -153,9 +153,9 @@ export const useResumeData = () => {
 
     // Datos de trabajo, proyectos, etc. (filtrar elementos no publicados)
     work: resumeData.work,
-    projects: (resumeData as Resume).projects.filter(
-      (item: ResumeProject) => item.published !== false,
-    ),
+    projects: (resumeData as Resume).projects
+      .filter((item: ResumeProject) => item.published !== false)
+      .reverse(), // Mostrar proyectos más recientes primero
 
     skills: resumeData.skills,
     education: resumeData.education,

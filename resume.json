@@ -404,8 +404,8 @@
     {
       "type": "Chrome Extension / Web App",
       "name": "LinKs (noTabs)",
-      "startDate": "2023-05",
-      "endDate": "",
+      "startDate": "2023-04",
+      "endDate": "2023-06",
       "description": "Extensión ligera para guardar links de trabajo/estudio, agruparlos por tags y abrirlos rápido desde el navegador. Pensada para mi flujo diario de soporte y lectura.",
       "technologies": [
         "React 18",
@@ -427,7 +427,42 @@
       "role": "Developer",
       "complexity": "Simple"
     },
-
+    {
+      "published": true,
+      "type": "Personal Website & Resume Automation",
+      "name": "fmarcos.dev – Portfolio SPA con pipeline de generación de CV",
+      "startDate": "2025-05",
+      "endDate": "-infinite-",
+      "description": "SPA profesional basada en React 19 + Vite que consume el mismo JSON Resume que alimenta el sitio, combinando Atomic Design con un componente DailyFocus que resalta prioridades. La misma data se transforma automáticamente en HTML/PDF/DOCX durante el CI (resume-cli con theme dev-ats-es, wkhtmltopdf y pandoc) y se publica desde la rama development gracias a GitHub Actions, guardando los artefactos en src/generate-resume-files-by-workflow.",
+      "technologies": [
+        "React 19",
+        "Vite",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "React Router 7",
+        "Atomic Design",
+        "@fmarcosdev/ui-core",
+        "JSON Resume",
+        "resume-cli (dev-ats-es)",
+        "wkhtmltopdf",
+        "pandoc",
+        "GitHub Actions",
+        "Cloudinary",
+        "Vitest",
+        "Cypress",
+        "react-markdown",
+        "three"
+      ],
+      "features": [
+        "Biblioteca de componentes atómicos y áreas templated alineadas con la librería local @fmarcosdev/ui-core y validación global de variables CSS",
+        "Flujo automatizado que genera CV en HTML/PDF/DOCX en cada push a development usando resume-cli + wkhtmltopdf + pandoc, luego reposiciona los archivos en el repositorio y sincroniza main",
+        "Blog con helical scroll (three.js) que consume un API público configurable vía VITE_API_GATEWAY_URL, maneja paginación, errores y carga incremental de tarjetas",
+        "DailyFocusPill con hooks personalizados para mostrar proyectos/estudios incompletos y navega entre Landing y Main Layouts",
+        "Suite de calidad: Vitest, Cypress y comandos tsc -b + vite build generan confianza antes de publicar"
+      ],
+      "role": "Fullstack Developer / Automation",
+      "complexity": "High"
+    },
     {
       "published": false,
       "type": "Mobile App",
@@ -572,40 +607,41 @@
       "complexity": "High"
     },
     {
-      "published": false,
+      "published": true,
       "type": "Backend API Service",
-      "name": "AgriPlan API – Backend de Planificación Agrícola",
-      "startDate": "",
-      "endDate": "",
-      "description": "API REST para planificación y gestión agrícola, construida con Python siguiendo arquitectura en capas (Router → Service → Repository). Incluye gestión de cultivos, parcelas, ciclos de riego y reportes operativos. Proyecto enfocado en aplicar estándares de producción del ecosistema Python backend: tipado estricto, validación con Pydantic/DRF Serializers, inyección de dependencias, manejo de errores con excepciones de dominio y testing con pytest.",
+      "name": "AgriPlan API – NestJS + Fastify para datos agrícolas",
+      "startDate": "2026-02",
+      "endDate": "2026-03",
+      "description": "Backend NestJS 11 con Fastify que recolecta y normaliza datos climáticos (Open-Meteo, NASA Power), precios ODEPA, directorios curados, plaguicidas SAG y recomendaciones INIA para poblar Supabase; pensado para un Portal público para agricultores con rutinas cron de sincronización.",
       "technologies": [
-        "Python",
-        "Django REST Framework",
-        "FastAPI",
-        "PostgreSQL",
-        "SQLAlchemy",
-        "Pydantic",
-        "Alembic",
-        "pytest",
-        "Docker",
-        "AWS S3",
-        "AWS Lambda",
-        "CI/CD (GitHub Actions)"
+        "NestJS 11",
+        "Fastify",
+        "Prisma 7",
+        "PostgreSQL 16",
+        "Supabase",
+        "Redis (CacheModule)",
+        "@nestjs/axios",
+        "@nestjs/schedule",
+        "class-validator",
+        "class-transformer",
+        "Pino (nestjs-pino)",
+        "Swagger/OpenAPI",
+        "Rate limiting",
+        "Jest + Supertest",
+        "GitHub Actions",
+        "Docker Compose"
       ],
       "url": "",
       "githubUrl": "",
       "image": "",
       "features": [
-        "Arquitectura en capas: Router → Service → Repository con separación estricta",
-        "CRUD de parcelas, cultivos, ciclos de riego y actividades agrícolas",
-        "Validación tipada de request/response con Pydantic schemas o DRF Serializers",
-        "Manejo de errores con jerarquía de excepciones de dominio",
-        "Inyección de dependencias y repository pattern con interfaces abstractas",
-        "Testing con pytest: unit tests en services, integration en repositories, API tests en endpoints",
-        "Documentación automática OpenAPI/Swagger",
-        "Autenticación JWT"
+        "Arquitectura limpia con separación de capas (clima, precios, histórico, directorio, módulos extra, rate limiting, tests e INIA)",
+        "Cron jobs cada 6 h para clima y precios y semanal para recomendaciones INIA que actualizan tablas Supabase (`clima_base`, `precios_mercado`, etc.)",
+        "Endpoints REST `/clima`, `/clima/sync`, `/precios`, `/precios/sync`, `/clima-historico`, `/directorio`, `/recomendaciones`, `/recomendaciones/sync` y `/plaguicidas` sirven al Portal público y herramientas de debugging",
+        "Rate limiting + caché Redis en el nivel Fastify protegen los endpoints públicos y los cron-triggered syncs mientras la lógica de cache/retry y saneamiento decimal se centraliza en `shared`",
+        "Cobertura de tests unitarios e integración con Jest/Supertest, migraciones Prisma, Swagger y health checks"
       ],
-      "role": "Backend Developer (Python)",
+      "role": "Backend Engineer (API)",
       "complexity": "High"
     }
   ],
