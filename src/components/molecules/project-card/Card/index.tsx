@@ -56,7 +56,7 @@ const badgeStyles = tv({
   base: "absolute text-xs font-semibold px-3 py-1 rounded-full z-10",
   variants: {
     type: {
-      featured: "top-7 left-3 bg-primary-color my-2 ml-1",
+      featured: "top-9 left-3 bg-highlight-yellow my-2 ml-1 text-footer-dark",
       complexity:
         "bottom-2 right-2 bg-secondary-color/80 text-white font-medium px-2 py-1",
       role: "bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded",
