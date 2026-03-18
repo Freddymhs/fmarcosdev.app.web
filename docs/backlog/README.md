@@ -8,8 +8,8 @@ El build script fue corregido de `||` a `&&` (`package.json` linea 10), por lo q
 
 | Fase | Nombre | Status | Prioridad | Tareas |
 |------|--------|--------|-----------|--------|
-| 0 | [Errores criticos de tipo](./FASE_0_ERRORES_CRITICOS.md) | PENDIENTE | Alta | 6 |
-| 1 | [Cleanup imports/variables](./FASE_1_CLEANUP_UNUSED.md) | PENDIENTE | Media | 5 |
+| 0 | [Errores criticos de tipo](./FASE_0_ERRORES_CRITICOS.md) | ✅ | Alta | 6 |
+| 1 | [Cleanup imports/variables](./FASE_1_CLEANUP_UNUSED.md) | ✅ | Media | 5 |
 | 2 | [CSS variables no usadas](./FASE_2_CSS_VARS_CLEANUP.md) | PENDIENTE | Baja | 3 |
 | 3 | [Verificacion build y deploy](./FASE_3_BUILD_DEPLOY_VERIFICACION.md) | PENDIENTE | Alta | 4 |
 | 4 | [Dependencias deprecadas](./FASE_4_DEPENDENCIAS_DEPRECADAS.md) | PENDIENTE | Baja | 3 |

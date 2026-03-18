@@ -105,11 +105,11 @@ const VISIBLE_NAV_ROUTES: RoutePath[] = [
 ];
 
 export const REGISTERED_PAGES = ExistentPages.filter(({ to }) =>
-  ACTIVE_ROUTES.includes(to)
+  ACTIVE_ROUTES.includes(to),
 );
 
 export const NAVIGATION_PAGES = ExistentPages.filter(({ to }) =>
-  VISIBLE_NAV_ROUTES.includes(to)
+  VISIBLE_NAV_ROUTES.includes(to),
 );
 
 export const copyRightText = "© 2025 fmarcos.dev";
@@ -244,22 +244,26 @@ export const TECH_CONCURRENT_BROWSER_MANAGEMENT =
   "Concurrent Browser Management";
 export const TECH_NESTJS_SCRAPER_ARCHITECTURE = "NestJS Scraper Architecture";
 export const TECH_NEXUS_SCRAPER_ARCHITECTURE = "Nexus Scraper Architecture";
-export const TECH_MODULAR_ARCHITECTURE_BACKEND = "Modular Architecture (Backend)";
+export const TECH_MODULAR_ARCHITECTURE_BACKEND =
+  "Modular Architecture (Backend)";
 export const TECH_ERROR_HANDLING_MIDDLEWARE_BACKEND =
   "Error Handling Middleware (Backend)";
 export const TECH_VALIDATION_PIPES_BACKEND = "Validation Pipes (Backend)";
 export const TECH_THREAD_MANAGEMENT_BACKEND = "Thread Management (Backend)";
 export const TECH_HEALTH_MONITORING_BACKEND = "Health Monitoring (Backend)";
-export const TECH_PERFORMANCE_OPTIMIZATION_BACKEND = "Performance Optimization (Backend)";
+export const TECH_PERFORMANCE_OPTIMIZATION_BACKEND =
+  "Performance Optimization (Backend)";
 export const TECH_ZOD_VALIDATION = "Zod Validation";
 export const TECH_SWAGGER_OPENAPI_DOCUMENTATION =
   "Swagger/OpenAPI Documentation";
 export const TECH_NESTJS_SCRAPER_ARCHITECTURE_BACKEND =
   "NestJS Scraper Architecture (Backend)";
-export const TECH_PROXY_ROTATION_IPROYAL_BACKEND = "Proxy Rotation (IPRoyal) (Backend)";
+export const TECH_PROXY_ROTATION_IPROYAL_BACKEND =
+  "Proxy Rotation (IPRoyal) (Backend)";
 export const TECH_CONCURRENT_BROWSER_MANAGEMENT_BACKEND =
   "Concurrent Browser Management (Backend)";
-export const TECH_SCREENSHOT_AUTOMATION_BACKEND = "Screenshot Automation (Backend)";
+export const TECH_SCREENSHOT_AUTOMATION_BACKEND =
+  "Screenshot Automation (Backend)";
 export const TECH_NEXUS_BACKEND = "Nexus (Backend)";
 export const TECH_REDIS_BACKEND = "Redis (Backend)";
 export const TECH_AWS_SQS_BACKEND = "AWS SQS (Backend)";
@@ -270,24 +274,28 @@ export const TECH_AWS_SNS_SQS_BACKEND = "AWS SNS/SQS (Backend)";
 export const TECH_CLEAN_ARCHITECTURE_BACKEND = "Clean Architecture (Backend)";
 export const TECH_ROLE_BASED_ACCESS_CONTROL_BACKEND =
   "Role-based Access Control (Backend)";
-export const TECH_HARDWARE_INTEGRATION_BACKEND = "Hardware Integration (Backend)";
+export const TECH_HARDWARE_INTEGRATION_BACKEND =
+  "Hardware Integration (Backend)";
 export const TECH_PDF_CSV_GENERATION_BACKEND = "PDF/CSV Generation (Backend)";
 export const TECH_CIRCUIT_BREAKER_BACKEND = "Circuit Breaker (Backend)";
-export const TECH_ASYNCHRONOUS_PROGRAMMING_BACKEND = "Asynchronous Programming (Backend)";
+export const TECH_ASYNCHRONOUS_PROGRAMMING_BACKEND =
+  "Asynchronous Programming (Backend)";
 export const TECH_REACT_18 = "React 18";
 export const TECH_ANT_DESIGN_BACKEND = "Ant Design (Backend)";
 export const TECH_FEATURE_FLAGS_BACKEND = "Feature Flags (Backend)";
 export const TECH_UI_UX_OPTIMIZATION_BACKEND = "UI/UX Optimization (Backend)";
 export const TECH_SEO_OPTIMIZATION_BACKEND = "SEO Optimization (Backend)";
 export const TECH_MOBILE_SCANNER_BACKEND = "Mobile Scanner (Backend)";
-export const TECH_BLUETOOTH_PRINT_ESC_POS_BACKEND = "Bluetooth Print ESC/POS (Backend)";
+export const TECH_BLUETOOTH_PRINT_ESC_POS_BACKEND =
+  "Bluetooth Print ESC/POS (Backend)";
 export const TECH_DART_BACKEND = "Dart (Backend)";
 export const TECH_CROSS_PLATFORM_BACKEND = "Cross-platform (Backend)";
 export const TECH_PWA_BACKEND = "PWA (Backend)";
 export const TECH_MICROSERVICES_ARCHITECTURE = "Microservices Architecture";
 export const TECH_REAL_TIME_INVENTORY_MANAGEMENT_BACKEND =
   "Real-time Inventory Management (Backend)";
-export const TECH_SERVERLESS_ARCHITECTURE_BACKEND = "Serverless Architecture (Backend)";
+export const TECH_SERVERLESS_ARCHITECTURE_BACKEND =
+  "Serverless Architecture (Backend)";
 export const TECH_AWS_FREE_TIER_BACKEND = "AWS Free Tier (Backend)";
 export const TECH_AWS_LAMBDA_BACKEND = "AWS Lambda (Backend)";
 export const TECH_AWS_SES_BACKEND = "AWS SES (Backend)";
@@ -301,13 +309,17 @@ export const TECH_HUMAN_BEHAVIOR_SIMULATION_BACKEND =
 export const TECH_ANTI_DETECTION_TECHNIQUES_BACKEND =
   "Anti-Detection Techniques (Backend)";
 export const TECH_TWILIO_API_BACKEND = "Twilio API (Backend)";
-export const TECH_WHATSAPP_BUSINESS_API_BACKEND = "WhatsApp Business API (Backend)";
-export const TECH_WHATSAPP_INTEGRATION_BACKEND = "WhatsApp Integration (Backend)";
+export const TECH_WHATSAPP_BUSINESS_API_BACKEND =
+  "WhatsApp Business API (Backend)";
+export const TECH_WHATSAPP_INTEGRATION_BACKEND =
+  "WhatsApp Integration (Backend)";
 export const TECH_GOOGLE_SHEETS_API_BACKEND = "Google Sheets API (Backend)";
 export const TECH_GOOGLE_OAUTH2_BACKEND = "Google OAuth2 (Backend)";
 export const TECH_AXIOS_HTTP_CLIENT_BACKEND = "Axios HTTP Client (Backend)";
-export const TECH_BROWSER_POOL_MANAGEMENT_BACKEND = "Browser Pool Management (Backend)";
-export const TECH_SHADOW_DOM_MANIPULATION_BACKEND = "Shadow DOM Manipulation (Backend)";
+export const TECH_BROWSER_POOL_MANAGEMENT_BACKEND =
+  "Browser Pool Management (Backend)";
+export const TECH_SHADOW_DOM_MANIPULATION_BACKEND =
+  "Shadow DOM Manipulation (Backend)";
 export const TECH_THREAD_MANAGEMENT_FRONTEND = "Thread Management (Frontend)";
 export const TECH_HEALTH_MONITORING_FRONTEND = "Health Monitoring (Frontend)";
 export const TECH_CONNECTION_POOLING_BACKEND = "Connection Pooling (Backend)";
@@ -315,9 +327,11 @@ export const TECH_VALIDATION_PIPES_FRONTEND = "Validation Pipes (Frontend)";
 export const TECH_RATE_LIMITING_BACKEND = "Rate Limiting (Backend)";
 export const TECH_ERROR_HANDLING_MIDDLEWARE_FRONTEND =
   "Error Handling Middleware (Frontend)";
-export const TECH_MODULAR_ARCHITECTURE_FRONTEND = "Modular Architecture (Frontend)";
+export const TECH_MODULAR_ARCHITECTURE_FRONTEND =
+  "Modular Architecture (Frontend)";
 export const TECH_DATABASE_DESIGN_BACKEND = "Database Design (Backend)";
-export const TECH_DEPENDENCY_INJECTION_BACKEND = "Dependency Injection (Backend)";
+export const TECH_DEPENDENCY_INJECTION_BACKEND =
+  "Dependency Injection (Backend)";
 export const TECH_PERFORMANCE_OPTIMIZATION_FRONTEND =
   "Performance Optimization (Frontend)";
 export const TECH_STYLED_COMPONENTS_FRONTEND = "Styled Components (Frontend)";
@@ -333,7 +347,8 @@ export const TECH_REACT_NATIVE_MOBILE = "React Native (Mobile)";
 export const TECH_DART_MOBILE = "Dart (Mobile)";
 export const TECH_CROSS_PLATFORM_MOBILE = "Cross-platform (Mobile)";
 export const TECH_MOBILE_SCANNER_MOBILE = "Mobile Scanner (Mobile)";
-export const TECH_BLUETOOTH_PRINT_ESC_POS_MOBILE = "Bluetooth Print ESC/POS (Mobile)";
+export const TECH_BLUETOOTH_PRINT_ESC_POS_MOBILE =
+  "Bluetooth Print ESC/POS (Mobile)";
 export const TECH_PWA_MOBILE = "PWA (Mobile)";
 
 export const TECH_STACK_COLORS: Record<string, string> = {
