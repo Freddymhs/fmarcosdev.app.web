@@ -7,7 +7,7 @@
     "review": "tsc -b &&  vite build && kill-port 4173 && npx vite preview",
     "kill": "npx kill-port 3000",
     "dev": "npm run kill && npm run check-css-vars && vite --host --port 3000",
-    "build": "npm run check-css-vars && tsc -b ||  vite build",
+    "build": "npm run check-css-vars && tsc -b && vite build",
     "check-css-vars": "node scripts/check-css-vars.js",
     "simulate-worflow-generate-docs": "npx resume export --theme dev-ats-es --format html src/generate-resume-files-by-workflow/cv.html && wkhtmltopdf src/generate-resume-files-by-workflow/cv.html src/generate-resume-files-by-workflow/cv.pdf && pandoc src/generate-resume-files-by-workflow/cv.html -o src/generate-resume-files-by-workflow/cv.docx",
     "version-upgrade": "npm version minor --no-git-tag-version && git add . && git commit -m \"chore: bump version to $(node -p -e \"require('./package.json').version\")\" && git push -f",
