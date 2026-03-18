@@ -631,9 +631,9 @@
         "GitHub Actions",
         "Docker Compose"
       ],
-      "url": "",
-      "githubUrl": "",
-      "image": "",
+      "url": "http://localhost:3001/docs",
+      "githubUrl": "https://github.com/Freddymhs/agriplan-api-nestjs",
+      "image": "agriplan-api-nestjs_zibhpf",
       "features": [
         "Arquitectura limpia con separación de capas (clima, precios, histórico, directorio, módulos extra, rate limiting, tests e INIA)",
         "Cron jobs cada 6 h para clima y precios y semanal para recomendaciones INIA que actualizan tablas Supabase (`clima_base`, `precios_mercado`, etc.)",
