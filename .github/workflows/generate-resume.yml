@@ -72,9 +72,12 @@ jobs:
 
       - name: 🚀 Commit and Push to Development
         run: |
-          git pull origin development
           git add .
-          git commit -m "🔄 Automated add new resumes and build"
+          git stash
+          git pull origin development
+          git stash pop
+          git add .
+          git commit -m "🔄 Automated add new resumes and build" || echo "Nothing to commit"
           git push origin development
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
