@@ -1,0 +1,12 @@
+{
+  "project": "fmarcosdev.app.web",
+  "tech": "React 19 + Vite + TypeScript 5.7 + TailwindCSS 4",
+  "current_phase": "FASE_0",
+  "phases": {
+    "FASE_0": { "status": "pending", "tasks": 0, "total": 6 },
+    "FASE_1": { "status": "pending", "tasks": 0, "total": 5 },
+    "FASE_2": { "status": "pending", "tasks": 0, "total": 3 },
+    "FASE_3": { "status": "pending", "tasks": 0, "total": 4 },
+    "FASE_4": { "status": "pending", "tasks": 0, "total": 3 }
+  }
+}
