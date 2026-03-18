@@ -14,7 +14,7 @@
     "email": "fmarcosdev@gmail.com",
     "phone": "+56 9 7464 6583",
     "url": "https://fmarcos.dev",
-    "summary": "Desarrollador Fullstack con +5 años de experiencia en tecnologías JavaScript/TypeScript (React, Next.js, NestJS, Node.js) como stack principal. Especializado en arquitecturas escalables, APIs REST, web scraping y sistemas de automatización con IA generativa (OpenAI API). Experiencia en desarrollo de CMS con Strapi, integración WhatsApp Business, testing automatizado (TDD) y metodologías ágiles, con skills complementarias en Flutter y Python. Enfoque en optimización de performance, seguridad y experiencia del usuario.",
+    "summary": "Desarrollador Fullstack con +5 años de experiencia en tecnologías JavaScript/TypeScript (React, Next.js, NestJS, Node.js) como stack principal. Especializado en arquitecturas escalables, APIs REST, web scraping y sistemas de automatización con IA generativa (OpenAI API). Experiencia en desarrollo de CMS con Strapi, integración WhatsApp Business y metodologías ágiles, con skills complementarias en Flutter y Python. Enfoque en optimización de performance, seguridad y experiencia del usuario.",
     "location": {
       "city": "Arica",
       "countryCode": "CL",
@@ -138,7 +138,6 @@
         "Redis Pub/Sub",
         "GitHub Actions",
         "CI/CD",
-        "TDD",
         "Role-based Access Control",
         "Real-time Inventory Management",
         "Hardware Integration",
@@ -921,12 +920,12 @@
       ]
     }
   ],
-  "updates": {
+  "WhatimLearning": {
     "goal": "Aprender y crecer hacia arquitectura de software, especialmente en sistemas que integren IA",
     "stack": "Fullstack JS/TS: Next.js (SSG/SSR/ISR/App Router) en frontend, Node.js/NestJS + Express en backend, APIs Python como integración. Go en el radar a futuro.",
     "workflow": "UI: v0 + Visily. Código: Claude Code (principal) + GPT para arquitectura. Editor: VSCode + MCP (Semgrep, TestSprite, comandos custom). Testing: Postman + Vitest + Playwright/Cypress. CI/CD: Husky + GitHub Actions. Docs: Swagger.",
-    "backend": "APIs REST con Node.js/NestJS + TypeScript. WebSockets con Socket.IO, arquitectura modular con módulos/controladores/servicios, IoC + DI, patrón Repository, validaciones con Zod, manejo centralizado de errores, documentación con Swagger.",
+    "backend": "APIs REST con Node.js/NestJS + TypeScript. WebSockets con Socket.IO, arquitectura modular con módulos/controladores/servicios, inyección de dependencias mediante providers/modules, pattern Repository, validaciones con Zod, manejo centralizado de errores, documentación con Swagger.",
     "cloud": "AWS: ECS, EC2, Lambda, SQS, DLQ, RDS, S3, Amplify. Arquitecturas serverless y de microservicios. Resiliencia con Circuit Breaker.",
-    "principles": "SOLID siempre. TDD en progreso (implementando por mi cuenta). Patrones UI: Render Props, HOC, Container. Inmutabilidad por defecto. MCP integrado al flujo de trabajo."
+    "principles": "Aplico principios SOLID y DRY, patrónes comunes (Singleton, Factory) y prácticas de resiliencia. TDD en progreso (implementando por mi cuenta). Patrones UI: Render Props, HOC, Container. Inmutabilidad por defecto. MCP integrado al flujo de trabajo."
   }
 }
