@@ -51,20 +51,20 @@
   "work": [
     {
       "name": "Depot Group",
-      "position": "Backend Developer / Web Scraping / CMS Manager",
+      "position": "FrontEnd Developer / Backend Developer / Web Scraping",
       "type": "contract",
       "startDate": "2025-07",
-      "endDate": "2025-10",
+      "endDate": "2025-12",
       "summary": "Desarrollador enfocado en microservicios, web scraping y gestión de contenido para automatización de diversos procesos empresariales. Implementando un chatbot de WhatsApp, un scraper avanzado y un backoffice con Strapi.",
 
       "highlights": [
-        "Scraper avanzado con NestJS y Puppeteer para extracción automatizada de datos de portales industriales, incluyendo gestión de pools de navegadores concurrentes y integración con OpenAI Vision API",
-        "Integración completa con Twilio WhatsApp Business API para mensajería empresarial, implementando webhooks robustos, manejo debotones interactivos",
-        "Desarrollo de chatbot WhatsApp empresarial con OpenAI Assistant API v2, procesando consultas automatizadas de repuestos industriales con 6 funciones personalizadas y lógica conversacional avanzada",
-        "Backoffice con Strapi CMS v5.23 y React 18: visualización de conversaciones recuperadas del chatbot WhatsApp, envío de mensajes masivos a usuarios que interactuaron previamente, autenticación, consumo de microservicio REST y dynamic zones para contenido flexible",
-        "Arquitectura de microservicios con Express.js y TypeScript, implementando validación Zod, manejo centralizado de errores, Socket.IO para comunicación en tiempo real y documentación Swagger/OpenAPI",
-        "Sistema completo de gestión de clientes con PostgreSQL y logging automático a Google Sheets, incluyendo analytics empresariales en tiempo real",
-        "Sistema de automatización empresarial procesando búsquedas industriales, registro automático de clientes y generación de reportes analíticos en tiempo real"
+        "Diseñé un ecosistema integral de automatización, combinando un backoffice en React con un API backend en Nest, encargado de gestionar scrapping y búsquedas industriales. Este sistema, integrado con Strapi CMS y Google Sheets API, permite gestionar usuarios, visualizar solicitudes, automatizar búsquedas y generar reportes. Además, el chatbot impulsado por Twilio, WhatsApp Empresarial y OpenAI Assistant API, automatiza las consultas de repuestos, combinando una lógica conversacional avanzada, optimización de tokens y un flujo ágil y económico.",
+        "Desarrollé un backoffice con Strapi CMS y React 18, integrando módulos de UI administrativa para gestionar usuarios internos/externos, visualizar solicitudes, seguimiento de usuarios y enviar mensajería masiva, integrando el consumo de API REST.",
+        "En el API desarrollé la automatización de búsquedas industriales internas y habilitar registro de clientes, priorizando un almacenamiento para una BD PostgreSQL para futuro control operativo y visualización.",
+        "El chatbot, integrado con Twilio, WhatsApp Empresarial y OpenAI Assistant API v2, automatiza consultas de repuestos industriales. Utiliza un scrapper que activa la API REST, evaluando si la información es reciente o si se debe scrapear nuevamente. Incluye seis funciones personalizadas, una lógica conversacional avanzada anti-prompt injection, y un template corporativo, con clean threads y una optimización eficiente de tokens, logrando un flujo ágil y económico.",
+        "Integré Twilio WhatsApp Business API con webhooks robustos y botones interactivos, junto a Socket.IO para comunicación en tiempo real, evitando fallos de conectividad y escalando mensajería empresarial masiva.",
+        "Arquitecté microservicios con connection pooling, health monitoring y proxy rotation (IPRoyal), gestionando pools de navegadores Puppeteer concurrentes para scraping eficiente y evitando bloqueos en portales industriales.",
+        "Implementé scraper en NestJS con Puppeteer y OpenAI Vision API, extrayendo datos automatizados de portales industriales con manejo de pools concurrentes, integrando API REST para validación de 'recientes' y escalabilidad."
       ],
       "technologies": [
         "React 18",
@@ -76,21 +76,20 @@
         "Google OAuth2",
         "Google Sheets API",
         "Puppeteer",
+        "Browser Pool Management",
+        "Proxy Rotation (IPRoyal)",
+        "Health Monitoring",
+        "Connection Pooling",
         "OpenAI Vision API",
+        "Rate Limiting",
         "Twilio WhatsApp Business API",
         "OpenAI Assistant API v2",
         "Strapi CMS v5.23",
         "Swagger/OpenAPI",
-        "Browser Pool Management",
-        "Proxy Rotation (IPRoyal)",
         "Thread Management",
-        "Health Monitoring",
         "ESLint + Prettier",
         "Axios HTTP Client",
-        "Rate Limiting",
-        "Connection Pooling",
         "Socket.IO WebSockets",
-
         "Styled Components"
       ]
     },
@@ -99,16 +98,16 @@
       "position": "Fullstack Developer",
       "type": "full-time",
       "startDate": "2024-04",
-      "endDate": "2024-12",
+      "endDate": "2025-01",
       "summary": "Desarrollo fullstack de sistema empresarial de punto de venta e inventario con backend GraphQL/NestJS, microservicios y CI/CD. Incluye aplicación multiplataforma Flutter con integración de hardware especializado (escáneres de códigos de barras, impresión térmica Bluetooth), 9 roles granulares y comunicación en tiempo real.",
       "highlights": [
-        "Sistema de punto de venta (POS) Flutter multiplataforma con integración de hardware: escáneres de códigos de barras, impresoras térmicas Bluetooth ESC/POS",
-        "Backend GraphQL especializado con Nexus y PostgreSQL, implementando 9 roles empresariales granulares (Gerente, Cajero, Bodega, Analista, Promotor, etc.) con permisos específicos por funcionalidad",
-        "Arquitectura de microservicios con comunicación en tiempo real: GraphQL Subscriptions + WebSockets para actualizaciones instantáneas de inventario, ventas y alertas de stock crítico",
-        "Sistema avanzado de inventario con gestión de fechas de vencimiento, categorías, ubicaciones, proveedores y alertas automáticas de reposición integrado con códigos de barras",
-        "Microservicio NestJS independiente para generación de reportes empresariales (PDF/CSV) con arquitectura limpia",
-        "Integración completa con Supabase para autenticación OAuth (Google Sign-In), almacenamiento en tiempo real y sincronización automática entre dispositivos móviles y web",
-        "Pipeline CI/CD automatizado con GitHub Actions, deployment multiplataforma (Android APK, iOS, PWA) y sistema de versionado automático para actualizaciones remotas"
+        "Diseñé un ecosistema POS multiplataforma completo en Flutter con backend GraphQL en Nexus y PostgreSQL, integrando microservicios NestJS y Supabase para autenticación, sincronización en tiempo real y reportes empresariales. Este sistema gestiona inventarios con alertas automáticas, 9 roles granulares, ventas con hardware POS y actualizaciones instantáneas vía WebSockets, optimizando operaciones retail con escalabilidad, sincronización automática y ROI mediante CI/CD automatizado.",
+        "Desarrollé sistema POS Flutter multiplataforma con integración de hardware como escáneres de códigos de barras e impresoras térmicas Bluetooth ESC/POS, asegurando ventas fluidas y compatibilidad cross-device para Android, iOS y PWA.",
+        "Implementé backend GraphQL especializado con Nexus y PostgreSQL, definiendo 9 roles empresariales granulares (Gerente, Cajero, Bodega, Analista, Promotor, etc.) con permisos específicos por funcionalidad, garantizando seguridad y control operativo preciso.",
+        "Desarrollé arquitectura de microservicios con GraphQL Subscriptions y WebSockets para comunicación en tiempo real, habilitando actualizaciones instantáneas de inventario, ventas y alertas de stock crítico, evitando inconsistencias en entornos distribuidos.",
+        "Implementé sistema avanzado de inventario con gestión de fechas de vencimiento, categorías, ubicaciones, proveedores y alertas automáticas de reposición integradas con códigos de barras, optimizando rotación de stock y reduciendo pérdidas.",
+        "Desarrollé microservicio independiente en NestJS para generación de reportes empresariales en PDF/CSV con arquitectura limpia, escalable para volúmenes altos y exportación rápida.",
+        "Integré Supabase para autenticación OAuth con Google Sign-In, almacenamiento en tiempo real y sincronización automática entre dispositivos móviles y web, junto a pipeline CI/CD con GitHub Actions para deployments multiplataforma y versionado remoto eficiente."
       ],
       "wishlist": [
         "Sistema de caché distribuido con Redis para optimización de consultas y connection pooling entre servicios",
@@ -191,14 +190,13 @@
       "endDate": "2024-03",
       "summary": "Desarrollador Fullstack y Soporte especializado en React, Next.js y GraphQL, contribuyendo al mantenimiento y desarrollo de features en plataforma SaaS empresarial. Enfocado en resolver problemas técnicos y desarrollo de componentes reutilizables.",
       "highlights": [
-        "Desarrollé y mantuve features frontend con React 18 y Next.js 13 en plataforma SaaS de logística marítima, creando componentes reutilizables bajo el design system interno (@klog/klog-design + Ant Design)",
-        "Implementé gestión de estado con Apollo Client (GraphQL) en arquitectura CSR: Optimistic UI, normalización de caché y re-fetching; construí queries y mutations mixtas conectando front y backend GraphQL; Context API + useReducer para estado local complejo",
-        "Migré class components legacy a functional components con hooks personalizados, mejorando la calidad y mantenibilidad del código base",
-        "Implementé capa de seguridad para feature flags: encriptación del valor de flags en backend y frontend usando crypto, evitando exponer nombres de funciones y permisos por usuario en peticiones GraphQL visibles",
-        "Implementé visibilidad de nuevas secciones basada en roles y permisos de usuario (casbin), desarrollando componentes React asociados y lógica de control de acceso en frontend",
-        "Resolví bugs críticos en módulo de tracking de cargas marítimas: debugging de coordenadas lat/long incorrectas que afectaban la visualización en mapa de seguimiento en tiempo real (google-map-react)",
-        "Ejecuté mejoras iterativas en módulo de reportes: corrección de formatos y adición de columnas según requerimientos del negocio logístico",
-        "Optimicé performance frontend con Chrome DevTools Profiler, identificando cuellos de botella en re-renders; establecí prácticas de calidad con ESLint/Prettier/Husky y GitHub Actions CI; brindé soporte técnico a usuarios internos y empresariales resolviendo incidencias funcionales"
+        "Desarrollé y mantuve una plataforma SaaS de logística marítima en React 18 y Next.js 13, creando componentes reutilizables sobre el design system interno (@klog/klog-design + Ant Design) para acelerar la evolución del producto. Mi trabajo integró frontend, soporte técnico y mejoras continuas orientadas a escalabilidad, mantenibilidad y entrega de valor al negocio.",
+        "Implementé una arquitectura de estado con Apollo Client y GraphQL en CSR, aplicando Optimistic UI, normalización de caché y re-fetching para lograr una experiencia más fluida y consistente. También construí queries y mutations mixtas conectando front y backend GraphQL, complementadas con Context API + useReducer para manejar estado local complejo.",
+        "Migré class components legacy a functional components con hooks personalizados, mejorando la calidad del código base y facilitando su mantenimiento a largo plazo. Esta evolución permitió modernizar el frontend sin romper flujos existentes ni afectar la continuidad operativa.",
+        "Implementé una capa de seguridad para feature flags mediante encriptación del valor de flags en backend y frontend usando crypto, evitando exponer nombres de funciones y permisos por usuario en peticiones GraphQL visibles. Este enfoque reforzó la protección de lógica sensible y redujo riesgos de acceso indebido.",
+        "Implementé visibilidad de nuevas secciones basada en roles y permisos de usuario con casbin, desarrollando componentes React asociados y lógica de control de acceso en frontend. Esto permitió habilitar experiencias diferenciadas según perfil, manteniendo orden y trazabilidad en la plataforma.",
+        "Resolví bugs críticos en el módulo de tracking de cargas marítimas, depurando coordenadas lat/long incorrectas que afectaban la visualización en mapa de seguimiento en tiempo real con google-map-react. Además, ejecuté mejoras iterativas en el módulo de reportes, corrigiendo formatos y agregando columnas según requerimientos del negocio logístico.",
+        "Optimicé performance frontend con Chrome DevTools Profiler, identificando cuellos de botella en re-renders y aplicando buenas prácticas de calidad con ESLint, Prettier, Husky y GitHub Actions CI. También brindé soporte técnico a usuarios internos y empresariales, resolviendo incidencias funcionales con foco en continuidad del servicio."
       ],
       "technologies": [
         "React",
@@ -230,13 +228,13 @@
       "endDate": "2021-01",
       "summary": "Desarrollador frontend especializado en soluciones WordPress personalizadas para el sector farmacéutico, con enfoque en UI/UX y optimización de performance. Participé en proyectos con tecnologías modernas como React y Angular, aplicando metodologías ágiles.",
       "highlights": [
-        "Desarrollo y personalización de temas y plugins WordPress utilizando PHP, HTML, CSS y JavaScript, adaptando funcionalidades a requerimientos específicos del sector farmacéutico",
-        "Implementación de mejoras de UI/UX en interfaces de usuario, optimizando la experiencia del cliente final y aumentando la usabilidad de las aplicaciones",
-        "Optimización de performance frontend en sitios WordPress, reduciendo tiempos de carga y mejorando el posicionamiento SEO",
-        "Gestión e implementación de campañas publicitarias digitales mediante desarrollo frontend personalizado, contribuyendo al crecimiento de la presencia online de clientes",
-        "Contribución en proyectos con tecnologías modernas como React y Angular, desarrollando componentes reutilizables y funcionalidades avanzadas",
-        "Colaboración con equipos multidisciplinarios bajo metodologías ágiles utilizando JIRA para la gestión eficiente de tareas y entregas",
-        "Mantenimiento y resolución de issues técnicos en sitios WordPress existentes, garantizando estabilidad y continuidad del servicio"
+        "Diseñé y desarrollé soluciones frontend personalizadas para el sector farmacéutico, combinando WordPress, PHP, HTML, CSS y JavaScript para adaptar sitios y funcionalidades a requerimientos específicos del negocio. Enfocado en UI/UX y performance, contribuí a mejorar la experiencia del cliente final, la usabilidad y la presencia online de los clientes.",
+        "Desarrollé y personalicé temas y plugins WordPress, implementando funcionalidades a medida para resolver necesidades concretas del sector farmacéutico sin comprometer la estabilidad del sitio. Este enfoque permitió mantener una base flexible y escalable para futuras evoluciones del producto.",
+        "Implementé mejoras de UI/UX en interfaces de usuario, optimizando la experiencia de navegación y elevando la usabilidad de las aplicaciones. Apliqué criterios de diseño orientados a conversión y claridad visual para mejorar la interacción del usuario final.",
+        "Optimicé el performance frontend en sitios WordPress, reduciendo tiempos de carga y mejorando el posicionamiento SEO. Estas mejoras aportaron una experiencia más rápida y eficiente, con impacto directo en visibilidad y retención.",
+        "Gestioné e implementé campañas publicitarias digitales mediante desarrollo frontend personalizado, fortaleciendo la presencia online de clientes y apoyando objetivos de crecimiento comercial. Alineé la implementación técnica con necesidades de marketing y comunicación.",
+        "Contribuí en proyectos con React y Angular, desarrollando componentes reutilizables y funcionalidades avanzadas que facilitaron la escalabilidad de las interfaces. Este trabajo permitió mantener consistencia visual y acelerar entregas futuras.",
+        "Colaboré con equipos multidisciplinarios bajo metodologías ágiles, utilizando JIRA para organizar tareas, priorizar entregas y asegurar seguimiento eficiente del trabajo. También mantuve y resolví issues técnicos en sitios WordPress existentes, garantizando estabilidad y continuidad del servicio."
       ],
       "technologies": [
         "PHP",
