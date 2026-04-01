@@ -58,8 +58,8 @@
       "summary": "Desarrollador enfocado en microservicios, web scraping y gestión de contenido para automatización de diversos procesos empresariales. Implementando un chatbot de WhatsApp, un scraper avanzado y un backoffice con Strapi.",
 
       "highlights": [
-        "Diseñé un ecosistema integral de automatización, combinando un backoffice en React con un API backend en Nest, encargado de gestionar scrapping y búsquedas industriales. Este sistema, integrado con Strapi CMS y Google Sheets API, permite gestionar usuarios, visualizar solicitudes, automatizar búsquedas y generar reportes. Además, el chatbot impulsado por Twilio, WhatsApp Empresarial y OpenAI Assistant API, automatiza las consultas de repuestos, combinando una lógica conversacional avanzada, optimización de tokens y un flujo ágil y económico.",
-        "Desarrollé un backoffice con Strapi CMS y React 18, integrando módulos de UI administrativa para gestionar usuarios internos/externos, visualizar solicitudes, seguimiento de usuarios y enviar mensajería masiva, integrando el consumo de API REST.",
+        "Diseñé un ecosistema integral de automatización, combinando un backoffice en React 18 (con Zustand para estado global eficiente, Zod para validación de schemas y shadcn/ui para componentes UI modernos) con un API backend en NestJS. Este sistema, integrado con Strapi CMS y Google Sheets API, gestiona usuarios, visualiza solicitudes, automatiza búsquedas industriales y genera reportes dinámicos.",
+        "Desarrollé un backoffice administrativo con Strapi CMS y React 18, integrando módulos UI avanzados (shadcn/ui), gestión de estado con Zustand y validación estricta con Zod. Permite manejar usuarios internos/externos, visualizar solicitudes en tiempo real, seguimiento personalizado y mensajería masiva vía API REST.",
         "En el API desarrollé la automatización de búsquedas industriales internas y habilitar registro de clientes, priorizando un almacenamiento para una BD PostgreSQL para futuro control operativo y visualización.",
         "El chatbot, integrado con Twilio, WhatsApp Empresarial y OpenAI Assistant API v2, automatiza consultas de repuestos industriales. Utiliza un scrapper que activa la API REST, evaluando si la información es reciente o si se debe scrapear nuevamente. Incluye seis funciones personalizadas, una lógica conversacional avanzada anti-prompt injection, y un template corporativo, con clean threads y una optimización eficiente de tokens, logrando un flujo ágil y económico.",
         "Integré Twilio WhatsApp Business API con webhooks robustos y botones interactivos, junto a Socket.IO para comunicación en tiempo real, evitando fallos de conectividad y escalando mensajería empresarial masiva.",
@@ -67,6 +67,9 @@
         "Implementé scraper en NestJS con Puppeteer y OpenAI Vision API, extrayendo datos automatizados de portales industriales con manejo de pools concurrentes, integrando API REST para validación de 'recientes' y escalabilidad."
       ],
       "technologies": [
+        "Zustand",
+        "Zod",
+        "shadcdn/ui",
         "React 18",
         "NestJS",
         "Express.js",
@@ -107,7 +110,8 @@
         "Desarrollé arquitectura de microservicios con GraphQL Subscriptions y WebSockets para comunicación en tiempo real, habilitando actualizaciones instantáneas de inventario, ventas y alertas de stock crítico, evitando inconsistencias en entornos distribuidos.",
         "Implementé sistema avanzado de inventario con gestión de fechas de vencimiento, categorías, ubicaciones, proveedores y alertas automáticas de reposición integradas con códigos de barras, optimizando rotación de stock y reduciendo pérdidas.",
         "Desarrollé microservicio independiente en NestJS para generación de reportes empresariales en PDF/CSV con arquitectura limpia, escalable para volúmenes altos y exportación rápida.",
-        "Integré Supabase para autenticación OAuth con Google Sign-In, almacenamiento en tiempo real y sincronización automática entre dispositivos móviles y web, junto a pipeline CI/CD con GitHub Actions para deployments multiplataforma y versionado remoto eficiente."
+        "Integré Supabase para autenticación OAuth con Google Sign-In, almacenamiento en tiempo real y sincronización automática entre dispositivos móviles y web, junto a pipeline CI/CD con GitHub Actions para deployments multiplataforma y versionado remoto eficiente.",
+        "Implementé AWS lambda generacion de Reportes y almacenamiento en S3, optimizando costos y escalabilidad para generación de reportes empresariales bajo demanda, con integración de notificaciones por email al finalizar el proceso."
       ],
       "wishlist": [
         "Sistema de caché distribuido con Redis para optimización de consultas y connection pooling entre servicios",
