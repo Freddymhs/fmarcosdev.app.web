@@ -55,8 +55,7 @@
       "type": "contract",
       "startDate": "2025-07",
       "endDate": "2025-12",
-      "summary": "Desarrollador enfocado en microservicios, web scraping y gestión de contenido para automatización de diversos procesos empresariales. Implementando un chatbot de WhatsApp, un scraper avanzado y un backoffice con Strapi.",
-
+      "summary": "Diseñé e implementé un ecosistema completo de automatización para procesos industriales, combinando un backoffice moderno en React 18 con un API robusta en NestJS. La solución integra CMS, scraping inteligente y servicios externos para gestionar usuarios, solicitudes y generación de reportes en tiempo real. Además, desarrollé un chatbot empresarial conectado a WhatsApp que automatiza la búsqueda de repuestos mediante IA y scraping dinámico, optimizando costos y tiempos de respuesta. A nivel de arquitectura, trabajé con microservicios escalables, manejo de concurrencia y estrategias anti-bloqueo para asegurar estabilidad y eficiencia operativa.",
       "highlights": [
         "Diseñé un ecosistema integral de automatización, combinando un backoffice en React 18 (con Zustand para estado global eficiente, Zod para validación de schemas y shadcn/ui para componentes UI modernos) con un API backend en NestJS. Este sistema, integrado con Strapi CMS y Google Sheets API, gestiona usuarios, visualiza solicitudes, automatiza búsquedas industriales y genera reportes dinámicos.",
         "Desarrollé un backoffice administrativo con Strapi CMS y React 18, integrando módulos UI avanzados (shadcn/ui), gestión de estado con Zustand y validación estricta con Zod. Permite manejar usuarios internos/externos, visualizar solicitudes en tiempo real, seguimiento personalizado y mensajería masiva vía API REST.",
@@ -102,7 +101,7 @@
       "type": "full-time",
       "startDate": "2024-04",
       "endDate": "2025-01",
-      "summary": "Desarrollo fullstack de sistema empresarial de punto de venta e inventario con backend GraphQL/NestJS, microservicios y CI/CD. Incluye aplicación multiplataforma Flutter con integración de hardware especializado (escáneres de códigos de barras, impresión térmica Bluetooth), 9 roles granulares y comunicación en tiempo real.",
+      "summary": "Diseñé e implementé un sistema POS multiplataforma enfocado en retail, construyendo un backend basado en GraphQL con Nexus, NestJS y PostgreSQL, organizado en microservicios escalables. La arquitectura soporta múltiples roles empresariales con control granular, sincronización en tiempo real mediante WebSockets y generación eficiente de reportes, optimizando la operación y toma de decisiones. En el frontend, desarrollé la aplicación en Flutter con integración de hardware POS como escáneres y impresoras térmicas, asegurando una experiencia fluida en Android, iOS y web. Además, integré autenticación y sincronización en tiempo real con Supabase, junto a pipelines CI/CD y servicios en AWS para automatizar despliegues y generación de reportes bajo demanda.",
       "highlights": [
         "Diseñé un ecosistema POS multiplataforma completo en Flutter con backend GraphQL en Nexus y PostgreSQL, integrando microservicios NestJS y Supabase para autenticación, sincronización en tiempo real y reportes empresariales. Este sistema gestiona inventarios con alertas automáticas, 9 roles granulares, ventas con hardware POS y actualizaciones instantáneas vía WebSockets, optimizando operaciones retail con escalabilidad, sincronización automática y ROI mediante CI/CD automatizado.",
         "Desarrollé sistema POS Flutter multiplataforma con integración de hardware como escáneres de códigos de barras e impresoras térmicas Bluetooth ESC/POS, asegurando ventas fluidas y compatibilidad cross-device para Android, iOS y PWA.",
@@ -192,7 +191,7 @@
       "url": "",
       "startDate": "2021-02",
       "endDate": "2024-03",
-      "summary": "Desarrollador Fullstack y Soporte especializado en React, Next.js y GraphQL, contribuyendo al mantenimiento y desarrollo de features en plataforma SaaS empresarial. Enfocado en resolver problemas técnicos y desarrollo de componentes reutilizables.",
+      "summary": "Trabajé en el desarrollo y evolución de una plataforma SaaS de logística marítima, utilizando React 18 y Next.js 13, donde contribuí a la construcción de componentes reutilizables y mejoras continuas del producto. Participé tanto en desarrollo frontend como en soporte técnico, asegurando estabilidad, escalabilidad y entrega constante de valor al negocio. Implementé integración con GraphQL mediante Apollo Client, optimizando la gestión de estado y mejorando la experiencia de usuario con técnicas como caché normalizada y actualizaciones optimistas. Además, modernicé el código migrando componentes legacy a hooks, reforcé la seguridad en feature flags y optimicé el rendimiento, resolviendo problemas críticos en módulos clave como tracking en tiempo real.",
       "highlights": [
         "Desarrollé y mantuve una plataforma SaaS de logística marítima en React 18 y Next.js 13, creando componentes reutilizables sobre el design system interno (@klog/klog-design + Ant Design) para acelerar la evolución del producto. Mi trabajo integró frontend, soporte técnico y mejoras continuas orientadas a escalabilidad, mantenibilidad y entrega de valor al negocio.",
         "Implementé una arquitectura de estado con Apollo Client y GraphQL en CSR, aplicando Optimistic UI, normalización de caché y re-fetching para lograr una experiencia más fluida y consistente. También construí queries y mutations mixtas conectando front y backend GraphQL, complementadas con Context API + useReducer para manejar estado local complejo.",
@@ -230,7 +229,7 @@
       "url": "",
       "startDate": "2020-06",
       "endDate": "2021-01",
-      "summary": "Desarrollador frontend especializado en soluciones WordPress personalizadas para el sector farmacéutico, con enfoque en UI/UX y optimización de performance. Participé en proyectos con tecnologías modernas como React y Angular, aplicando metodologías ágiles.",
+      "summary": "Desarrollé soluciones frontend para el sector farmacéutico, trabajando principalmente con WordPress, PHP y JavaScript para crear sitios y funcionalidades personalizadas según necesidades del negocio. Me enfoqué en mejorar la experiencia de usuario, la usabilidad y el rendimiento, impactando directamente en la presencia digital y conversión de los clientes. Además, optimicé performance y SEO en múltiples proyectos, desarrollé temas y plugins a medida, y colaboré en iniciativas con React y Angular para construir interfaces más escalables. También trabajé en conjunto con equipos multidisciplinarios bajo metodologías ágiles, asegurando entregas eficientes y continuidad operativa..",
       "highlights": [
         "Diseñé y desarrollé soluciones frontend personalizadas para el sector farmacéutico, combinando WordPress, PHP, HTML, CSS y JavaScript para adaptar sitios y funcionalidades a requerimientos específicos del negocio. Enfocado en UI/UX y performance, contribuí a mejorar la experiencia del cliente final, la usabilidad y la presencia online de los clientes.",
         "Desarrollé y personalicé temas y plugins WordPress, implementando funcionalidades a medida para resolver necesidades concretas del sector farmacéutico sin comprometer la estabilidad del sitio. Este enfoque permitió mantener una base flexible y escalable para futuras evoluciones del producto.",
@@ -377,11 +376,12 @@
       "complexity": "Simple"
     },
     {
+      "published": true,
       "type": "Mobile App",
       "name": "PriorityBox APP",
       "startDate": "2024-02",
       "endDate": "2025-01",
-      "description": "Aplicación React Native que implementa la Matriz de Eisenhower para organizar y priorizar deseos vs necesidades. Permite clasificar elementos según relevancia (alta/baja) y tipo (deseo/necesidad) para facilitar decisiones de compra más conscientes.",
+      "description": "Aplicación React Native que implementa la Matriz de Eisenhower para organizar y priorizar deseos vs necesidades. Permite clasificar elementos según relevancia (alta/baja) y tipo (deseo/necesidad) para facilitar decisiones más conscientes.",
       "technologies": [
         "React Native",
         "Expo",
@@ -389,7 +389,7 @@
         "React Navigation",
         "Native Base"
       ],
-      "url": "",
+      "url": "https://github.com/Freddymhs/priorityBox",
       "githubUrl": "https://github.com/Freddymhs/priorityBox",
       "image": "prioritybox-matriz-image",
       "features": [
@@ -403,11 +403,12 @@
       "complexity": "Medio"
     },
     {
+      "published": true,
       "type": "Chrome Extension / Web App",
       "name": "LinKs (noTabs)",
       "startDate": "2023-04",
       "endDate": "2023-06",
-      "description": "Extensión ligera para guardar links de trabajo/estudio, agruparlos por tags y abrirlos rápido desde el navegador. Pensada para mi flujo diario de soporte y lectura.",
+      "description": "Extensión de Chrome ligera para guardar links de trabajo/estudio, agruparlos por tags y abrirlos rápido desde el navegador. Pensada para mi flujo diario de estudio y trabajo.",
       "technologies": [
         "React 18",
         "TypeScript",
@@ -454,6 +455,8 @@
         "react-markdown",
         "three"
       ],
+      "url": "https://www.fmarcos.dev/",
+      "githubUrl": "https://github.com/Freddymhs/fmarcosdev.app.web",
       "features": [
         "Biblioteca de componentes atómicos y áreas templated alineadas con la librería local @fmarcosdev/ui-core y validación global de variables CSS",
         "Flujo automatizado que genera CV en HTML/PDF/DOCX en cada push a development usando resume-cli + wkhtmltopdf + pandoc, luego reposiciona los archivos en el repositorio y sincroniza main",
