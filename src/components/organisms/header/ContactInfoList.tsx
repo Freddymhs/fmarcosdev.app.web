@@ -37,7 +37,7 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = "CV_Fullstack_Freddy_Marcos.pdf";
+    a.download = "CV_Freddy_Huaylla_Fullstack.pdf";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

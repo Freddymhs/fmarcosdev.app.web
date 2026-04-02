@@ -698,6 +698,7 @@
         "Modular Architecture",
         "Clean Architecture",
         "Microservices Architecture",
+        "System Design",
         "Swagger/OpenAPI Documentation",
         "Error Handling Middleware"
       ]
@@ -776,6 +777,9 @@
         "Prettier",
         "Chrome DevTools",
         "Vitest",
+        "Unit Testing",
+        "Testing",
+        "Performance Optimization",
         "Husky"
       ]
     },
@@ -803,6 +807,17 @@
         "Code Refactoring",
         "Circuit Breaker",
         "Asynchronous Programming"
+      ]
+    },
+    {
+      "name": "DevOps & Infrastructure",
+      "level": "Intermediate",
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "AWS CDK",
+        "Monorepo",
+        "Infrastructure as Code"
       ]
     },
     {
