@@ -632,7 +632,7 @@
         "GitHub Actions",
         "Docker Compose"
       ],
-      "url": "http://localhost:3001/docs",
+      "url": "https://agriplan-api-nestjs-production.up.railway.app/docs",
       "githubUrl": "https://github.com/Freddymhs/agriplan-api-nestjs",
       "image": "agriplan-api-nestjs_zibhpf",
       "features": [
