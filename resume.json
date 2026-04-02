@@ -435,7 +435,7 @@
       "name": "fmarcos.dev – Portfolio SPA con pipeline de generación de CV",
       "startDate": "2025-05",
       "endDate": "-infinite-",
-      "description": "SPA profesional basada en React 19 + Vite que consume el mismo JSON Resume que alimenta el sitio, combinando Atomic Design con un componente DailyFocus que resalta prioridades. La misma data se transforma automáticamente en HTML/PDF/DOCX durante el CI (resume-cli con theme dev-ats-es, wkhtmltopdf y pandoc) y se publica desde la rama development gracias a GitHub Actions, guardando los artefactos en src/generate-resume-files-by-workflow.",
+      "description": "SPA profesional basada en React 19 + Vite que consume el mismo JSON Resume que alimenta el sitio, combinando Atomic Design con un componente DailyFocus que resalta prioridades. La misma data se transforma automáticamente en HTML/PDF/DOCX durante el CI usando un tema ATS propio publicado en npm (jsonresume-theme-dev-ats-es), fork personalizado con soporte español y formato de fechas estándar ATS. Los artefactos se publican desde la rama development gracias a GitHub Actions, guardando los archivos en src/generate-resume-files-by-workflow.",
       "technologies": [
         "React 19",
         "Vite",
@@ -444,8 +444,9 @@
         "React Router 7",
         "Atomic Design",
         "@fmarcosdev/ui-core",
+        "jsonresume-theme-dev-ats-es (npm)",
         "JSON Resume",
-        "resume-cli (dev-ats-es)",
+        "resume-cli",
         "wkhtmltopdf",
         "pandoc",
         "GitHub Actions",
@@ -459,7 +460,7 @@
       "githubUrl": "https://github.com/Freddymhs/fmarcosdev.app.web",
       "features": [
         "Biblioteca de componentes atómicos y áreas templated alineadas con la librería local @fmarcosdev/ui-core y validación global de variables CSS",
-        "Flujo automatizado que genera CV en HTML/PDF/DOCX en cada push a development usando resume-cli + wkhtmltopdf + pandoc, luego reposiciona los archivos en el repositorio y sincroniza main",
+        "Publicó y mantiene jsonresume-theme-dev-ats-es en npm (fork con soporte ATS en español, fechas MM/YYYY y filtrado por flag published); pipeline CI/CD genera CV en HTML/PDF/DOCX en cada push usando resume-cli + wkhtmltopdf + pandoc, reposiciona los artefactos en el repo y sincroniza main automáticamente",
         "Blog con helical scroll (three.js) que consume un API público configurable vía VITE_API_GATEWAY_URL, maneja paginación, errores y carga incremental de tarjetas",
         "DailyFocusPill con hooks personalizados para mostrar proyectos/estudios incompletos y navega entre Landing y Main Layouts",
         "Suite de calidad: Vitest, Cypress y comandos tsc -b + vite build generan confianza antes de publicar"
