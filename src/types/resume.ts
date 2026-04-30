@@ -76,6 +76,7 @@ export interface ResumeCertificate {
   date?: string;
   startDate?: string;
   url?: string;
+  category?: string;
 }
 
 export interface ResumeEducation {

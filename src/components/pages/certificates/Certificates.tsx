@@ -1,4 +1,5 @@
 import { Download, ExternalLink } from "lucide-react";
+import { useState } from "react";
 import { tv } from "tailwind-variants";
 import { useResumeData } from "../../../hooks/useResumeData";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
@@ -62,15 +63,58 @@ const actionIconStyles = tv({
   base: "mr-1",
 });
 
+const filterBarStyles = tv({
+  base: "flex flex-wrap gap-2 mb-6",
+});
+
+const filterPillStyles = tv({
+  base: "px-3 py-1 rounded-full text-xs font-mono border transition-colors cursor-pointer",
+  variants: {
+    active: {
+      true: "bg-cv-dark text-cv-light border-cv-dark",
+      false: "bg-transparent text-cv-secondary border-cv-secondary hover:border-cv-dark hover:text-cv-dark",
+    },
+  },
+});
+
+const ALL_CATEGORY = "todos";
+
 const Certificates = () => {
   const { certificates } = useResumeData();
+  const [activeCategory, setActiveCategory] = useState(ALL_CATEGORY);
+
+  const categories = [
+    ALL_CATEGORY,
+    ...Array.from(
+      new Set(certificates.map((c) => c.category).filter(Boolean) as string[])
+    ).sort(),
+  ];
+
+  const visibleCertificates =
+    activeCategory === ALL_CATEGORY
+      ? certificates
+      : certificates.filter((c) => c.category === activeCategory);
 
   const Content = () => {
     return (
       <div className={contentContainerStyles()}>
         <div className={gridWrapperStyles()}>
+          <div className={filterBarStyles()}>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={filterPillStyles({ active: activeCategory === cat })}
+              >
+                {cat}
+                {cat === ALL_CATEGORY && (
+                  <span className="ml-1 opacity-60">{certificates.length}</span>
+                )}
+              </button>
+            ))}
+          </div>
           <div className={certificatesGridStyles()}>
-            {certificates.map((cert) => (
+            {visibleCertificates.map((cert) => (
               <div key={cert.name ?? ""} className={certificateCardStyles()}>
                 <div className={imageContainerStyles()}>
                   <img

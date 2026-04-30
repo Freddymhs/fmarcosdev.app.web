@@ -1,9 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
 import "highlight.js/styles/github.css";
 import "katex/dist/katex.min.css";
-import HelicalScrollCards, {
-  CardItem,
-} from "../../organisms/blog/HelicalScrollCards";
+import { HelicalScrollCards } from "@fmarcosdev/helical-scroll-cards";
+import type { CardItem } from "@fmarcosdev/helical-scroll-cards";
 import { SEOHead } from "../../atoms";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
 import useMediaQuery from "../../../hooks/useMediaQuery";

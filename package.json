@@ -21,6 +21,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
     "@cloudinary/url-gen": "^1.21.0",
+    "@fmarcosdev/helical-scroll-cards": "^1.0.0",
     "@fmarcosdev/ui-core": "^0.1.1",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.17",
