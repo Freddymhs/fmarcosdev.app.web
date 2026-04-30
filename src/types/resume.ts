@@ -38,6 +38,7 @@ export interface ResumeWork {
   summary?: string;
   highlights?: string[];
   keywords?: string[];
+  technologies?: string[];
 }
 
 export interface ResumeSkill {
@@ -72,6 +73,7 @@ export interface ResumeBasics {
 export interface ResumeCertificate {
   name?: string;
   issuer?: string;
+  date?: string;
   startDate?: string;
   url?: string;
 }
@@ -86,6 +88,10 @@ export interface ResumeEducation {
   courses?: string[];
 }
 
+export interface ResumeMeta {
+  lastUpdated?: string;
+}
+
 export interface Resume {
   basics: ResumeBasics;
   work?: ResumeWork[];
@@ -94,4 +100,5 @@ export interface Resume {
   education?: ResumeEducation[];
   studies: ResumeStudy[];
   certificates?: ResumeCertificate[];
+  meta?: ResumeMeta;
 }

@@ -2,10 +2,11 @@ import { AboutMeTitle } from "../../../constants";
 import { AnimatedTimeline } from "../../organisms";
 import { SEOHead } from "../../atoms";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
-import resumeData from "../../../../resume.json";
+import { useResumeData } from "../../../hooks/useResumeData";
 import ProfessionalOverview from "../../organisms/overview/ProfessionalOverView";
 
 const AboutMe = () => {
+  const { summary } = useResumeData();
   return (
     <>
       <SEOHead
@@ -26,7 +27,7 @@ const AboutMe = () => {
         content={{
           topSection: <ProfessionalOverview />,
           title: AboutMeTitle,
-          subtitle: resumeData.basics.summary,
+          subtitle: summary,
           content: <AnimatedTimeline />,
         }}
       />

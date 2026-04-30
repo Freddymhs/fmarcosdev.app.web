@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { tv } from "tailwind-variants";
-import resumeData from "../../../../resume.json";
+import { useResumeData } from "../../../hooks/useResumeData";
 import { awardsText } from "../../../constants";
 import ShowPills from "../../molecules/job-experience/TechPills";
 
@@ -241,7 +241,7 @@ function TimelineItem({
 }
 
 const AnimatedTimeline = () => {
-  const { work } = resumeData;
+  const { work } = useResumeData();
 
   return (
     <div className={timelineContainerStyles()}>
@@ -249,12 +249,12 @@ const AnimatedTimeline = () => {
         <div className={timelineListStyles()}>
           {work.map((item, index) => (
             <TimelineItem
-              key={`${item.name}-${index}`}
-              name={item.name}
-              position={item.position}
-              startDate={item.startDate}
-              endDate={item.endDate}
-              summary={item.summary}
+              key={`${item.name ?? index}`}
+              name={item.name ?? ""}
+              position={item.position ?? ""}
+              startDate={item.startDate ?? ""}
+              endDate={item.endDate ?? ""}
+              summary={item.summary ?? ""}
               highlights={item.highlights}
               technologies={item.technologies}
             />

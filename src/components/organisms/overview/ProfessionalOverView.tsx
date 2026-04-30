@@ -1,78 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { tv } from "tailwind-variants";
-import resumeData from "../../../../resume.json";
+import { useResumeData } from "../../../hooks/useResumeData";
+import type { ResumeWork, ResumeSkill } from "../../../types/resume";
 import { ProfessionalOverviewTexts as texts } from "../../../constants/ProfessionalOverviewTexts";
-
-// Definición de interfaces basadas en resume.json
-interface Profile {
-  network: string;
-  url: string;
-}
-
-interface Basics {
-  name: string;
-  label: string;
-  email?: string;
-  phone?: string;
-  url?: string;
-  summary?: string;
-  location?: {
-    city: string;
-    countryCode: string;
-    timezone: string;
-  };
-  profiles: Profile[];
-}
-
-interface WorkExperience {
-  name: string;
-  position: string;
-  type: string;
-  startDate: string;
-  endDate?: string;
-  summary?: string;
-  highlights?: string[];
-  technologies?: string[];
-}
-
-interface Project {
-  name: string;
-  // ... otras propiedades relevantes
-}
-
-interface Skill {
-  name: string;
-  level: string;
-  keywords?: string[];
-}
-
-interface Certificate {
-  name: string;
-  issuer: string;
-  date: string;
-  url: string;
-}
-
-interface Language {
-  language: string;
-  fluency: string;
-}
-
-interface Meta {
-  lastUpdated?: string;
-  // ... otras propiedades de meta
-}
-
-interface ResumeData {
-  meta: Meta;
-  basics: Basics;
-  work: WorkExperience[];
-  projects: Project[];
-  skills: Skill[];
-  certificates: Certificate[];
-  languages: Language[];
-  // ... otras secciones si se necesitan
-}
 
 // ------------------ estilos (tailwind-variants) ------------------
 const outerWrapper = tv({
@@ -132,46 +62,43 @@ const parseYearFrom = (dateString?: string): number => {
   return Number(year || NaN);
 };
 
-const calculateExperienceYears = (work: WorkExperience[]): number => {
+const calculateExperienceYears = (work: ResumeWork[]): number => {
   const startYears = work
     .map((job) => parseYearFrom(job.startDate))
     .filter((year) => !isNaN(year));
 
-  if (startYears.length === 0) return 4; // Valor por defecto si no hay datos
+  if (startYears.length === 0) return 4;
 
   const earliestYear = Math.min(...startYears);
   const currentYear = new Date().getFullYear();
   const calculatedYears = currentYear - earliestYear;
 
-  // Asegurarse de que al menos sea 1 año
   return Math.max(1, calculatedYears);
 };
 
 const extractExperienceYearsFromSummary = (
   summary: string | undefined,
 ): number => {
-  if (!summary) return 4; // Valor por defecto
+  if (!summary) return 4;
 
-  // Buscar patrón "+X años" o "X+ años" o "X años" en el resumen
   const match = summary.match(/(\d+)\s*\+\s*años|\+(\d+)\s*años/);
   if (match) {
-    // match[1] for "X+ años" pattern, match[2] for "+X años" pattern
     const years = match[1] || match[2];
     if (years) {
       return parseInt(years);
     }
   }
 
-  return 4; // Valor por defecto si no se encuentra
+  return 4;
 };
 
-const getTopTechnologies = (skills: Skill[], limit: number = 5): string[] => {
+const getTopTechnologies = (skills: ResumeSkill[], limit: number = 5): string[] => {
   const techSet = new Set<string>();
 
   skills.forEach((skill) => {
     if (Array.isArray(skill.keywords)) {
       skill.keywords.forEach((keyword) => techSet.add(keyword));
-    } else {
+    } else if (skill.name) {
       techSet.add(skill.name);
     }
   });
@@ -179,13 +106,13 @@ const getTopTechnologies = (skills: Skill[], limit: number = 5): string[] => {
   return Array.from(techSet).slice(0, limit);
 };
 
-const countUniqueTechnologies = (skills: Skill[]): number => {
+const countUniqueTechnologies = (skills: ResumeSkill[]): number => {
   const techSet = new Set<string>();
 
   skills.forEach((skill) => {
     if (Array.isArray(skill.keywords)) {
       skill.keywords.forEach((keyword) => techSet.add(keyword));
-    } else {
+    } else if (skill.name) {
       techSet.add(skill.name);
     }
   });
@@ -195,26 +122,23 @@ const countUniqueTechnologies = (skills: Skill[]): number => {
 
 // ------------------ component ------------------
 export default function ProfessionalOverview() {
-  const data = resumeData as ResumeData;
+  const { label, summary, email, location, profiles, work, skills, certificates, meta } = useResumeData();
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
-  // Obtener años de experiencia del resumen o calcularlos
+  const typedWork = work as ResumeWork[];
+  const typedSkills = skills as ResumeSkill[];
+
   const experienceYears =
-    extractExperienceYearsFromSummary(data.basics.summary) ||
-    calculateExperienceYears(data.work);
+    extractExperienceYearsFromSummary(summary) ||
+    calculateExperienceYears(typedWork);
 
-  // Métricas
-  const techCount = countUniqueTechnologies(data.skills);
-  const certificatesCount = data.certificates.length;
+  const techCount = countUniqueTechnologies(typedSkills);
+  const certificatesCount = certificates.length;
 
-  // Tecnologías principales (máx 8)
-  const topTechs = getTopTechnologies(data.skills, 5);
-  const totalTechs = countUniqueTechnologies(data.skills);
+  const topTechs = getTopTechnologies(typedSkills, 5);
+  const totalTechs = countUniqueTechnologies(typedSkills);
   const remainingTechs = totalTechs - topTechs.length;
-
-  // Redes sociales
-  const profiles = data.basics.profiles || [];
 
   useEffect(() => {
     const target = ref.current;
@@ -243,7 +167,7 @@ export default function ProfessionalOverview() {
           <div className="flex items-center justify-center gap-3">
             <span className="text-4xl">💻</span>
             <h2 className={titleStyles()}>
-              {`${experienceYears}+ años ${data.basics.label}`}
+              {`${experienceYears}+ años ${label}`}
             </h2>
           </div>
 
@@ -267,7 +191,7 @@ export default function ProfessionalOverview() {
                 </span>
               </span>
             )}
-            <span>🇨🇱 {data.basics.location?.city || texts.chile}</span>
+            <span>🇨🇱 {location?.city || texts.chile}</span>
             <span>🌍 {texts.remoteReady}</span>
             <span className="rounded-sm px-2 py-0.5 bg-green-100 text-green-800 text-xs font-medium">
               {texts.immediatelyAvailable}
@@ -277,12 +201,12 @@ export default function ProfessionalOverview() {
 
         {/* contacto / links */}
         <div className={contactRow()}>
-          {data.basics.email && (
+          {email && (
             <a
               className="flex items-center gap-2 hover:underline"
-              href={`mailto:${data.basics.email}`}
+              href={`mailto:${email}`}
             >
-              <span>{data.basics.email}</span>
+              <span>{email}</span>
             </a>
           )}
 
@@ -300,8 +224,8 @@ export default function ProfessionalOverview() {
 
           <span className="text-xs text-orange-600 font-medium">
             {texts.cvUpdated} (
-            {data.meta.lastUpdated &&
-              new Date(data.meta.lastUpdated).toLocaleDateString("es-ES", {
+            {meta?.lastUpdated &&
+              new Date(meta.lastUpdated).toLocaleDateString("es-ES", {
                 year: "numeric",
                 month: "short",
               })}
@@ -311,11 +235,6 @@ export default function ProfessionalOverview() {
 
         {/* stats */}
         <div className={statsGrid()}>
-          {/* <div className={statBox()}>
-            <div className={statNumber()}>{projectsCount}+</div>
-            <div className={statLabel()}>{texts.projectsDelivered}</div>
-          </div> */}
-
           <div className={statBox()}>
             <div className={statNumber()}>{experienceYears}+</div>
             <div className={statLabel()}>{texts.yearsExperience}</div>
@@ -383,7 +302,7 @@ export default function ProfessionalOverview() {
               <span>
                 {texts.timezoneFlexible.replace(
                   "{location}",
-                  data.basics.location?.city || texts.chile,
+                  location?.city || texts.chile,
                 )}
               </span>
             </li>

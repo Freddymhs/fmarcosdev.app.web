@@ -1,6 +1,6 @@
 import { Download, ExternalLink } from "lucide-react";
 import { tv } from "tailwind-variants";
-import resumeData from "../../../../resume.json";
+import { useResumeData } from "../../../hooks/useResumeData";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
 
 // Estilos usando Tailwind Variants
@@ -63,7 +63,7 @@ const actionIconStyles = tv({
 });
 
 const Certificates = () => {
-  const { certificates } = resumeData;
+  const { certificates } = useResumeData();
 
   const Content = () => {
     return (
@@ -71,17 +71,17 @@ const Certificates = () => {
         <div className={gridWrapperStyles()}>
           <div className={certificatesGridStyles()}>
             {certificates.map((cert) => (
-              <div key={cert.name} className={certificateCardStyles()}>
+              <div key={cert.name ?? ""} className={certificateCardStyles()}>
                 <div className={imageContainerStyles()}>
                   <img
-                    src={"certificates/" + cert.name + ".png"}
-                    alt={cert.name}
+                    src={"certificates/" + (cert.name ?? "") + ".png"}
+                    alt={cert.name ?? ""}
                     className={certificateImageStyles()}
                   />
                 </div>
                 <div className={cardContentStyles()}>
                   <h3 className={certificateTitleStyles()}>
-                    {cert.name.replace(/-/g, " ")}
+                    {(cert.name ?? "").replace(/-/g, " ")}
                   </h3>
                   <p className={certificateMetaStyles()}>
                     {cert.issuer} • {cert.date}
@@ -93,7 +93,7 @@ const Certificates = () => {
                     >
                       <ExternalLink size={14} className={actionIconStyles()} /> Ver
                     </button>
-                    <a href={`certificates/${cert.name}.png`} download>
+                    <a href={`certificates/${cert.name ?? ""}.png`} download>
                       <button className={actionButtonStyles({ variant: "download" })}>
                         <Download size={14} className={actionIconStyles()} /> Descargar
                       </button>

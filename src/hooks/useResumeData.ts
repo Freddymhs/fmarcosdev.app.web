@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { Resume, ResumeProject } from "../types/resume";
+import type { Resume, ResumeProject, ResumeMeta } from "../types/resume";
 
 const API_BASE_URL = import.meta.env.VITE_API_GATEWAY_URL;
 
@@ -101,6 +101,7 @@ export const useResumeData = () => {
       incompledteStudies: EMPTY_ARRAY,
       incompletedProjects: EMPTY_ARRAY,
       certificates: EMPTY_ARRAY,
+      meta: null as ResumeMeta | null,
     };
   }
 
@@ -151,6 +152,7 @@ export const useResumeData = () => {
       (item) => item.published === false && item.startDate !== "",
     ),
     certificates: resume.certificates ?? EMPTY_ARRAY,
+    meta: resume.meta ?? null,
   };
 };
 

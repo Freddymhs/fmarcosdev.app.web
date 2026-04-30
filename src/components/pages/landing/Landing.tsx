@@ -6,25 +6,22 @@ import ProgressBar from "../../atoms/progressbar";
 import MessageArea from "../../atoms/messageArea";
 import { SEOHead } from "../../atoms";
 import { useNavigate } from "react-router";
-import resumeData from "../../../../resume.json";
+import { useResumeData } from "../../../hooks/useResumeData";
 import { preload } from "react-dom";
-
-(() => {
-  const { certificates } = resumeData;
-
-  certificates.forEach((cert) => {
-    preload("/certificates/" + cert.name + ".png", {
-      as: "image",
-    });
-  });
-})();
 
 export default function Landing() {
   const navigate = useNavigate();
+  const { certificates } = useResumeData();
 
   const [message, setMessage] = useState("");
   const [progress, setProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    certificates.forEach((cert) => {
+      if (cert.name) preload("/certificates/" + cert.name + ".png", { as: "image" });
+    });
+  }, [certificates]);
 
   const getRandomMessage = useCallback(
     () => WELCOME_MESSAGES[Math.floor(Math.random() * WELCOME_MESSAGES.length)],
