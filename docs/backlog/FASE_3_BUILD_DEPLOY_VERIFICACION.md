@@ -1,6 +1,6 @@
 # FASE 3: Verificacion de Build y Deploy Pipeline
 
-**Status**: PENDIENTE
+**Status**: ✅ COMPLETADO
 **Prioridad**: Alta
 **Dependencias**: FASE_0, FASE_1
 
@@ -43,7 +43,7 @@ Verificar que el fix del build script (`||` → `&&`) funciona end-to-end: local
 
 ## Criterios de Aceptacion
 
-- [ ] `npm run build` local genera `dist/` sin errores
+- [x] `npm run build` local genera `dist/` sin errores
 - [ ] GitHub Actions workflow pasa en verde
 - [ ] Vercel deploy status: READY
 - [ ] https://fmarcos.dev carga correctamente
