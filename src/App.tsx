@@ -41,7 +41,10 @@ const App = () => {
     () => ({
       [INITIAL_ROUTE]: (
         <LandingLayout version={versionApp}>
-          <DailyFocusPill project={project?.name || ''} study={study?.name || ''} />
+          <DailyFocusPill
+            project={project?.name || ""}
+            study={study?.name || ""}
+          />
           <LandingPage />
         </LandingLayout>
       ),
@@ -52,7 +55,7 @@ const App = () => {
       [BLOG_PAGE]: <Blog />,
       [NO_INCLUDED_ROUTE_TO_PAGE]: <Navigate to={HOME_PAGE} replace />,
     }),
-    [versionApp],
+    [versionApp, project, study],
   );
 
   const routeDefinitions = useMemo(
