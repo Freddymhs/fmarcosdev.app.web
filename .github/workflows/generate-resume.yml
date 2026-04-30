@@ -6,6 +6,9 @@ on:
       - development
     paths-ignore:
       - "generate-resume-files-by-workflow/**"
+  repository_dispatch:
+    types:
+      - resume-updated
   workflow_dispatch:
     inputs:
       reason:
@@ -47,6 +50,9 @@ jobs:
           sudo apt update
           sudo apt install -y wkhtmltopdf pandoc
           npm install jsonresume-theme-dev-ats-es resume-cli
+
+      - name: 📥 Fetch resume.json from api.resume
+        run: curl -f "${{ secrets.API_RESUME_URL }}/api/resume" -o resume.json
 
       - name: 📋 Generate Multi Documents
         run: |
@@ -93,6 +99,6 @@ jobs:
 
       - name: ✅ Workflow Completion Notification
         if: success()
-        run: echo "Resume generation, push to development and sync to main completed successfully! 🎉"
-
+        run: echo "Resume generation, push to development and sync to main completed
+          successfully! 🎉"
         #
