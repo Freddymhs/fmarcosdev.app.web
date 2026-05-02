@@ -13,6 +13,8 @@ El build script fue corregido de `||` a `&&` (`package.json` linea 10), por lo q
 | 2 | [CSS variables no usadas](./FASE_2_CSS_VARS_CLEANUP.md) | ✅ | Baja | 3 |
 | 3 | [Verificacion build y deploy](./FASE_3_BUILD_DEPLOY_VERIFICACION.md) | ✅ | Alta | 4 |
 | 4 | [Dependencias deprecadas](./FASE_4_DEPENDENCIAS_DEPRECADAS.md) | ✅ | Baja | 3 |
+| 5 | [HelicalScrollCards → npm](./FASE_5_helical-scroll-cards-npm-guide.md) | ✅ | Media | 1 |
+| 6 | [UI components → @fmarcosdev/ui-core](./FASE_6_UI_CORE_LIBRARY.md) | PENDIENTE | Media | 5 |
 
 ## Dependencias
 
