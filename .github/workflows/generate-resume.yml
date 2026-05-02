@@ -51,6 +51,21 @@ jobs:
           sudo apt install -y wkhtmltopdf pandoc
           npm install jsonresume-theme-dev-ats-es resume-cli
 
+      - name: 🔐 Verify required secrets
+        run: |
+          MISSING=()
+          if [ -z "${{ secrets.API_RESUME_URL }}" ]; then
+            MISSING+=("API_RESUME_URL — URL base de api.resume (ej. https://resume.fmarcos.dev)")
+          fi
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "❌ Faltan secrets requeridos:"
+            for m in "${MISSING[@]}"; do echo "   • $m"; done
+            echo ""
+            echo "Agregar en: repo → Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          echo "✅ API_RESUME_URL — ${{ secrets.API_RESUME_URL }}"
+
       - name: 📥 Fetch resume.json from api.resume
         run: curl -f "${{ secrets.API_RESUME_URL }}/api/resume" -o resume.json
 
