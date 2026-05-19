@@ -99,8 +99,8 @@ jobs:
             echo "Nothing to commit"
             exit 0
           fi
-          git pull --rebase origin main
           git commit -m "🔄 Automated add new resumes and build"
+          git pull --rebase origin main
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
