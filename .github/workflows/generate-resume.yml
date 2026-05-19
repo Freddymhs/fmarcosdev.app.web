@@ -3,9 +3,9 @@ name: 📄 Multi-Format Resume
 on:
   push:
     branches:
-      - development
+      - main
     paths-ignore:
-      - "generate-resume-files-by-workflow/**"
+      - "src/generate-resume-files-by-workflow/**"
   repository_dispatch:
     types:
       - resume-updated
@@ -25,18 +25,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🏁 Initialize Workflow
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
+          ref: main
           persist-credentials: true
-          fetch-depth: 0 # Fetch full history
+          fetch-depth: 0
 
       - name: 🛠️ Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "22.12.0"
 
       - name: 📦 Cache Node Modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
@@ -91,29 +92,19 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-      - name: 🚀 Commit and Push to Development
+      - name: 🚀 Commit and Push to Main
         run: |
           git add .
-          git stash
-          git pull origin development
-          git stash pop
-          git add .
-          git commit -m "🔄 Automated add new resumes and build" || echo "Nothing to commit"
-          git push origin development
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 🔄 Sync Main Branch
-        run: |
-          git fetch origin
-          git checkout main
-          git reset --hard origin/development
-          git push origin main --force
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git pull --rebase origin main
+          git commit -m "🔄 Automated add new resumes and build"
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ✅ Workflow Completion Notification
         if: success()
-        run: echo "Resume generation, push to development and sync to main completed
-          successfully! 🎉"
-        #
+        run: echo "Resume generation and push to main completed successfully! 🎉"
