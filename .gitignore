@@ -7,7 +7,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-package-lock.json
 
 node_modules
 dist
@@ -29,7 +28,6 @@ dist-ssr
 goodstipstailwind.css
 
 #ia
-CLAUDE.md
 .serena/project.local.yml
 project.yml
 code_style_conventions.md

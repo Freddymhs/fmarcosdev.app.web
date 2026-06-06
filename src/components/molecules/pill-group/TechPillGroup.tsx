@@ -15,7 +15,7 @@ export const TechPillGroup = ({
   return (
     <TechContainer>
       {visibleTechs.map((tech, index) => (
-        <TechPill key={index} tech={tech} index={index} />
+        <TechPill key={tech} tech={tech} index={index} />
       ))}
 
       {hiddenTechs.length > 0 && (

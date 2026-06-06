@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { renderHook, waitFor } from "@testing-library/react";
+import { renderHook, act } from "@testing-library/react";
 import { useResumeData } from "../hooks/useResumeData";
 
 const mockResume = {
@@ -48,20 +48,20 @@ describe("useResumeData", () => {
 
   it("devuelve datos del CV tras el fetch", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(result.current.name).toBe("Freddy Huaylla");
     expect(result.current.email).toBe("fmarcosdev@gmail.com");
   });
 
   it("devuelve proyectos como array", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(Array.isArray(result.current.projects)).toBe(true);
   });
 
   it("filtra proyectos publicados", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(result.current.projects.every((p) => p.published !== false)).toBe(
       true,
     );
@@ -69,31 +69,31 @@ describe("useResumeData", () => {
 
   it("devuelve información de trabajo", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(Array.isArray(result.current.work)).toBe(true);
   });
 
   it("devuelve habilidades", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(Array.isArray(result.current.skills)).toBe(true);
   });
 
   it("devuelve estudios incompletos", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(Array.isArray(result.current.incompledteStudies)).toBe(true);
   });
 
   it("devuelve proyectos incompletos", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(Array.isArray(result.current.incompletedProjects)).toBe(true);
   });
 
   it("devuelve perfiles de contacto", async () => {
     const { result } = renderHook(() => useResumeData());
-    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    await act(async () => {});
     expect(Array.isArray(result.current.profiles)).toBe(true);
   });
 });

@@ -32,6 +32,8 @@ export default function Landing() {
     if (progress === 100 && isLoading === false) {
       navigate("/about_me");
     }
+  // navigate es estable por garantía de react-router (no cambia entre renders)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress, isLoading]);
 
   useEffect(() => {

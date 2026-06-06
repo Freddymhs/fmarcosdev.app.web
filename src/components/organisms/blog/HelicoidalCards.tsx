@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { tv } from "tailwind-variants";
 // import { CONFIG_BLOG_CARDS } from "../../../constants/constants";
 import type { CardPosition } from "../../../types/cardPosition";
@@ -101,15 +101,30 @@ export default function HelicoidalCards({
   cards = [],
   cardAction,
   filterHeight = 0,
+  autoScroll = false,
 }: {
   debug?: boolean;
   cards: CardData[];
   cardAction: (id: string) => void;
   filterHeight?: number;
+  autoScroll?: boolean;
 }) {
   const [scrollY, setScrollY] = useState(0);
-  const [isAutoScroll] = useState(false);
+  const isAutoScroll = autoScroll;
+  // TODO: documentHeight se captura al montar pero aún no se consume en getCardPosition
   const [, setDocumentHeight] = useState(0);
+
+  const stars = useMemo(
+    () =>
+      Array.from({ length: 33 }).map((_, i) => ({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 3}s`,
+        animationDuration: `${2 + Math.random() * 3}s`,
+      })),
+    []
+  );
 
   // Auto scroll effect
   useEffect(() => {
@@ -255,17 +270,8 @@ export default function HelicoidalCards({
       >
         {/* Background stars effect */}
         <div className={starsContainerStyles()}>
-          {Array.from({ length: 33 }).map((_, i) => (
-            <div
-              key={i}
-              className={starStyles()}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-              }}
-            />
+          {stars.map(({ id, ...style }) => (
+            <div key={id} className={starStyles()} style={style} />
           ))}
         </div>
 
@@ -277,7 +283,9 @@ export default function HelicoidalCards({
             return (
               <div
                 onClick={() => cardAction(id)}
-                key={index}
+                role="button"
+                tabIndex={0}
+                key={id}
                 className={cardStyles()}
                 style={{
                   ...position,

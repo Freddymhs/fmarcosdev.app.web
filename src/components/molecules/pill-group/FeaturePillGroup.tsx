@@ -14,8 +14,8 @@ export const FeaturePillGroup = ({
 
   return (
     <TechContainer>
-      {visibleFeatures.map((feature, index) => (
-        <FeaturePill key={index} feature={feature} />
+      {visibleFeatures.map((feature) => (
+        <FeaturePill key={feature} feature={feature} />
       ))}
 
       {hiddenFeatures.length > 0 && (

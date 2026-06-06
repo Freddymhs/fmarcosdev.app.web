@@ -16,7 +16,11 @@
     "test:coverage": "vitest --coverage",
     "cypress": "cypress open",
     "depcheck": "depcheck",
-    "clean": "rm -rf node_modules && npm cache clean --force && npm install"
+    "clean": "rm -rf node_modules && npm cache clean --force && npm install",
+    "validate:sitemap": "node scripts/validate-sitemap.js"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run validate:sitemap"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.3",
@@ -60,8 +64,10 @@
     "happy-dom": "^20.6.1",
     "jsdom": "^28.0.0",
     "kill-port": "^2.0.1",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
+    "vite": "^8.0.16",
     "vitest": "^4.0.18"
   },
   "volta": {

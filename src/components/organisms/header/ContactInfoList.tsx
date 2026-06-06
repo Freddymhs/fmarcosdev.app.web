@@ -31,17 +31,21 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
   };
 
   const handleDownload = async () => {
-    const response = await fetch(cv);
-    const blob = await response.blob();
-    const url = URL.createObjectURL(blob);
+    try {
+      const response = await fetch(cv);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
 
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "CV_Freddy_Huaylla_Fullstack.pdf";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "CV_Freddy_Huaylla_Fullstack.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Error al descargar el CV:", err);
+    }
   };
 
   // Función para obtener el icono correcto según el tipo
@@ -59,6 +63,8 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
         return <Globe size={14} />;
       case "hackerrank":
         return <Trophy size={14} />;
+      // case "x":
+      //   return <Linkedin size={14} />;
       default:
         return <ExternalLink size={14} />;
     }
@@ -111,6 +117,7 @@ export const ContactInfoList = ({ vertical = false }: ContactInfoListProps) => {
           className={copyButtonStyle({ vertical, copied: isCopied })}
           onClick={() => handleCopy(url, url)}
           title="Copiar"
+          aria-label="Copiar"
         >
           <Copy size={12} />
         </button>

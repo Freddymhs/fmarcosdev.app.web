@@ -22,7 +22,7 @@ interface BlogContentProps {
   loadingMore: boolean;
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_GATEWAY_URL;
+const API_BASE_URL = `${import.meta.env.VITE_API_GATEWAY_URL}/api/articles`;
 
 const CARDS_PER_PAGE = 15;
 const CARDS_START_OFFSET = 1;
@@ -43,7 +43,7 @@ const useArticles = () => {
         setError(null);
 
         const res = await fetch(
-          `${API_BASE_URL}/articles?pagination[page]=${targetPage}&pagination[pageSize]=${CARDS_PER_PAGE}`
+          `${API_BASE_URL}?pagination[page]=${targetPage}&pagination[pageSize]=${CARDS_PER_PAGE}`,
         );
 
         if (!res.ok) throw new Error(`API Error: ${res.status}`);
@@ -57,20 +57,20 @@ const useArticles = () => {
         setHasMore(hasMorePages);
 
         setArticles((prev) =>
-          append ? [...prev, ...newArticles] : newArticles
+          append ? [...prev, ...newArticles] : newArticles,
         );
         setPage(targetPage);
       } catch (err) {
         console.error("Error fetching articles:", err);
         setError(
-          err instanceof Error ? err.message : "Failed to fetch articles"
+          err instanceof Error ? err.message : "Failed to fetch articles",
         );
       } finally {
-        setIsLoading(false);
-        setIsAppending(false);
+        const updateLoadingState = append ? setIsAppending : setIsLoading;
+        updateLoadingState(false);
       }
     },
-    []
+    [],
   );
 
   useEffect(() => {

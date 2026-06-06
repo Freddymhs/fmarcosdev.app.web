@@ -215,7 +215,7 @@ function TimelineItem({
           <ul className={highlightsListStyles()}>
             {highlights.map((item, index) => (
               <li
-                key={index}
+                key={item}
                 className={highlightItemStyles({ animated: showItem })}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >

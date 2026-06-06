@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 import { Link, useLocation } from "react-router";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { NAVIGATION_PAGES } from "../../../constants";
+import { NAVIGATION_PAGES, URL_SITE } from "../../../constants";
 
 // ESTILOS PARA EL NUEVO FOOTER
 const FooterContainerStyles = tv({
@@ -68,7 +68,7 @@ const NavigationFooter = () => {
 
   // Generar la URL completa basada en la ubicación actual
   const getCurrentUrl = () => {
-    return `https://www.fmarcos.dev${location.pathname}`;
+    return `${URL_SITE}${location.pathname}`;
   };
 
   // Encontrar la página activa
@@ -105,7 +105,7 @@ const NavigationFooter = () => {
                 active: showActiveStyle,
               })}
             >
-              {to.replace("/", "")}
+              {to.replace("/", "").replace(/_/g, " ")}
             </Link>
           );
         })}

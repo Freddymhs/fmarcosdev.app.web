@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Resume, ResumeProject, ResumeMeta } from "../types/resume";
 
-const API_BASE_URL = import.meta.env.VITE_API_GATEWAY_URL;
+const API_BASE_URL = `${import.meta.env.VITE_API_GATEWAY_URL}/api/resume`;
 
 const EMPTY_ARRAY: never[] = [];
 
@@ -65,7 +65,7 @@ export const useResumeData = () => {
   useEffect(() => {
     const fetchResume = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/resume`);
+        const res = await fetch(`${API_BASE_URL}`);
         if (!res.ok) throw new Error(`Resume API error: ${res.status}`);
         const data: Resume = await res.json();
         setResume(data);

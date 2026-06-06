@@ -23,9 +23,9 @@ const ShowPills = ({
     <TechContainer>
       {visibleItems.map((item, index) =>
         format === "pill" ? (
-          <TechPill key={index} tech={item} index={index} />
+          <TechPill key={item} tech={item} index={index} />
         ) : (
-          <FeaturePill key={index} feature={item} />
+          <FeaturePill key={item} feature={item} />
         )
       )}
 

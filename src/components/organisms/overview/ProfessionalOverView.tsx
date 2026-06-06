@@ -257,9 +257,9 @@ export default function ProfessionalOverview() {
             {texts.valuePropositionTitle}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {texts.technicalFocusAreas.map((area, index) => (
+            {texts.technicalFocusAreas.map((area) => (
               <div
-                key={index}
+                key={area.title}
                 className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-blue-100"
               >
                 <div className="text-3xl mb-2">{area.emoji}</div>
