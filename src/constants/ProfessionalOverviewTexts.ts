@@ -39,19 +39,18 @@ export const ProfessionalOverviewTexts = {
       emoji: "🤖",
       title: "Automatización",
       description:
-        "Reduzco trabajo manual repetitivo con web scraping, bots de WhatsApp y procesamiento automatizado",
+        "Reduzco trabajo manual repetitivo con web scraping, bots de WhatsApp y procesamiento automatizado en cloud",
     },
     {
       emoji: "📱",
       title: "Apps Móviles",
-      description:
-        "Desarrollo aplicaciones Flutter con Clean Architecture y BLoC para código mantenible",
+      description: "Desarrollo aplicaciones Flutter",
     },
     {
       emoji: "🔧",
       title: "Backend & APIs",
       description:
-        "Implemento microservicios, APIs REST/GraphQL usando NestJS, Express y TypeScript",
+        "Implemento microservicios, APIs REST/GraphQL usando Express , NestJS y TypeScript",
     },
   ],
 };
