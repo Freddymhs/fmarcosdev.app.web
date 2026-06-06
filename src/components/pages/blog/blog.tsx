@@ -195,6 +195,7 @@ const BlogContent = ({
           helixLine: 0x7c9c3f,
         }}
         className=""
+        autoScroll={true}
       />
     </div>
   );
