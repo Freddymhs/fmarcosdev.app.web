@@ -118,7 +118,7 @@ const Certificates = () => {
               <div key={cert.name ?? ""} className={certificateCardStyles()}>
                 <div className={imageContainerStyles()}>
                   <img
-                    src={"certificates/" + (cert.name ?? "") + ".png"}
+                    src={"/certificates/" + (cert.name ?? "") + ".png"}
                     alt={cert.name ?? ""}
                     className={certificateImageStyles()}
                   />
@@ -137,7 +137,7 @@ const Certificates = () => {
                     >
                       <ExternalLink size={14} className={actionIconStyles()} /> Ver
                     </button>
-                    <a href={`certificates/${cert.name ?? ""}.png`} download>
+                    <a href={`/certificates/${cert.name ?? ""}.png`} download>
                       <button className={actionButtonStyles({ variant: "download" })}>
                         <Download size={14} className={actionIconStyles()} /> Descargar
                       </button>
