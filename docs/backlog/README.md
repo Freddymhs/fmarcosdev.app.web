@@ -15,6 +15,7 @@ El build script fue corregido de `||` a `&&` (`package.json` linea 10), por lo q
 | 4 | [Dependencias deprecadas](./FASE_4_DEPENDENCIAS_DEPRECADAS.md) | ✅ | Baja | 3 |
 | 5 | [HelicalScrollCards → npm](./FASE_5_helical-scroll-cards-npm-guide.md) | ✅ | Media | 1 |
 | 6 | [UI components → @fmarcosdev/ui-core](./FASE_6_UI_CORE_LIBRARY.md) | PENDIENTE | Media | 5 |
+| 7 | [UX Polish & Frontend Quality](./FASE_7_UX_POLISH_SEMI_SENIOR.md) | PENDIENTE | Alta | 13 |
 
 ## Dependencias
 
