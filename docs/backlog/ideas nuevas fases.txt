@@ -1,0 +1,8 @@
+1#
+Tu app es CSR pura (Create React App pattern con Vite + react-router). No hay servidor, no hay SSR, no hay streaming → PPR no aplica.
+PPR requiere un runtime de servidor que pueda emitir HTML estático con huecos dinámicos que se resuelven vía streaming. Es una feature del App Router de Next.js que depende de React Server Components — tu stack no tiene ninguna de esas piezas.
+¿Te podrías beneficiar del concepto? Sí, pero no implementando PPR. El equivalente práctico sería:
+1. Data fetching con Suspense + streaming — si migraras a un framework con SSR (Next.js, Remix, o incluso Vite SSR custom), podrías servir el shell HTML inmediato mientras los datos del resume/articles llegan.
+2. En el corto plazo y sin cambiar de framework: migrar de useEffect + fetch() a TanStack Query te daría caching, stale-while-revalidate y prefetching, eliminando los estados vacíos de carga. Combinado con React.lazy() + <Suspense> para code-splitting por ruta, mejorarías LCP significativamente sin salir de CSR.
+
+

@@ -6,6 +6,9 @@
   El prefijo `/api` se agrega en el código donde se construye la URL (ej. `blog.tsx`).
   Ejemplo correcto: `http://localhost:3001` / `https://gateway.fmarcos.dev`.
 
+- `VITE_SENTRY_DSN` — DSN de Sentry para error tracking. Vacío/ausente → Sentry
+  desactivado (ver `src/instrument.ts`). Definir en Vercel (producción) o `.env.local` (dev).
+
 ## SEO / Routing
 
 - `public/sitemap.xml` debe estar sincronizado con `ACTIVE_ROUTES` en `src/constants.ts`.

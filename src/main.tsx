@@ -1,3 +1,5 @@
+// Sentry debe importarse antes que cualquier otro módulo para capturar todo.
+import "./instrument";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
