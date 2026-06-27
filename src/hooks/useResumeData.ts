@@ -149,7 +149,10 @@ export const useResumeData = () => {
       (item) => item.completed === false && item.startDate !== "",
     ),
     incompletedProjects: resume.projects.filter(
-      (item) => item.published === false && item.startDate !== "",
+      (item) =>
+        item.published === false &&
+        item.startDate !== "" &&
+        !(item as { aiGenerated?: boolean }).aiGenerated,
     ),
     certificates: resume.certificates ?? EMPTY_ARRAY,
     meta: resume.meta ?? null,
