@@ -14,8 +14,9 @@ El build script fue corregido de `||` a `&&` (`package.json` linea 10), por lo q
 | 3 | [Verificacion build y deploy](./FASE_3_BUILD_DEPLOY_VERIFICACION.md) | ✅ | Alta | 4 |
 | 4 | [Dependencias deprecadas](./FASE_4_DEPENDENCIAS_DEPRECADAS.md) | ✅ | Baja | 3 |
 | 5 | [HelicalScrollCards → npm](./FASE_5_helical-scroll-cards-npm-guide.md) | ✅ | Media | 1 |
-| 6 | [UI components → @fmarcosdev/ui-core](./FASE_6_UI_CORE_LIBRARY.md) | PENDIENTE | Media | 5 |
-| 7 | [UX Polish & Frontend Quality](./FASE_7_UX_POLISH_SEMI_SENIOR.md) | PENDIENTE | Alta | 13 |
+| 6 | [Loading UX real (matar timer falso)](./FASE_6_LOADING_UX_REAL.md) | PENDIENTE | Alta | 10 |
+| 7 | [UI components → @fmarcosdev/ui-core](./FASE_7_UI_CORE_LIBRARY.md) | PENDIENTE | Media | 5 |
+| 8 | [UX Polish & Frontend Quality](./FASE_8_UX_POLISH_SEMI_SENIOR.md) | PENDIENTE | Alta | 14 |
 
 ## Dependencias
 

@@ -1,4 +1,4 @@
-# FASE 6: Extraer componentes a @fmarcosdev/ui-core
+# FASE 7: Extraer componentes a @fmarcosdev/ui-core
 
 **Status**: PENDIENTE
 **Prioridad**: Media
@@ -40,7 +40,7 @@ extrayendo los componentes genéricos del proyecto web.
 
 ## Tareas
 
-### Tarea 6.1: Mover IconButton y MoreItemsTooltip (sin cambios)
+### Tarea 7.1: Mover IconButton y MoreItemsTooltip (sin cambios)
 
 - Igual que HelicalScrollCards — copiar tal cual, publicar
 - Archivos: `atoms/button/IconButton.tsx`, `atoms/tooltip/MoreItemsTooltip.tsx`
@@ -48,26 +48,26 @@ extrayendo los componentes genéricos del proyecto web.
 - En `app.web`: reemplazar imports locales por `@fmarcosdev/ui-core`
 - Dependencias a agregar en `ui-core`: `tailwind-variants` (peerDep o dep directa)
 
-### Tarea 6.2: Abstraer y mover ProgressBar
+### Tarea 7.2: Abstraer y mover ProgressBar
 
 - Agregar prop `color?: string` para reemplazar el CSS var hardcodeado
 - Publicar en `ui-core`
 - Actualizar consumer en `app.web` pasando el color del proyecto
 
-### Tarea 6.3: Abstraer y mover FeaturePill y TechPill
+### Tarea 7.3: Abstraer y mover FeaturePill y TechPill
 
 - `FeaturePill`: reemplazar tokens locales por props `className` o `variant`
 - `TechPill`: recibir `colorMap: Record<string, string>` como prop en lugar de importar `TECH_STACK_COLORS`
 - Publicar en `ui-core`
 - Actualizar consumers en `app.web`
 
-### Tarea 6.4: Abstraer y mover ScrollToTopButton
+### Tarea 7.4: Abstraer y mover ScrollToTopButton
 
 - Recibir `threshold?: number` como prop en lugar de `SCROLL_CONFIG`
 - Requiere `lucide-react` como peerDep en `ui-core`
 - Publicar en `ui-core`
 
-### Tarea 6.5: Bump de versión y publish de ui-core
+### Tarea 7.5: Bump de versión y publish de ui-core
 
 - Cada tarea de abstracción = nuevo minor en `ui-core` (0.2.0, 0.3.0, etc.)
 - Verificar que `app.web` construye tras cada update
