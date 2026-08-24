@@ -25,8 +25,9 @@ const mockResume = {
     { name: "Project B", published: false, startDate: "2024-06" },
   ],
   skills: [{ name: "TypeScript" }],
-  education: [],
-  studies: [{ name: "Study A", completed: false, startDate: "2024-01" }],
+  education: [
+    { studies: [{ name: "Study A", completed: false, startDate: "2024-01" }] },
+  ],
   certificates: [],
 };
 

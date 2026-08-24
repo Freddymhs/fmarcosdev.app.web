@@ -145,7 +145,7 @@ export const useResumeData = () => {
       .reverse(),
     skills: resume.skills ?? EMPTY_ARRAY,
     education: resume.education ?? EMPTY_ARRAY,
-    incompledteStudies: (resume.studies ?? EMPTY_ARRAY).filter(
+    incompledteStudies: (resume.education?.[0]?.studies ?? EMPTY_ARRAY).filter(
       (item) => item.completed === false && item.startDate !== "",
     ),
     incompletedProjects: resume.projects.filter(

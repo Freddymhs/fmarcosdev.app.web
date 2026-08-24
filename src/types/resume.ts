@@ -87,6 +87,7 @@ export interface ResumeEducation {
   endDate?: string;
   score?: string;
   courses?: string[];
+  studies?: ResumeStudy[];
 }
 
 export interface ResumeMeta {
@@ -99,7 +100,6 @@ export interface Resume {
   projects: ResumeProject[];
   skills?: ResumeSkill[];
   education?: ResumeEducation[];
-  studies: ResumeStudy[];
   certificates?: ResumeCertificate[];
   meta?: ResumeMeta;
 }
