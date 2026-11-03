@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.18.0",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "review": "tsc -b &&  vite build && kill-port 4173 && npx vite preview",
     "kill": "npx kill-port 3000",
