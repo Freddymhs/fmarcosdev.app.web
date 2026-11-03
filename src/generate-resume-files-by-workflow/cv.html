@@ -10,149 +10,158 @@
     <style>
     /* Template level */
 body {
-    font-family: Georgia, serif;
-    font-size: 11px;
-    margin: 24px 48px;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  margin: 24px 48px;
 }
 
 h1 {
-    font-size: 26px;
-    text-align: center;
-    margin: 5px;
+  font-size: 26px;
+  text-align: center;
+  margin: 5px;
 }
 
 h2 {
-    border-width: 1px;
-    border-style: none none solid none;
-    margin: 10px 0 2.5px 0;
+  border-width: 1px;
+  border-style: none none solid none;
+  margin: 10px 0 2.5px 0;
 }
 
 section {
-    margin: 3px 0;
+  margin: 3px 0;
 }
 
 ul {
-    margin: 0;
-    padding-left: 20px;
+  margin: 0;
+  padding-left: 20px;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .item {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
-.item>.item-header {
-    float: left;
-    display: block;
+.item > .item-header {
+  float: left;
+  display: block;
 }
 
-.item>.item-header>.item-header-title {
-    font-weight: bold;
+.item > .item-header > .item-header-title {
+  font-weight: bold;
 }
 
-.item>.item-header>.item-header-subtitle {
-    font-style: italic;
+.item > .item-header > .item-header-subtitle {
+  font-style: italic;
 }
 
-.item>.item-details {
-    float: right;
-    text-align: right;
+.item > .item-details {
+  float: right;
+  text-align: right;
 }
 
-.item>.item-details>.item-details-title {
-    font-weight: bold;
+.item > .item-details > .item-details-title {
+  font-weight: bold;
 }
 
 .clearfix {
-    clear: both;
+  clear: both;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 /* Section specific */
 /* basics */
 .vertical-separator {
-    text-align: center;
-    padding: 0 10px;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .vertical-separator:not(:first-child) {
-    border-left: 1px solid #000;
-    text-align: center;
+  border-left: 1px solid #000;
+  text-align: center;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 .col {
-    flex: 1;
-    min-width: 50%;
-    box-sizing: border-box;
-    padding: 10px;
+  flex: 1;
+  min-width: 50%;
+  box-sizing: border-box;
+  padding: 10px;
 }
 .profile-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: left;
 }
 .title-subtitle {
-    flex: 1;
-    min-width: 80px;
+  flex: 1;
+  min-width: 80px;
 }
 .url {
-    margin-left: 20px;
-    word-break: break-all; 
-    overflow-wrap: break-word; 
+  margin-left: 20px;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 a {
-    word-break: break-all;
-    overflow-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 /* Set some print settings. */
 @media print {
-    @page {
-        size: portrait;
-        margin: 10mm 25mm;
-    }
-    .resume {
-        max-width: 100%;
-        border: 0px;
-        background: #fff;
-        box-shadow: none;
-        -webkit-box-shadow: none;
-    }
-    body,
-    html,
-    .resume {
-        margin: 0px;
-        padding: 0px;
-    }
-    .controls {
-        display: none;
-    }
-    .section {
-        page-break-inside: avoid; 
-        margin-bottom: 20px; 
-    }
+  @page {
+    size: portrait;
+    margin: 10mm 25mm;
+  }
+  .resume {
+    max-width: 100%;
+    border: 0px;
+    background: #fff;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  body,
+  html,
+  .resume {
+    margin: 0px;
+    padding: 0px;
+  }
+  .controls {
+    display: none;
+  }
+  /* .section {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+  } */
+  .section {
+    margin-bottom: 55px;
+  }
 
-    .section h2 {
-        page-break-after: avoid; 
-    }
+  .item {
+    page-break-inside: avoid;
+  }
 
-    .row, .col {
-        page-break-inside: avoid; 
-    }
+  .section h2 {
+    page-break-after: avoid;
+  }
+
+  .row,
+  .col {
+    page-break-inside: avoid;
+  }
 }
+
     </style>
 
     </head>
@@ -175,6 +184,8 @@ a {
             <section id="skills">
                 <h2>Habilidades Técnicas</h2>
                 <ul class="item">
+                    <li>
+                    </li>
                     <li>
                         <strong>AI/ML Integration</strong>: OpenAI API, OpenAI Vision API, Conversational AI, OpenAI Assistant API
                     </li>
@@ -217,6 +228,8 @@ a {
                     <li>
                         <strong>Fundamentos &amp; Principios</strong>: SOLID (SRP), SOLID (Open/Closed), SSOT, Closure, Event Loop, Garbage Collection
                     </li>
+                    <li>
+                    </li>
                 </ul>
             </section>
         </div>
@@ -226,10 +239,32 @@ a {
             <div class="item">
                 <div class="item-header">
                     <div class="item-header-title">
+                        SIIGSA — cliente SAG (Servicio Agrícola y Ganadero, Chile)
+                    </div>
+                    <div class="item-header-subtitle">
+                        Backend Developer (Node.js / AdonisJS · microservicios)
+                    </div>
+                </div>
+                <div class="item-details">
+                  <div class="date">
+                    09/2026 — 11/2026
+                  </div>
+                </div>    <div class="clearfix"></div>
+                
+                        <ul class="highlights">
+                            <li>Construí la bandeja de recepción de muestras de laboratorio: KPIs por unidad organizacional (con desempate por pendientes), buscador con sugerencias y filtros, cómputo de días hábiles con feriados nacionales y comunales, y selectores restringidos a las unidades reales del usuario; el equipo adoptó el contrato de ese listado como plantilla para los demás módulos.</li>
+                            <li>Implementé el ciclo de estados y la trazabilidad de la recepción (iniciar, cancelar y confirmar; verificación de sección; revisión y confirmación por muestra con la hora local del laboratorio) y el correo al solicitante al confirmar, entre tres microservicios y el BFF.</li>
+                            <li>Integré la API transversal de Controles Fronterizos y los catálogos de insumos, mezclas y nutrientes (cascadas bidireccionales, componentes de mezcla, parámetros de análisis), dejando una colección Postman por PBI como evidencia de cada criterio de aceptación.</li>
+                            <li>Remedié los reportes de SonarQube del BFF (~75 issues, de 71 a 6 en el reporte oficial en una semana) y de api.solicitudes (~110 issues): complejidad cognitiva, campos readonly, parsers y manejo de errores; y dejé un pre-commit (husky) con las 11 reglas de Sonar para que no vuelvan. Uniformé los errores de microservicios caídos como 502 genérico hacia el front y agregué el chequeo de migraciones pendientes al arrancar.</li>
+                            <li>Operé con un flujo IA-first propio (Claude Code): comandos para bajar y entender cada PBI de Azure, construir la colección Postman, auditar, pre-commit y documentar, con 25 ADRs escritos — método documentado para portarlo a otros clientes.</li>
+                        </ul>
+            </div><div class="item">
+                <div class="item-header">
+                    <div class="item-header-title">
                         Depot Group
                     </div>
                     <div class="item-header-subtitle">
-                        Backend Developer / AI Engineer / Web Scraping / FrontEnd
+                        Backend Developer / AI Engineer / Scraping 
                     </div>
                 </div>
                 <div class="item-details">
@@ -322,7 +357,7 @@ a {
                         INACAP
                     </div>
                     <div class="item-header-subtitle">
-                        Técnico Superior
+                        Técnico de Nivel Superior en Analista Programador
                     </div>
                 </div>
                 <div class="item-details">
@@ -538,21 +573,63 @@ a {
             <div class="item">
                 <div class="item-header">
                     <div class="item-header-title">
-                        GEOTRANS - Maquinarias y Transportes
+                        AgriPlan API – NestJS + Fastify para datos agrícolas
                     </div>
                     <div class="item-header-subtitle">
-                        Diseñé y desarrollé un sitio web corporativo moderno y optimizado para una empresa con más de 20 años en el rubro del transporte y maquinaria pesada en el norte de Chile. Implementé una arquitectura JAMstack con Gatsby y React, integrando formularios sin servidor con AWS Lambda, API Gateway y SES. Enfocado en SEO, rendimiento, experiencia de usuario y soporte multiidioma (español/inglés), el proyecto está desplegado como PWA de alta performance.
+                        Backend NestJS 11 con Fastify que recolecta y normaliza datos climáticos (Open-Meteo, NASA Power), precios ODEPA, directorios curados, plaguicidas SAG y recomendaciones INIA para poblar Supabase; pensado para un Portal público para agricultores con rutinas cron de sincronización.
                     </div>
                 </div>
                 <div class="item-details">
                   <div class="date">
-                    04/2020 — 05/2020
+                    02/2026 — 03/2026
                   </div>
                   <div class="url">
-                    [<a href="https://geotrans.vercel.app">geotrans.vercel.app</a>]
+                    [<a href="https://agriplan-api-nestjs-production.up.railway.app/docs">agriplan-api-nestjs-production.up.railway.app/docs</a>]
                   </div>
                   <div class="url">
-                    [<a href="https://github.com/Freddymhs/gatsby-geotrans-web">github.com/Freddymhs/gatsby-geotrans-web</a>]
+                    [<a href="https://github.com/Freddymhs/agriplan-api-nestjs">github.com/Freddymhs/agriplan-api-nestjs</a>]
+                  </div>
+                </div>    <div class="clearfix"></div>
+            </div>
+            
+                
+            
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-header-title">
+                        MyLends(Loans) - Gestión de Préstamos
+                    </div>
+                    <div class="item-header-subtitle">
+                        Aplicación móvil multiplataforma para gestión de préstamos empresariales, implementando Clean Architecture de 4 capas con BLoC Pattern, Supabase como  backend y programación funcional con Either types para manejo de errores tipados.
+                    </div>
+                </div>
+                <div class="item-details">
+                  <div class="date">
+                    07/2025 — 12/2025
+                  </div>
+                </div>    <div class="clearfix"></div>
+            </div>    
+            
+                
+            
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-header-title">
+                        fmarcos.dev – Portfolio SPA con pipeline de generación de CV
+                    </div>
+                    <div class="item-header-subtitle">
+                        SPA profesional basada en React 19 + Vite que consume el mismo JSON Resume que alimenta el sitio, combinando Atomic Design con un componente DailyFocus que resalta prioridades. La misma data se transforma automáticamente en HTML/PDF/DOCX durante el CI usando un tema ATS propio publicado en npm (jsonresume-theme-dev-ats-es), fork personalizado con soporte español y formato de fechas estándar ATS. Los artefactos se publican desde la rama development gracias a GitHub Actions, guardando los archivos en src/generate-resume-files-by-workflow. El frontend se conecta a un ecosistema de microservicios con patrón BFF: api.gateway (NestJS) actúa como único punto de entrada orquestando api.resume y api.blog (Strapi CMS), cada servicio deployado y escalable independientemente.
+                    </div>
+                </div>
+                <div class="item-details">
+                  <div class="date">
+                    05/2025 — Presente
+                  </div>
+                  <div class="url">
+                    [<a href="https://www.fmarcos.dev/">www.fmarcos.dev/</a>]
+                  </div>
+                  <div class="url">
+                    [<a href="https://github.com/Freddymhs/fmarcosdev.app.web">github.com/Freddymhs/fmarcosdev.app.web</a>]
                   </div>
                 </div>    <div class="clearfix"></div>
             </div>
@@ -604,45 +681,21 @@ a {
             <div class="item">
                 <div class="item-header">
                     <div class="item-header-title">
-                        fmarcos.dev – Portfolio SPA con pipeline de generación de CV
+                        GEOTRANS - Maquinarias y Transportes
                     </div>
                     <div class="item-header-subtitle">
-                        SPA profesional basada en React 19 + Vite que consume el mismo JSON Resume que alimenta el sitio, combinando Atomic Design con un componente DailyFocus que resalta prioridades. La misma data se transforma automáticamente en HTML/PDF/DOCX durante el CI usando un tema ATS propio publicado en npm (jsonresume-theme-dev-ats-es), fork personalizado con soporte español y formato de fechas estándar ATS. Los artefactos se publican desde la rama development gracias a GitHub Actions, guardando los archivos en src/generate-resume-files-by-workflow. El frontend se conecta a un ecosistema de microservicios con patrón BFF: api.gateway (NestJS) actúa como único punto de entrada orquestando api.resume y api.blog (Strapi CMS), cada servicio deployado y escalable independientemente.
+                        Diseñé y desarrollé un sitio web corporativo moderno y optimizado para una empresa con más de 20 años en el rubro del transporte y maquinaria pesada en el norte de Chile. Implementé una arquitectura JAMstack con Gatsby y React, integrando formularios sin servidor con AWS Lambda, API Gateway y SES. Enfocado en SEO, rendimiento, experiencia de usuario y soporte multiidioma (español/inglés), el proyecto está desplegado como PWA de alta performance.
                     </div>
                 </div>
                 <div class="item-details">
                   <div class="date">
-                    05/2025 — Presente
+                    04/2020 — 05/2020
                   </div>
                   <div class="url">
-                    [<a href="https://www.fmarcos.dev/">www.fmarcos.dev/</a>]
+                    [<a href="https://geotrans.vercel.app">geotrans.vercel.app</a>]
                   </div>
                   <div class="url">
-                    [<a href="https://github.com/Freddymhs/fmarcosdev.app.web">github.com/Freddymhs/fmarcosdev.app.web</a>]
-                  </div>
-                </div>    <div class="clearfix"></div>
-            </div>
-            
-                
-            
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-header-title">
-                        AgriPlan API – NestJS + Fastify para datos agrícolas
-                    </div>
-                    <div class="item-header-subtitle">
-                        Backend NestJS 11 con Fastify que recolecta y normaliza datos climáticos (Open-Meteo, NASA Power), precios ODEPA, directorios curados, plaguicidas SAG y recomendaciones INIA para poblar Supabase; pensado para un Portal público para agricultores con rutinas cron de sincronización.
-                    </div>
-                </div>
-                <div class="item-details">
-                  <div class="date">
-                    02/2026 — 03/2026
-                  </div>
-                  <div class="url">
-                    [<a href="https://agriplan-api-nestjs-production.up.railway.app/docs">agriplan-api-nestjs-production.up.railway.app/docs</a>]
-                  </div>
-                  <div class="url">
-                    [<a href="https://github.com/Freddymhs/agriplan-api-nestjs">github.com/Freddymhs/agriplan-api-nestjs</a>]
+                    [<a href="https://github.com/Freddymhs/gatsby-geotrans-web">github.com/Freddymhs/gatsby-geotrans-web</a>]
                   </div>
                 </div>    <div class="clearfix"></div>
             </div>
