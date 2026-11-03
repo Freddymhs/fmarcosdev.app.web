@@ -176,7 +176,7 @@ a {
             <span class="vertical-separator"><a href="https://fmarcos.dev">fmarcos.dev</a></span>    </div>
                 <div class="summary">
                     <h2>Resumen Profesional</h2>
-                    <p>Desarrollador Fullstack con +5 años de experiencia en tecnologías JavaScript/TypeScript (React, Next.js, NestJS, Node.js) como stack principal. Especializado en arquitecturas escalables, APIs REST, web scraping y sistemas de automatización con IA generativa (OpenAI API). Experiencia en desarrollo de CMS con Strapi, integración WhatsApp Business y metodologías ágiles, con skills complementarias en Flutter y Python. Enfoque en optimización de performance, seguridad y experiencia del usuario.</p>
+                    <p>Desarrollador Fullstack con más de 5 años en JavaScript y TypeScript (Node.js, React, Next.js, NestJS, AdonisJS). Último proyecto: backend de microservicios en producción para el SAG (Estado de Chile), con APIs REST, DDD, SQL Server, PostgreSQL, Redis y Azure DevOps, bajo revisión de arquitectura en cada PR. Integro IA generativa en producto: chatbots con OpenAI, extracción de datos con visión y agentes con function calling. Trabajo con un flujo de desarrollo asistido por IA (Claude Code) que documento y reutilizo. También web scraping, CMS headless (Strapi) y WhatsApp Business; complementario en Flutter y Python. Prioridad: calidad medible con tests, SonarQube, performance y seguridad.</p>
                 </div>
             </section>
         </div>
@@ -185,18 +185,16 @@ a {
                 <h2>Habilidades Técnicas</h2>
                 <ul class="item">
                     <li>
+                        <strong>AI/ML Integration</strong>: OpenAI API, OpenAI Vision API, Conversational AI, OpenAI Assistant API, Agentes IA (function calling), Claude Code
                     </li>
                     <li>
-                        <strong>AI/ML Integration</strong>: OpenAI API, OpenAI Vision API, Conversational AI, OpenAI Assistant API
-                    </li>
-                    <li>
-                        <strong>Backend/API Development</strong>: Express.js, NestJS, GraphQL, Apollo Server, REST APIs, WebSockets, Socket.IO, Prisma, Nexus, Zod Validation, GraphQL Subscriptions
+                        <strong>Backend/API Development</strong>: Node.js, Express.js, NestJS, AdonisJS, Lucid ORM, VineJS, GraphQL, Apollo Server, REST APIs, WebSockets, Socket.IO, Prisma, Nexus, Zod Validation, GraphQL Subscriptions
                     </li>
                     <li>
                         <strong>Web Scraping &amp; Automation</strong>: Puppeteer, NestJS Scraper Architecture, Browser Pool Management, Proxy Rotation, Screenshot Automation, Rate Limiting
                     </li>
                     <li>
-                        <strong>Backend Architecture</strong>: Modular Architecture, Clean Architecture, System Design, Swagger/OpenAPI Documentation, Error Handling Middleware
+                        <strong>Backend Architecture</strong>: Microservicios, DDD / Bounded Contexts, BFF (Backend for Frontend), Modular Architecture, Clean Architecture, System Design, Consul (config por ambiente), Swagger/OpenAPI Documentation, Error Handling Middleware
                     </li>
                     <li>
                         <strong>Frontend Development</strong>: React, Next.js, Next.js App Router, Tailwind CSS, TypeScript, JavaScript, Context API, Hooks Personalizados, Ant Design, Material UI, Styled Components, Webpack, UI/UX Optimization, SEO Optimization, React Router DOM, React i18next, React Helmet, Bootstrap, Apollo Client, PWA
@@ -205,13 +203,13 @@ a {
                         <strong>CMS &amp; Content Management</strong>: Strapi CMS, Content Modeling, Media Management, Headless CMS
                     </li>
                     <li>
-                        <strong>Database &amp; Auth</strong>: PostgreSQL, SQLite3, Supabase, Prisma, Database Design, Google OAuth2, JWT
+                        <strong>Database &amp; Auth</strong>: PostgreSQL, SQL Server, Redis, SQLite3, Supabase, Prisma, Database Design, Google OAuth2, JWT
                     </li>
                     <li>
                         <strong>Mobile Development</strong>: Flutter, Cross-platform, React Native, Mobile Scanner, Bluetooth Print ESC/POS
                     </li>
                     <li>
-                        <strong>Development Tools</strong>: CI/CD, Chrome DevTools, Vitest, Performance Optimization, Vite, ESLint, Prettier, Husky
+                        <strong>Development Tools</strong>: CI/CD, SonarQube, Jest, Japa, Testcontainers, Postman / newman, Chrome DevTools, Vitest, Performance Optimization, Vite, ESLint, Prettier, Husky
                     </li>
                     <li>
                         <strong>External Integrations</strong>: Twilio API, WhatsApp Business API, Google Sheets API, AWS SQS, AWS S3, Redis Pub/Sub, AWS Lambda
@@ -220,15 +218,13 @@ a {
                         <strong>Methodologies &amp; Patterns</strong>: Feature Flags, API-first Architecture, Agile/Scrum, Code Refactoring, Circuit Breaker, Conventional Commits
                     </li>
                     <li>
-                        <strong>DevOps &amp; Infrastructure</strong>: Docker, Monorepo, GitHub Actions, PM2
+                        <strong>DevOps &amp; Infrastructure</strong>: Docker, Monorepo, GitHub Actions, Azure DevOps, Vercel, PM2
                     </li>
                     <li>
                         <strong>Design Patterns</strong>: Higher-Order Components (HOC), Render Props, Compound Components, Container/Presentational, Custom Hooks, Factory Pattern, Singleton
                     </li>
                     <li>
                         <strong>Fundamentos &amp; Principios</strong>: SOLID (SRP), SOLID (Open/Closed), SSOT, Closure, Event Loop, Garbage Collection
-                    </li>
-                    <li>
                     </li>
                 </ul>
             </section>
@@ -239,7 +235,7 @@ a {
             <div class="item">
                 <div class="item-header">
                     <div class="item-header-title">
-                        SIIGSA — cliente SAG (Servicio Agrícola y Ganadero, Chile)
+                        SIIGSA, para el SAG (Servicio Agrícola y Ganadero, Chile)
                     </div>
                     <div class="item-header-subtitle">
                         Backend Developer (Node.js / AdonisJS · microservicios)
@@ -256,7 +252,7 @@ a {
                             <li>Implementé el ciclo de estados y la trazabilidad de la recepción (iniciar, cancelar y confirmar; verificación de sección; revisión y confirmación por muestra con la hora local del laboratorio) y el correo al solicitante al confirmar, entre tres microservicios y el BFF.</li>
                             <li>Integré la API transversal de Controles Fronterizos y los catálogos de insumos, mezclas y nutrientes (cascadas bidireccionales, componentes de mezcla, parámetros de análisis), dejando una colección Postman por PBI como evidencia de cada criterio de aceptación.</li>
                             <li>Remedié los reportes de SonarQube del BFF (~75 issues, de 71 a 6 en el reporte oficial en una semana) y de api.solicitudes (~110 issues): complejidad cognitiva, campos readonly, parsers y manejo de errores; y dejé un pre-commit (husky) con las 11 reglas de Sonar para que no vuelvan. Uniformé los errores de microservicios caídos como 502 genérico hacia el front y agregué el chequeo de migraciones pendientes al arrancar.</li>
-                            <li>Operé con un flujo IA-first propio (Claude Code): comandos para bajar y entender cada PBI de Azure, construir la colección Postman, auditar, pre-commit y documentar, con 25 ADRs escritos — método documentado para portarlo a otros clientes.</li>
+                            <li>Operé con un flujo IA-first propio (Claude Code): comandos para bajar y entender cada PBI de Azure, construir la colección Postman, auditar, pre-commit y documentar, con 25 ADRs escritos; el método quedó documentado para portarlo a otros clientes.</li>
                         </ul>
             </div><div class="item">
                 <div class="item-header">
@@ -337,12 +333,7 @@ a {
                 
                         <ul class="highlights">
                             <li>Diseñé y desarrollé soluciones frontend personalizadas para el sector farmacéutico, combinando WordPress, PHP, HTML, CSS y JavaScript para adaptar sitios y funcionalidades a requerimientos específicos del negocio. Enfocado en UI/UX y performance, contribuí a mejorar la experiencia del cliente final, la usabilidad y la presencia online de los clientes.</li>
-                            <li>Desarrollé y personalicé temas y plugins WordPress, implementando funcionalidades a medida para resolver necesidades concretas del sector farmacéutico sin comprometer la estabilidad del sitio. Este enfoque permitió mantener una base flexible y escalable para futuras evoluciones del producto.</li>
-                            <li>Implementé mejoras de UI/UX en interfaces de usuario, optimizando la experiencia de navegación y elevando la usabilidad de las aplicaciones. Apliqué criterios de diseño orientados a conversión y claridad visual para mejorar la interacción del usuario final.</li>
-                            <li>Optimicé el performance frontend en sitios WordPress, reduciendo tiempos de carga y mejorando el posicionamiento SEO. Estas mejoras aportaron una experiencia más rápida y eficiente, con impacto directo en visibilidad y retención.</li>
-                            <li>Gestioné e implementé campañas publicitarias digitales mediante desarrollo frontend personalizado, fortaleciendo la presencia online de clientes y apoyando objetivos de crecimiento comercial. Alineé la implementación técnica con necesidades de marketing y comunicación.</li>
                             <li>Contribuí en proyectos con React y Angular, desarrollando componentes reutilizables y funcionalidades avanzadas que facilitaron la escalabilidad de las interfaces. Este trabajo permitió mantener consistencia visual y acelerar entregas futuras.</li>
-                            <li>Colaboré con equipos multidisciplinarios bajo metodologías ágiles, utilizando JIRA para organizar tareas, priorizar entregas y asegurar seguimiento eficiente del trabajo. También mantuve y resolví issues técnicos en sitios WordPress existentes, garantizando estabilidad y continuidad del servicio.</li>
                         </ul>
             </div></section>
         </div>
