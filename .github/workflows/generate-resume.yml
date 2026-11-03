@@ -50,7 +50,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y wkhtmltopdf pandoc
-          npm install --no-save jsonresume-theme-dev-ats-es resume-cli
+          npm install --no-save @fmarcosdev/jsonresume-theme-dev-ats-es resumed
 
       - name: 🔐 Verify required secrets
         run: |
@@ -72,7 +72,7 @@ jobs:
 
       - name: 📋 Generate Multi Documents
         run: |
-          npx resume export --theme dev-ats-es --format html cv.html
+          npx resumed render resume.json --theme @fmarcosdev/jsonresume-theme-dev-ats-es --output cv.html
           wkhtmltopdf cv.html cv.pdf
           pandoc cv.html -o cv.docx
           ls
