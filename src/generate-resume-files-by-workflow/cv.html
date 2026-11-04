@@ -290,7 +290,7 @@ a {
                 </div>    <div class="clearfix"></div>
                 
                         <ul class="highlights">
-                            <li>Desarrollé en solitario el sistema POS multiplataforma (web y Android) que opera la venta diaria de 3 locales — cientos de transacciones al día — con 9 roles de usuario e integración de hardware de caja: escáner de códigos de barras e impresora térmica Bluetooth (ESC/POS).</li>
+                            <li>Desarrollé en solitario el sistema POS multiplataforma (web y Android) que opera la venta diaria de 3 locales (cientos de transacciones al día) con 9 roles de usuario e integración de hardware de caja: escáner de códigos de barras e impresora térmica Bluetooth (ESC/POS).</li>
                             <li>Diseñé el backend GraphQL, núcleo del sistema, que sincroniza los locales en tiempo real vía WebSockets y gestiona el inventario con lotes FIFO, alertas de reposición y fechas de vencimiento.</li>
                             <li>Construí el microservicio de reportes que genera PDF/CSV bajo demanda en AWS y los envía por email, aislado del backend principal para no frenar la venta en vivo durante los picos.</li>
                         </ul>
@@ -310,10 +310,10 @@ a {
                 </div>    <div class="clearfix"></div>
                 
                         <ul class="highlights">
-                            <li>Reduje el consumo de red de la plataforma normalizando la caché de Apollo — cada objeto se guarda una sola vez y todas las pantallas leen la misma entrada — tras detectar midiendo el patrón de consultas repetidas.</li>
+                            <li>Reduje el consumo de red de la plataforma normalizando la caché de Apollo (cada objeto se guarda una sola vez y todas las pantallas leen la misma entrada) tras detectar midiendo el patrón de consultas repetidas.</li>
                             <li>Implementé Optimistic UI para dar respuesta instantánea en zonas no críticas, y eliminé re-renders innecesarios detectados con el Profiler, como filtros que redibujaban más de 20 componentes.</li>
                             <li>Reforcé la seguridad usando una estrategia de hashes SHA-256 para usuarios no administradores, cerrando una fuga que exponía las capacidades y permisos de la plataforma; trabajé el control de acceso por roles (casbin) en frontend y backend.</li>
-                            <li>Modernicé los componentes React sin frenar el desarrollo — cada PR que tocaba un componente de clase lo migraba a funcional — y migré el login al flujo nativo de Auth0, resolviendo un bug que bloqueaba a usuarios registrados.</li>
+                            <li>Modernicé los componentes React sin frenar el desarrollo (cada PR que tocaba un componente de clase lo migraba a funcional) y migré el login al flujo nativo de Auth0, resolviendo un bug que bloqueaba a usuarios registrados.</li>
                             <li>Creé un programa para automatizar a base de scripts la geolocalización de 12.000 puertos, ahorrando semanas de trabajo manual al equipo de producto.</li>
                         </ul>
             </div><div class="item">
