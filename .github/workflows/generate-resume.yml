@@ -22,7 +22,7 @@ permissions:
 jobs:
   generate-resume-formats:
     name: 🚀 Create Resume pdf doc html
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: 🏁 Initialize Workflow
         uses: actions/checkout@v4
