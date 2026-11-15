@@ -1,0 +1,26 @@
+name: 🧪 Tests
+
+# Hasta 2026-11-15 ningún workflow corría vitest y los tests no arrancaban (faltaba
+# @testing-library/dom) sin que nadie se enterara. Vercel construye, pero no prueba.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: vitest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run

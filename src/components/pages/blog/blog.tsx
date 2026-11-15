@@ -42,8 +42,9 @@ const useArticles = () => {
         updateLoadingState(true);
         setError(null);
 
+        // El gateway pagina con `page`/`pageSize`; ignora `pagination[page]` y devolvía siempre la página 1.
         const res = await fetch(
-          `${API_BASE_URL}?pagination[page]=${targetPage}&pagination[pageSize]=${CARDS_PER_PAGE}`,
+          `${API_BASE_URL}?page=${targetPage}&pageSize=${CARDS_PER_PAGE}`,
         );
 
         if (!res.ok) throw new Error(`API Error: ${res.status}`);
