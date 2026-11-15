@@ -4,5 +4,4 @@ export { default as HeaderBlog } from "./header/headerBlog";
 export { default as Footer } from "./footer/footer";
 export { default as AnimatedTimeline } from "./job-experience/AnimatedTimeline";
 export { default as HelicoidalCards } from "./blog/HelicoidalCards";
-export { HelicalScrollCards } from "@fmarcosdev/helical-scroll-cards";
 export { default as ModalContent } from "./modal/modalContent";

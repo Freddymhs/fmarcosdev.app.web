@@ -12,7 +12,7 @@
 - **Problema**: Solo retorna el string `"social"`, no tiene UI real.
 - **Fix**: Implementar la página o redirigir a `/about_me` y sacarla de las rutas activas.
 
-### 8.1 — Tests Vitest no ejecutan
+### 8.1 — Tests Vitest no ejecutan — HECHO 2026-11-15 (0e65a4f: @testing-library/dom + workflow test.yml)
 - **Archivo**: `package.json`
 - **Problema**: Falta `@testing-library/dom` — los 3 archivos de test fallan al importar.
 - **Fix**: `npm install --save-dev @testing-library/dom`
@@ -95,7 +95,7 @@ Páginas que usan `useResumeData()` pero no extraen `isLoading` ni `error`:
 
 | Suite | Archivos | Tests | Estado |
 |---|---|---|---|
-| Vitest | 3 | ~21 | ❌ No ejecutan (falta @testing-library/dom) |
+| Vitest | 3 | 30 | ✅ corre en CI |
 | Cypress E2E | 4 | ~18 | ⚠️ Algunos selectores inválidos |
 
 ---
@@ -103,7 +103,7 @@ Páginas que usan `useResumeData()` pero no extraen `isLoading` ni `error`:
 ## Checklist de verificación post-fix
 
 ```bash
-npm test                          # Vitest — debe pasar los 21 tests
+npm test                          # Vitest — debe pasar los 30 tests
 npm run cypress                   # Cypress — debe pasar los 18 tests
 npm run build                     # Build limpio sin errores TS
 npm run validate:sitemap          # Sitemap sincronizado

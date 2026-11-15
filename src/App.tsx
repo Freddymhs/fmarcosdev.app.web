@@ -1,5 +1,5 @@
 import packageJson from "../package.json";
-import { JSX, useMemo, useCallback } from "react";
+import { JSX, lazy, Suspense, useMemo, useCallback } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import MainLayout from "./components/templates/app-layout/MainLayout";
 import LandingLayout from "./components/templates/landing-layout/Landing-layout";
@@ -23,10 +23,12 @@ import {
   LandingPage,
   Social,
   Projects,
-  Blog,
 } from "./components/pages";
 import { DailyFocusPill } from "@fmarcosdev/ui-core";
 import useResumeData from "./hooks/useResumeData";
+
+// three.js solo lo usa /blog: se carga en un chunk aparte
+const Blog = lazy(() => import("./components/pages/blog/blog"));
 
 const App = () => {
   const { incompletedProjects, incompledteStudies } = useResumeData();
@@ -52,7 +54,11 @@ const App = () => {
       [SOCIAL_PAGE]: <Social />,
       [CERTIFICATES_PAGE]: <Certificates />,
       [PROJECTS_PAGE]: <Projects />,
-      [BLOG_PAGE]: <Blog />,
+      [BLOG_PAGE]: (
+        <Suspense fallback={null}>
+          <Blog />
+        </Suspense>
+      ),
       [NO_INCLUDED_ROUTE_TO_PAGE]: <Navigate to={HOME_PAGE} replace />,
     }),
     [versionApp, project, study],

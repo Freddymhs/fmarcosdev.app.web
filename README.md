@@ -1,4 +1,4 @@
-#  Responsive website [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/freddymhs/fmarcosdev.github.io/generate-resume.yml?branch=development)](https://github.com/freddymhs/fmarcosdev.github.io/actions/workflows/generate-resume.yml)
+#  Responsive website [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/freddymhs/fmarcosdev.github.io/generate-resume.yml?branch=main)](https://github.com/freddymhs/fmarcosdev.github.io/actions/workflows/generate-resume.yml)
 
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -51,24 +51,23 @@ Este proyecto incluye un sistema automatizado para generar su currículum en mú
    - `git add . && git commit -m "mi feature"`
    - `npm run review` (no debe tener fallas)
    - _(opcional)_ `npm run version-upgrade` (genera commit de nueva versión)
-3. `git push` y **crear Pull Request** o **hacer commit directo a `development`**
-4. (Automático) GitHub Workflow detecta cambios en `development`
+3. `git push` y **crear Pull Request** o **hacer commit directo a `main`**
+4. (Automático) GitHub Workflow detecta el push a `main`
    - Genera archivos `CV.pdf`, `CV.html`, etc.
    - Despliegue automático en Vercel
 
 
 - generador de docs por (CI/CD) en la instancia de  github
-  - El proyecto utiliza GitHub Actions para generar automáticamente los archivos del CV cuando se realiza un push a la rama `development`. 
+  - El proyecto utiliza GitHub Actions para generar automáticamente los archivos del CV cuando se hace push a `main`, cuando `api.resume` dispara `repository_dispatch` (`resume-updated`) o a mano con `workflow_dispatch`. 
 ```
 Detalles del generador de docs por (CI/CD):
 
-1. Se activa al hacer push a la rama `development`
+1. Se activa con push a `main`, `repository_dispatch` (lo manda `api.resume`) o `workflow_dispatch`; las corridas van en cola (`concurrency: resume-files`)
 2. Instala las dependencias necesarias (Node.js, wkhtmltopdf, pandoc)
 3. Genera los archivos CV (HTML, PDF, DOCX)
 4. Mueve los archivos generados a `src/generate-resume-files-by-workflow/`
 5. Construye el proyecto
-6. Realiza commit de los cambios y los envía a la rama `development`
-7. Sincroniza la rama `main` con `development`
+6. Realiza commit de los cambios y los envía a `main` (no a `development`)
 **Para ejecutar manualmente, puede utilizar la función "workflow_dispatch" en GitHub Actions.**
 ```
 

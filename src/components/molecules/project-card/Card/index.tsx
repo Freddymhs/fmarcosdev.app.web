@@ -7,6 +7,9 @@ import { Project } from "../../../../types/projects";
 import { AdvancedImage, placeholder, lazyload } from "@cloudinary/react";
 import { scale } from "@cloudinary/url-gen/actions/resize";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { format, quality } from "@cloudinary/url-gen/actions/delivery";
+import { auto as autoFormat } from "@cloudinary/url-gen/qualifiers/format";
+import { auto as autoQuality } from "@cloudinary/url-gen/qualifiers/quality";
 
 interface CardTypeProps {
   i: number;
@@ -134,7 +137,11 @@ const Card = ({ i, featured, isMobile, data, cld }: CardTypeProps) => {
     role,
     complexity,
   } = data;
-  const cloudImageOptimized = cld.image(imageId).resize(scale().width(800));
+  const cloudImageOptimized = cld
+    .image(imageId)
+    .resize(scale().width(800))
+    .delivery(format(autoFormat()))
+    .delivery(quality(autoQuality()));
 
   const formatDateRange = () => {
     if (startDate && endDate) {

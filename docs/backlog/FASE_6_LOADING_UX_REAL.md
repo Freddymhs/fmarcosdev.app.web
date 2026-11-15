@@ -153,3 +153,5 @@ implementada esta fase, agregarla al `wishlist` del proyecto `fmarcosdev.app.web
 `fmarcosdev.api.resume/resume.json` (vía `/work:resume:sync`, no a mano) para que quede registrada como
 crecimiento intencional. Mencionado por vos en la idea original ("agregar luego al resumen") — se deja
 para el flujo de sync, no para esta fase de código.
+
+2026-11-15: el fetch duplicado se cerró con `src/utils/fetchResumeOnce.ts`; queda loading real/reintento/timeout.
