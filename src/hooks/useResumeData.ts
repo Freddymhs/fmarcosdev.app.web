@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Resume, ResumeProject, ResumeMeta } from "../types/resume";
+import { fetchResumeOnce } from "../utils/fetchResumeOnce";
 
 const API_BASE_URL = `${import.meta.env.VITE_API_GATEWAY_URL}/api/resume`;
 
@@ -65,10 +66,7 @@ export const useResumeData = () => {
   useEffect(() => {
     const fetchResume = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}`);
-        if (!res.ok) throw new Error(`Resume API error: ${res.status}`);
-        const data: Resume = await res.json();
-        setResume(data);
+        setResume(await fetchResumeOnce(API_BASE_URL));
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch resume");
       } finally {

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 import { useResumeData } from "../hooks/useResumeData";
+import { clearResumeRequests } from "../utils/fetchResumeOnce";
 
 const mockResume = {
   basics: {
@@ -32,6 +33,7 @@ const mockResume = {
 };
 
 beforeEach(() => {
+  clearResumeRequests();
   vi.stubGlobal(
     "fetch",
     vi.fn().mockResolvedValue({
@@ -69,6 +71,7 @@ describe("useResumeData", () => {
   });
 
   it("conserva el orden de la API (más nuevo primero) para el proyecto destacado", async () => {
+    clearResumeRequests();
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({

@@ -2,6 +2,7 @@ import { Download, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { tv } from "tailwind-variants";
 import { useResumeData } from "../../../hooks/useResumeData";
+import type { ResumeCertificate } from "../../../types/resume";
 import PageContentLayout from "../../templates/page-content-layout/Page-Content-Layout";
 
 // Estilos usando Tailwind Variants
@@ -79,6 +80,52 @@ const filterPillStyles = tv({
 
 const ALL_CATEGORY = "todos";
 
+const CertificateCard = ({ cert }: { cert: ResumeCertificate }) => {
+  const [hasImage, setHasImage] = useState(true);
+  const imageSrc = `/certificates/${cert.name ?? ""}.png`;
+  const hasUrl = Boolean(cert.url);
+
+  return (
+    <div className={certificateCardStyles()}>
+      <div className={imageContainerStyles()}>
+        {hasImage && (
+          <img
+            src={imageSrc}
+            alt={cert.name ?? ""}
+            className={certificateImageStyles()}
+            onError={() => setHasImage(false)}
+          />
+        )}
+      </div>
+      <div className={cardContentStyles()}>
+        <h3 className={certificateTitleStyles()}>
+          {(cert.name ?? "").replace(/-/g, " ")}
+        </h3>
+        <p className={certificateMetaStyles()}>
+          {cert.issuer} • {cert.date}
+        </p>
+        <div className={actionsContainerStyles()}>
+          {hasUrl && (
+            <button
+              onClick={() => window.open(cert.url, "_blank")}
+              className={actionButtonStyles({ variant: "view" })}
+            >
+              <ExternalLink size={14} className={actionIconStyles()} /> Ver
+            </button>
+          )}
+          {hasImage && (
+            <a href={imageSrc} download>
+              <button className={actionButtonStyles({ variant: "download" })}>
+                <Download size={14} className={actionIconStyles()} /> Descargar
+              </button>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Certificates = () => {
   const { certificates } = useResumeData();
   const [activeCategory, setActiveCategory] = useState(ALL_CATEGORY);
@@ -115,36 +162,7 @@ const Certificates = () => {
           </div>
           <div className={certificatesGridStyles()}>
             {visibleCertificates.map((cert) => (
-              <div key={cert.name ?? ""} className={certificateCardStyles()}>
-                <div className={imageContainerStyles()}>
-                  <img
-                    src={"/certificates/" + (cert.name ?? "") + ".png"}
-                    alt={cert.name ?? ""}
-                    className={certificateImageStyles()}
-                  />
-                </div>
-                <div className={cardContentStyles()}>
-                  <h3 className={certificateTitleStyles()}>
-                    {(cert.name ?? "").replace(/-/g, " ")}
-                  </h3>
-                  <p className={certificateMetaStyles()}>
-                    {cert.issuer} • {cert.date}
-                  </p>
-                  <div className={actionsContainerStyles()}>
-                    <button
-                      onClick={() => window.open(cert.url, "_blank")}
-                      className={actionButtonStyles({ variant: "view" })}
-                    >
-                      <ExternalLink size={14} className={actionIconStyles()} /> Ver
-                    </button>
-                    <a href={`/certificates/${cert.name ?? ""}.png`} download>
-                      <button className={actionButtonStyles({ variant: "download" })}>
-                        <Download size={14} className={actionIconStyles()} /> Descargar
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <CertificateCard key={cert.name ?? ""} cert={cert} />
             ))}
           </div>
         </div>

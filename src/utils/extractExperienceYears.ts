@@ -1,4 +1,4 @@
-export const DEFAULT_EXPERIENCE_YEARS = 4;
+export const DEFAULT_EXPERIENCE_YEARS = 5;
 
 const EXPERIENCE_YEARS_PATTERN =
   /(\d+)\s*\+\s*años|\+(\d+)\s*años|más\s+de\s+(\d+)\s*años/i;

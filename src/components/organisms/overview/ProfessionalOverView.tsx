@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { tv } from "tailwind-variants";
 import { useResumeData } from "../../../hooks/useResumeData";
 import type { ResumeWork, ResumeSkill } from "../../../types/resume";
-import { extractExperienceYearsFromSummary } from "../../../utils/extractExperienceYears";
+import {
+  DEFAULT_EXPERIENCE_YEARS,
+  extractExperienceYearsFromSummary,
+} from "../../../utils/extractExperienceYears";
+import { formatCvUpdated } from "../../../utils/formatCvUpdated";
 import { ProfessionalOverviewTexts as texts } from "../../../constants/ProfessionalOverviewTexts";
 
 // ------------------ estilos (tailwind-variants) ------------------
@@ -48,6 +52,16 @@ const statNumber = tv({ base: "text-lg font-bold" });
 
 const statLabel = tv({ base: "text-xs text-muted-foreground mt-1" });
 
+const skeleton = tv({
+  base: "mx-auto rounded bg-gray-200 animate-pulse",
+  variants: {
+    size: {
+      stat: "h-6 w-10",
+      title: "h-8 w-64 max-w-full",
+    },
+  },
+});
+
 const bottomGrid = tv({ base: "grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6" });
 
 const card = tv({ base: "bg-white rounded-sm p-4 shadow-sm border text-sm" });
@@ -68,7 +82,7 @@ const calculateExperienceYears = (work: ResumeWork[]): number => {
     .map((job) => parseYearFrom(job.startDate))
     .filter((year) => !isNaN(year));
 
-  if (startYears.length === 0) return 4;
+  if (startYears.length === 0) return DEFAULT_EXPERIENCE_YEARS;
 
   const earliestYear = Math.min(...startYears);
   const currentYear = new Date().getFullYear();
@@ -107,7 +121,7 @@ const countUniqueTechnologies = (skills: ResumeSkill[]): number => {
 
 // ------------------ component ------------------
 export default function ProfessionalOverview() {
-  const { label, summary, email, location, profiles, work, skills, certificates, meta } = useResumeData();
+  const { isLoading, error, label, summary, email, location, profiles, work, skills, certificates, meta } = useResumeData();
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -120,10 +134,17 @@ export default function ProfessionalOverview() {
 
   const techCount = countUniqueTechnologies(typedSkills);
   const certificatesCount = certificates.length;
+  const cvUpdatedDate = formatCvUpdated(meta?.lastUpdated);
 
   const topTechs = getTopTechnologies(typedSkills, 5);
   const totalTechs = countUniqueTechnologies(typedSkills);
   const remainingTechs = totalTechs - topTechs.length;
+
+  const statItems = [
+    { label: texts.yearsExperience, value: `${experienceYears}+` },
+    { label: texts.technologies, value: `${techCount}+` },
+    { label: texts.certifications, value: `${certificatesCount}` },
+  ];
 
   useEffect(() => {
     const target = ref.current;
@@ -151,9 +172,13 @@ export default function ProfessionalOverview() {
         <div className={titleRow()}>
           <div className="flex items-center justify-center gap-3">
             <span className="text-4xl">💻</span>
-            <h2 className={titleStyles()}>
-              {`${experienceYears}+ años ${label}`}
-            </h2>
+            {isLoading ? (
+              <div className={skeleton({ size: "title" })} />
+            ) : (
+              <h2 className={titleStyles()}>
+                {`${experienceYears}+ años ${label}`}
+              </h2>
+            )}
           </div>
 
           {/* fila de tecnologías / país / remote */}
@@ -207,34 +232,26 @@ export default function ProfessionalOverview() {
             </a>
           ))}
 
-          <span className="text-xs text-orange-600 font-medium">
-            {texts.cvUpdated} (
-            {meta?.lastUpdated &&
-              new Date(meta.lastUpdated).toLocaleDateString("es-ES", {
-                year: "numeric",
-                month: "short",
-              })}
-            )
-          </span>
+          {cvUpdatedDate && (
+            <span className="text-xs text-orange-600 font-medium">
+              {texts.cvUpdated} ({cvUpdatedDate})
+            </span>
+          )}
         </div>
 
-        {/* stats */}
-        <div className={statsGrid()}>
-          <div className={statBox()}>
-            <div className={statNumber()}>{experienceYears}+</div>
-            <div className={statLabel()}>{texts.yearsExperience}</div>
+        {/* stats: sin datos de la API no se pinta ningún número */}
+        {!error && (
+          <div className={statsGrid()}>
+            {statItems.map(({ label: statName, value }) => (
+              <div key={statName} className={statBox()}>
+                <div className={statNumber()}>
+                  {isLoading ? <div className={skeleton({ size: "stat" })} /> : value}
+                </div>
+                <div className={statLabel()}>{statName}</div>
+              </div>
+            ))}
           </div>
-
-          <div className={statBox()}>
-            <div className={statNumber()}>{techCount}+</div>
-            <div className={statLabel()}>{texts.technologies}</div>
-          </div>
-
-          <div className={statBox()}>
-            <div className={statNumber()}>{certificatesCount}</div>
-            <div className={statLabel()}>{texts.certifications}</div>
-          </div>
-        </div>
+        )}
 
         {/* Propuesta de valor - Grid 3 columnas */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-5 mt-6 border border-blue-200 shadow-sm">
