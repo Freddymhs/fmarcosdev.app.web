@@ -141,8 +141,7 @@ export const useResumeData = () => {
     getContactsBySpace: (maxItems: number) => contacts.slice(0, maxItems),
     work: resume.work ?? EMPTY_ARRAY,
     projects: (resume.projects as ResumeProject[])
-      .filter((item) => item.published !== false)
-      .reverse(),
+      .filter((item) => item.published !== false),
     skills: resume.skills ?? EMPTY_ARRAY,
     education: resume.education ?? EMPTY_ARRAY,
     incompledteStudies: (resume.education?.[0]?.studies ?? EMPTY_ARRAY).filter(

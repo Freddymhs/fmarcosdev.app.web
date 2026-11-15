@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { tv } from "tailwind-variants";
 import { useResumeData } from "../../../hooks/useResumeData";
 import type { ResumeWork, ResumeSkill } from "../../../types/resume";
+import { extractExperienceYearsFromSummary } from "../../../utils/extractExperienceYears";
 import { ProfessionalOverviewTexts as texts } from "../../../constants/ProfessionalOverviewTexts";
 
 // ------------------ estilos (tailwind-variants) ------------------
@@ -74,22 +75,6 @@ const calculateExperienceYears = (work: ResumeWork[]): number => {
   const calculatedYears = currentYear - earliestYear;
 
   return Math.max(1, calculatedYears);
-};
-
-const extractExperienceYearsFromSummary = (
-  summary: string | undefined,
-): number => {
-  if (!summary) return 4;
-
-  const match = summary.match(/(\d+)\s*\+\s*años|\+(\d+)\s*años/);
-  if (match) {
-    const years = match[1] || match[2];
-    if (years) {
-      return parseInt(years);
-    }
-  }
-
-  return 4;
 };
 
 const getTopTechnologies = (skills: ResumeSkill[], limit: number = 5): string[] => {

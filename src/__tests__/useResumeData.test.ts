@@ -68,6 +68,31 @@ describe("useResumeData", () => {
     );
   });
 
+  it("conserva el orden de la API (más nuevo primero) para el proyecto destacado", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            ...mockResume,
+            projects: [
+              { name: "Nuevo", published: true, startDate: "2026-02" },
+              { name: "Medio", published: true, startDate: "2024-02" },
+              { name: "Viejo", published: true, startDate: "2020-04" },
+            ],
+          }),
+      }),
+    );
+    const { result } = renderHook(() => useResumeData());
+    await act(async () => {});
+    expect(result.current.projects.map((p) => p.name)).toEqual([
+      "Nuevo",
+      "Medio",
+      "Viejo",
+    ]);
+  });
+
   it("devuelve información de trabajo", async () => {
     const { result } = renderHook(() => useResumeData());
     await act(async () => {});

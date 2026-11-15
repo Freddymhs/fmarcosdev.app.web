@@ -198,21 +198,25 @@ const Card = ({ i, featured, isMobile, data, cld }: CardTypeProps) => {
             <TechPillGroup technologies={technologies} max={11} />
 
             <div className={actionsContainerStyles()}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkStyles()}
-              >
-                <IconButton icon={<Link size={18} />} title="Ver Proyecto" />
-              </a>
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <IconButton
-                  icon={<GithubIcon size={18} />}
-                  title="Código"
-                  type="small"
-                />
-              </a>
+              {url && (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkStyles()}
+                >
+                  <IconButton icon={<Link size={18} />} title="Ver Proyecto" />
+                </a>
+              )}
+              {githubUrl && (
+                <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                  <IconButton
+                    icon={<GithubIcon size={18} />}
+                    title="Código"
+                    type="small"
+                  />
+                </a>
+              )}
             </div>
           </div>
         </div>
