@@ -19,6 +19,12 @@ on:
 permissions:
   contents: write
 
+# Un push y el repository_dispatch de api.resume llegan casi juntos: en paralelo
+# regeneran los mismos binarios y el segundo choca en el rebase. En cola, no.
+concurrency:
+  group: resume-files
+  cancel-in-progress: false
+
 jobs:
   generate-resume-formats:
     name: 🚀 Create Resume pdf doc html
