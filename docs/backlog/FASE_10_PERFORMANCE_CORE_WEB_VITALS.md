@@ -61,6 +61,8 @@ pipeline de imágenes/chunking (🟢) son incrementales y no bloquean el 🔴.
 ## 🔴 Críticos (quick-wins, sin tooling nuevo)
 
 ### 10.0 — Remover `three@0.177`
+
+> **2026-11-15 — NO aplica tal cual:** `three` sí se usa en `/blog` vía `@fmarcosdev/helical-scroll-cards`; no desinstalar. Hecho en su lugar (6d2aa22): `/blog` es `lazy()` y `three` va en el chunk `blog-*.js`; el principal bajó de 876 kB a 381 kB (245 → 119 kB gz).
 - **Archivo**: `package.json:48`
 - **Problema**: confirmado 0 imports reales (`from "three"`, `@react-three/*`) en todo `src/`.
   Dependencia pesada (~1MB) sin uso — bundle muerto.
@@ -68,6 +70,8 @@ pipeline de imágenes/chunking (🟢) son incrementales y no bloquean el 🔴.
   referenciaba indirectamente).
 
 ### 10.1 — Preloads rotos en `index.html`
+
+> **HECHO 2026-11-15 (6d2aa22):** se borraron los 6 preloads de certificados de `index.html` y el precargado de los 11 PNG en `Landing.tsx`.
 - **Archivo**: `index.html:11-41`
 - **Problema**: línea 16 tiene `<link rel="preload" as="image" href="" />` (href vacío — no hace
   nada útil, ocupa presupuesto de prioridad de red). Las líneas 12-41 usan
@@ -116,6 +120,8 @@ pipeline de imágenes/chunking (🟢) son incrementales y no bloquean el 🔴.
 ## 🟢 Mejoras (pipeline de imágenes + chunking)
 
 ### 10.7 — Cloudinary `f_auto,q_auto` + srcset responsive
+
+> **PARCIAL 2026-11-15 (6d2aa22):** `Card` ya pide `f_auto/q_auto` (~297 kB → ~46 kB por imagen); falta el `srcset` responsive.
 - **Problema**: no está confirmado que todos los usos de `@cloudinary/react`/`@cloudinary/url-gen`
   apliquen `f_auto,q_auto` (formato/calidad automáticos) y `srcset` responsive.
 - **Fix**: auditar los componentes que consumen Cloudinary y estandarizar la transformación
