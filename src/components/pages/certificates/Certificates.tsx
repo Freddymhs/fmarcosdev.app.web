@@ -93,6 +93,8 @@ const CertificateCard = ({ cert }: { cert: ResumeCertificate }) => {
             src={imageSrc}
             alt={cert.name ?? ""}
             className={certificateImageStyles()}
+            loading="lazy"
+            decoding="async"
             onError={() => setHasImage(false)}
           />
         )}
